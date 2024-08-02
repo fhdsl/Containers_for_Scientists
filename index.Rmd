@@ -1,5 +1,5 @@
 ---
-title: "FHDaSL Book Name"
+title: "Containers for Scientists"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -18,4 +18,3 @@ knitr::write_bib(c(
 ```
 
 # About this Book {-}
-
