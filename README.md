@@ -1,21 +1,26 @@
-# {Course Name}
+# Containers for Scientists
 
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template).
 
-You can see the rendered course material here: {Link to rendered bookdown and/or to the Leanpub.}
+You can see the rendered course material here: https://hutchdatascience.org/Containers_for_Scientists/
 
 If you would like to contribute to this course material, take a look at the [OTTR documentation](https://www.ottrproject.org/).
 
 ## About this course
 
-This course introduces {info on what this course introduces}
+This course introduces fundamentals on how to use containers for research. 
 
 ## Learning Objectives
 
 This course will teach learners to:  
 
-- {You can use https://www.bobpikegroup.com/trainer-blog/5-steps-to-writing-clear-and-measurable-learning-objectives to define some learning objectives here}
-- {More learning objectives}
+- Understand that computing environment are moving targets
+- Use containers to share a controlled computing environment
+- Pull and use a docker image from online
+- Modify a docker image
+- Build a docker image from scratch
+- Troubleshoot the most common docker related errors
+
 
 ## Encountering problems?
 
