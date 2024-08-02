@@ -1,5 +1,5 @@
 ---
-title: "Informatics Technology for Cancer Research (ITCR): Course Name "
+title: "Containers for Scientists"
 date: "August, 2024"
 site: bookdown::bookdown_site
 documentclass: book
