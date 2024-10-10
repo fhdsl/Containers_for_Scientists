@@ -8,7 +8,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## The problem
 
-In todays data driven world, science is driven by computer work. But each of these computers is unique. This goes far beyond "Mac vs PC". Every computer has a special configuration of software and software versions that is installed on it. Some of this is determined by the user of the computer, some was designed by company that sells the computers, and some is even controlled by institutions and their IT departments that manage the computers.
+In today's data driven world, science is driven by computer work. But each of these computers is unique. This goes far beyond "Mac vs PC". Every computer has a special configuration of software and software versions that is installed on it. Some of this is determined by the user of the computer, some was designed by company that sells the computers, and some is even controlled by institutions and their IT departments that manage the computers.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_0")
@@ -129,4 +129,4 @@ Basically going from image to container is like this scene from Mary Poppins.
 
 <iframe src="https://giphy.com/embed/bS93RNppr0aY0" width="480" height="319" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/disney-picture-magic-bS93RNppr0aY0">via GIPHY</a></p>
 
-This course's goal is to make learning containers go down like a spoonful of sugar. 
+This course's goal is to make learning containers go down like a spoonful of sugar.
