@@ -7,8 +7,9 @@ rmd_files: ["index.Rmd",
             "03-using-containers.Rmd",
             "04-modifying-containers.Rmd",
             "05-sharing-containers.Rmd",
-            "06-troubleshooting.Rmd",
-            "07-advanced-techniques.Rmd",
+            "06-cleaning-up.Rmd",
+            "07-troubleshooting.Rmd",
+            "08-advanced-techniques.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes
