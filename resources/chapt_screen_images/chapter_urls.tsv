@@ -1,0 +1,12 @@
+url	chapt_title	img_path
+http://hutchdatascience.org/Containers_for_Scientists/index.html	About this Course	resources/chapt_screen_images/index.png
+http://hutchdatascience.org/Containers_for_Scientists/introduction.html	1 Introduction	resources/chapt_screen_images/introduction.png
+http://hutchdatascience.org/Containers_for_Scientists/why-containers.html	2 Why Containers?	resources/chapt_screen_images/why-containers.png
+http://hutchdatascience.org/Containers_for_Scientists/using-containers.html	3 Using Containers	resources/chapt_screen_images/using-containers.png
+http://hutchdatascience.org/Containers_for_Scientists/modifying-containers.html	4 Modifying Containers	resources/chapt_screen_images/modifying-containers.png
+http://hutchdatascience.org/Containers_for_Scientists/sharing-containers.html	5 Sharing Containers	resources/chapt_screen_images/sharing-containers.png
+http://hutchdatascience.org/Containers_for_Scientists/cleaning-up.html	6 Cleaning Up	resources/chapt_screen_images/cleaning-up.png
+http://hutchdatascience.org/Containers_for_Scientists/troubleshooting-tips.html	7 Troubleshooting Tips	resources/chapt_screen_images/troubleshooting-tips.png
+http://hutchdatascience.org/Containers_for_Scientists/advanced-container-techniques.html	8 Advanced Container Techniques	resources/chapt_screen_images/advanced-container-techniques.png
+http://hutchdatascience.org/Containers_for_Scientists/about-the-authors.html	About the Authors	resources/chapt_screen_images/about-the-authors.png
+http://hutchdatascience.org/Containers_for_Scientists/references.html	9 References	resources/chapt_screen_images/references.png
