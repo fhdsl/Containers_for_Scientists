@@ -63,4 +63,6 @@ This course is meant to teach learners how to create sophisticated GitHub Action
 
 ## How to use the course
 
-Ideally you should follow along with the chapters and perform the activities as they are described. These activities involve using Docker or optionally Podman. 
+Ideally you should follow along with the chapters and perform the activities as they are described. These activities involve using Docker or optionally Podman.
+
+We also recommend that if you'd like to fully leverage your container skills after taking this course you may also enjoy our [GitHub Actions course](https://hutchdatascience.org/GitHub_Automation_for_Scientists/) that pairs well with the skillset taught here. 
