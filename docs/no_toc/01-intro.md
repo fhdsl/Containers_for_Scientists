@@ -3,90 +3,58 @@
 
 # Introduction
 
-
-## Motivation
-
+<img src="resources/images/01-intro_files/figure-html//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_p.png" width="100%" />
 
 ## Target Audience  
 
-The course is intended for ...
+The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research
+
+_This course is written for individuals who:_   
+
+- Are comfortable with bash and command line
+- Write code for scientific projects
+- Perhaps tried to use Docker or another containerization software before but felt overwhelmed or confused on how to get started
+- Want to learn best practices for using containers
+
+
+<img src="resources/images/01-intro_files/figure-html//1x0Cnk2Wcsg8HYkmXnXo_0PxmYCxAwzVrUQzb8DUDvTA_g1173f7473f7_0_0.png" width="100%" />
+
+## Topics covered
+
+This course covers how to use containers for scientific software development. We encourage the recognition that scientific software can take many forms that can all benefit from the concepts of continuous integration and continuous deployment.
+
+<img src="resources/images/01-intro_files/figure-html//1x0Cnk2Wcsg8HYkmXnXo_0PxmYCxAwzVrUQzb8DUDvTA_gd422c5de97_0_10.png" width="100%" />
+
+This course builds on concepts introduced in the [Reproducibility](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html) and [Advanced Reproducibility](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/introduction.html) courses from the ITCR Training Network. If you are unfamiliar with GitHub and/or do not have an account, we'd suggest you start with those courses by using the links above.
+
+## Motivation
+
+Cancer datasets are plentiful, complicated, and hold untold amounts of information regarding cancer biology. Cancer researchers are working to apply their expertise to the analysis of these vast amounts of data but training opportunities to properly equip them in these efforts can be sparse. This includes training in reproducible data analysis methods.
+
+Data analyses are generally not reproducible without direct contact with the original researchers and a substantial amount of time and effort [@BeaulieuJones2017]. Reproducibility in cancer informatics (as with other fields) is still not monitored or incentivized despite that it is fundamental to the scientific method. Despite the lack of incentive, many researchers strive for reproducibility in their own work but often lack the skills or training to do so effectively.
+
+Equipping researchers with the skills to create reproducible data analyses increases the efficiency of everyone involved. One tool among many for creating reproducible analyses is utilizing automation. Many individuals performing analyses on cancer data may not have formal training in software development and may be unfamiliar with the ideas of continuous integration and continuous deployment. By recognizing that biological data analysis code is a form of software development, we can try to adapt good development practices in scientific analyses and software contexts.
+
+_Scientific software projects may include (but aren't limited to):_
+
+- Software that built as tools to be utilized by others to analyze biologically derived data.
+- Code that is built primarily for analyzing one project's data.
+- Code that is built as a workflow for a series of steps and analyses that might be reused among collaborators or within a lab.
+- Any scripts and code that are built to handle data in a research setting.
+- Any scripts and code a researcher might interact with.
 
 ## Curriculum  
 
-The course covers...
+The course includes hands-on exercises for how to use, modify, share, and troubleshoot containers for scientific software development purposes.
 
+**Goal of this course:**  
+Equip learners with basics skills and confidence to utilize the containers within the context of scientific software analyses.
 
+**What is not the goal**  
+This course is meant to teach learners how to create sophisticated GitHub Actions, but instead introduce learners to basic fundamentals of continuous integration and continuous deployment. This course focuses on GitHub Actions and will not cover any other (perfectly fine) tools for CI/CD.
 
-```r
-devtools::session_info()
-```
+## How to use the course
 
-```
-## ─ Session info ───────────────────────────────────────────────────────────────
-##  setting  value                       
-##  version  R version 4.0.2 (2020-06-22)
-##  os       Ubuntu 20.04.5 LTS          
-##  system   x86_64, linux-gnu           
-##  ui       X11                         
-##  language (EN)                        
-##  collate  en_US.UTF-8                 
-##  ctype    en_US.UTF-8                 
-##  tz       Etc/UTC                     
-##  date     2023-05-24                  
-## 
-## ─ Packages ───────────────────────────────────────────────────────────────────
-##  package     * version date       lib source                            
-##  assertthat    0.2.1   2019-03-21 [1] RSPM (R 4.0.5)                    
-##  bookdown      0.24    2023-03-28 [1] Github (rstudio/bookdown@88bc4ea) 
-##  bslib         0.4.2   2022-12-16 [1] CRAN (R 4.0.2)                    
-##  cachem        1.0.7   2023-02-24 [1] CRAN (R 4.0.2)                    
-##  callr         3.5.0   2020-10-08 [1] RSPM (R 4.0.2)                    
-##  cli           3.6.1   2023-03-23 [1] CRAN (R 4.0.2)                    
-##  crayon        1.3.4   2017-09-16 [1] RSPM (R 4.0.0)                    
-##  desc          1.2.0   2018-05-01 [1] RSPM (R 4.0.3)                    
-##  devtools      2.3.2   2020-09-18 [1] RSPM (R 4.0.3)                    
-##  digest        0.6.25  2020-02-23 [1] RSPM (R 4.0.0)                    
-##  ellipsis      0.3.1   2020-05-15 [1] RSPM (R 4.0.3)                    
-##  evaluate      0.20    2023-01-17 [1] CRAN (R 4.0.2)                    
-##  fansi         0.4.1   2020-01-08 [1] RSPM (R 4.0.0)                    
-##  fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.0.2)                    
-##  fs            1.5.0   2020-07-31 [1] RSPM (R 4.0.3)                    
-##  glue          1.4.2   2020-08-27 [1] RSPM (R 4.0.5)                    
-##  hms           0.5.3   2020-01-08 [1] RSPM (R 4.0.0)                    
-##  htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.0.2)                    
-##  jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.0.2)                    
-##  jsonlite      1.7.1   2020-09-07 [1] RSPM (R 4.0.2)                    
-##  knitr         1.33    2023-03-28 [1] Github (yihui/knitr@a1052d1)      
-##  lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.0.2)                    
-##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.0.2)                    
-##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.0.2)                    
-##  ottrpal       1.0.1   2023-03-28 [1] Github (jhudsl/ottrpal@151e412)   
-##  pillar        1.9.0   2023-03-22 [1] CRAN (R 4.0.2)                    
-##  pkgbuild      1.1.0   2020-07-13 [1] RSPM (R 4.0.2)                    
-##  pkgconfig     2.0.3   2019-09-22 [1] RSPM (R 4.0.3)                    
-##  pkgload       1.1.0   2020-05-29 [1] RSPM (R 4.0.3)                    
-##  prettyunits   1.1.1   2020-01-24 [1] RSPM (R 4.0.3)                    
-##  processx      3.4.4   2020-09-03 [1] RSPM (R 4.0.2)                    
-##  ps            1.4.0   2020-10-07 [1] RSPM (R 4.0.2)                    
-##  R6            2.4.1   2019-11-12 [1] RSPM (R 4.0.0)                    
-##  readr         1.4.0   2020-10-05 [1] RSPM (R 4.0.2)                    
-##  remotes       2.2.0   2020-07-21 [1] RSPM (R 4.0.3)                    
-##  rlang         1.1.0   2023-03-14 [1] CRAN (R 4.0.2)                    
-##  rmarkdown     2.10    2023-03-28 [1] Github (rstudio/rmarkdown@02d3c25)
-##  rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.0.2)                    
-##  sass          0.4.5   2023-01-24 [1] CRAN (R 4.0.2)                    
-##  sessioninfo   1.1.1   2018-11-05 [1] RSPM (R 4.0.3)                    
-##  stringi       1.5.3   2020-09-09 [1] RSPM (R 4.0.3)                    
-##  stringr       1.4.0   2019-02-10 [1] RSPM (R 4.0.3)                    
-##  testthat      3.0.1   2023-03-28 [1] Github (R-lib/testthat@e99155a)   
-##  tibble        3.2.1   2023-03-20 [1] CRAN (R 4.0.2)                    
-##  usethis       1.6.3   2020-09-17 [1] RSPM (R 4.0.2)                    
-##  utf8          1.1.4   2018-05-24 [1] RSPM (R 4.0.3)                    
-##  vctrs         0.6.1   2023-03-22 [1] CRAN (R 4.0.2)                    
-##  withr         2.3.0   2020-09-22 [1] RSPM (R 4.0.2)                    
-##  xfun          0.26    2023-03-28 [1] Github (yihui/xfun@74c2a66)       
-##  yaml          2.2.1   2020-02-01 [1] RSPM (R 4.0.3)                    
-## 
-## [1] /usr/local/lib/R/site-library
-## [2] /usr/local/lib/R/library
-```
+Ideally you should follow along with the chapters and perform the activities as they are described. These activities involve using Docker or optionally Podman.
+
+We also recommend that if you'd like to fully leverage your container skills after taking this course you may also enjoy our [GitHub Actions course](https://hutchdatascience.org/GitHub_Automation_for_Scientists/) that pairs well with the skillset taught here. 
