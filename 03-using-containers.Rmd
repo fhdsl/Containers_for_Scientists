@@ -13,10 +13,10 @@ When learning another software skill like containers, it sometimes means you'll 
 
 **IMPORTANT**: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because steps have to be done and in order!
 
-# {.tabset}
+## {.tabset}
 
-## Docker
-### Set up
+### Docker
+#### Set up
 <input type="checkbox"> Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.    
 <input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).    
 <input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.   
@@ -25,7 +25,7 @@ When learning another software skill like containers, it sometimes means you'll 
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_686")
 ```
 
-### Get workshop files
+#### Get workshop files
 <input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip  
 <input type="checkbox"> Put this file on your desktop so it is easily findable.  
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
@@ -34,7 +34,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
 ```
 
-### Activity 1: Pull and run a Docker image
+#### Activity 1: Pull and run a Docker image
 
 **This activity is built so that you will encounter errors that this guide will work you through!**
 Most common container stumbling block is understanding the idea that containers are isolated from your computer
@@ -51,7 +51,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 We will encounter both an error of when we don't have a file we need AND an error of when we don't have a software package we need. We will guide you through what to do when these expected errors occur.
 
-### Step 1: Docker pull
+#### Step 1: Docker pull
 
 We need to get the Docker **image** we want to use. We do this by "pulling" it.
 Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer).
@@ -72,7 +72,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 ```
 
 
-#### Step 2: Check what images you have
+##### Step 2: Check what images you have
 
 <input type="checkbox"> To see what images we have we can run `docker image ls`.  
 <input type="checkbox"> We should see `cansav09/practice-image:1` show up in the output.  
@@ -81,7 +81,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_752")
 ```
 
-#### Step 3: Run the docker image to start a container!
+##### Step 3: Run the docker image to start a container!
 
 Remember Images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do `docker run`
 
@@ -117,7 +117,7 @@ What can we do with running containers?
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_791")
 ```
 
-#### Step 4: Run a single command
+##### Step 4: Run a single command
 
 <input type="checkbox"> To run stuff interactively from the command line we can do:  
 
@@ -129,7 +129,7 @@ docker exec -it <PUT_CONTAINER_ID_HERE> bash
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_803")
 ```
 
-#### Step 5: Try calling a script
+##### Step 5: Try calling a script
 
 <input type="checkbox"> To run a script using the docker container we could just add reference to a script at the end:  
 
@@ -151,11 +151,11 @@ bash: run_analysis.sh: No such file or directory
 
 This won't work because the file `run_analysis.sh` is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.
 
-### Activity 1b: Add a volume to the image
+#### Activity 1b: Add a volume to the image
 
 Our container is separate from our computer so if we want to use a file we have to attach it using a "volume".
 
-#### Step 1: Let’s add our containers-for-scientists-sandbox files
+##### Step 1: Let’s add our containers-for-scientists-sandbox files
 
 Let's point a volume to our workshop files so we have them on our container.
 
@@ -176,7 +176,7 @@ If you have a windows machine you may have to run this variant instead. This ver
 ```
 docker run -v ${pwd}:/home cansav09/practice-image:1
 ```
-### Step 2: Retry calling the script
+#### Step 2: Retry calling the script
 
 <input type="checkbox"> Now we can run the following command but we will have to run `docker ps` and get the container ID we need to put here.   
 ```
@@ -186,8 +186,8 @@ Now we have a new error! What does this mean?
 
 **Question: Does our container have all of the same software that our computer has?**
 
-## Podman
-### Set up Podman
+### Podman
+#### Set up Podman
 <input type="checkbox"> Go here to [install Podman](https://podman.io/docs/installation), following the instructions for your particular operating system.  
 <input type="checkbox"> Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).  
 <input type="checkbox"> Start up Podman by running the following:  
@@ -196,12 +196,12 @@ podman machine init
 podman machine start
 ```
 
-### Get workshop files
+#### Get workshop files
 <input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip  
 <input type="checkbox"> Put this file on your desktop so it is easily findable.  
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
 
-### Activity 1: Pull and run an image
+#### Activity 1: Pull and run an image
 
 **This activity is built so that you will encounter errors that this guide will work you through!**
 Most common container stumbling block is understanding the idea that containers are isolated from your computer
@@ -210,7 +210,7 @@ Which means: If your computer has files, software, or anything else. Your contai
 
 We will encounter both an error of when we don't have a file we need AND an error of when we don't have a software package we need. We will guide you through what to do when these expected errors occur.
 
-#### Step 1: Podman pull
+##### Step 1: Podman pull
 
 We need to get the Docker **image** we want to use. We do this by "pulling" it.
 
@@ -220,12 +220,12 @@ We need to get the Docker **image** we want to use. We do this by "pulling" it.
 podman pull cansav09/practice-image:1
 ```
 
-#### Step 2: Check what images you have
+##### Step 2: Check what images you have
 
 <input type="checkbox"> To see what images we have we can run `podman image ls`.  
 <input type="checkbox"> You should see `cansav09/practice-image:1` show up in the output.  
 
-#### Step 3: Run the docker image to start a container!
+##### Step 3: Run the docker image to start a container!
 
 <input type="checkbox"> Now if want to launch the image for use, we can use `podman run` to turn it into a **container**.
 
@@ -239,7 +239,7 @@ podman run cansav09/practice-image:1
 podman ps
 ```
 
-#### Step 4: Run a single command
+##### Step 4: Run a single command
 
 <input type="checkbox"> To run stuff interactively from the command line we can do:
 
@@ -247,7 +247,7 @@ podman ps
 podman exec -it <PUT_CONTAINER_ID_HERE> bash
 ```
 
-#### Step 5: Try calling a script
+##### Step 5: Try calling a script
 
 <input type="checkbox"> To run a script using the docker container we could just add reference to a script at the end:
 
@@ -262,11 +262,11 @@ This won't work because the file `run_analysis.sh` is not a file that our contai
 bash: run_analysis.sh: No such file or directory
 ```
 
-### Activity 1b: Add a volume to the image
+#### Activity 1b: Add a volume to the image
 
 Our container is separate from our computer so if we want to use a file we have to attach it using a "volume".
 
-#### Step 1: Let’s add our containers-for-scientists-sandbox files
+##### Step 1: Let’s add our containers-for-scientists-sandbox files
 
 Let's point a volume to our workshop files so we have them on our container.
 
@@ -286,7 +286,7 @@ If you have a windows machine you may have to run this variant instead. This ver
 ```
 podman run -v ${pwd}:/home cansav09/practice-image:1
 ```
-#### Step 2: Retry calling the script
+##### Step 2: Retry calling the script
 
 <input type="checkbox"> Now we can run:
 ```
