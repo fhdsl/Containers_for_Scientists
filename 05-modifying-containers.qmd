@@ -1,18 +1,30 @@
 
 # Modifying Containers
 
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_847") 
+```
+
 ```{r panel-setup, include = FALSE}
 xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```
 
-## Activity Instructions {.panelset}
+A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
 
-### Docker
-#### Set up Docker and workshop files
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1169") 
+```
+
+## Activity Instructions
+
 A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
 
 <input type="checkbox"> Open up the Dockerfile in the  `activity-files` folder.  
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1192") 
+```
 
 You'll notice we have this at the top for you:
 ```
@@ -21,6 +33,20 @@ FROM cansav09/practice-image:1
 
 This means we're going to take the existing image called, `cansav09/practice-image:1` and build on to it.
 This image will be our base. There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1200") 
+```
+
+The trick is to find a base image that has most of the software things you need, but not extra stuff you don't need. You want to make your image have all the stuff it needs but also be as small as possible. IMages that are overly big are harder to deal with and to download. 
+
+_There are (at least) two strategies you can take_: 
+
+- Start with the smallest images possible and add only what you need for the specific case you are working on. 
+- Make more than one docker image for each use case you have. Don't make one really large docker image you use for everything, that will take forever to pull from the internet or forever to build. 
+
+
+Let's take a look at a Dockerfile.
 
 #### Step 1: Use any file editor to open up the Dockerfile
 Usually double clicking will work. 
@@ -32,6 +58,14 @@ Usually double clicking will work.
 
 <input type="checkbox">  Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly.  
 
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1212") 
+```
+
+## {.panelset}
+
+### Docker
 #### Step 4: Build the image from the Dockerfile 
 
 <input type="checkbox">  With `activity-files` as your working directory, run the following:  
@@ -42,11 +76,23 @@ docker build . -t cool-new-image
 
 Optionally you could call this from somewhere else and use the `-f` option to specify the file path to the Dockerfile. But in the scenario above it just grabs the Dockerfile in our working directory.
 
+If your image builds properly you should see something like this: 
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1221") 
+```
+
 #### Step 4: Inspect new image!
 
 <input type="checkbox"> Let's see if we have an image!  
 ```
 docker image ls
+```
+
+And if you check Docker desktop you should now see this image show up in your list: 
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1230") 
 ```
 
 #### Step 5: Run the new image
@@ -58,9 +104,18 @@ docker image ls
 docker run cool-new-image
 ```
 
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1238") 
+```
+
 #### Step 6: See the minor difference!
 
-<input type="checkbox"> We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image.   
+<input type="checkbox"> We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image. 
+
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1247") 
+```
 
 #### Step 7: Edit the Dockerfile so it has the installation step for rmarkdown package and remove the CMD step
 
@@ -75,6 +130,11 @@ RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
 ```
 <input type="checkbox"> **AND remove the `CMD` line**.  
 <input type="checkbox"> Save your edited Dockerfile.  
+
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1253")
+```
 
 #### Step 8: Re-build now that we’ve edited the Dockerfile
 
@@ -110,27 +170,6 @@ docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
 
 ### Podman
-A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
-
-<input type="checkbox"> Open up the Dockerfile in the  `activity-files` folder.  
-
-You'll notice we have this at the top for you:
-```
-FROM cansav09/practice-image:1
-```
-
-This means we're going to take the existing image called, `cansav09/practice-image:1` and build on to it.
-This image will be our base. There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.
-
-#### Step 1: Use any file editor to open up the Dockerfile
-Usually double clicking will work. 
-
-#### Step 2: Inspect the Dockerfile
-<input type="checkbox"> Double click it and open the file to take a look at it with any default text editor.    
-
-#### Step 3: Change your working directory to activity-files
-
-<input type="checkbox">  Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly.  
 
 #### Step 4: Build the image from the Dockerfile 
 
@@ -207,4 +246,9 @@ podman run -v $PWD:/home cool-new-image:2
 <input type="checkbox"> Try running the script using the following command:  
 ```
 podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
+```
+
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1326") 
 ```
