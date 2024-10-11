@@ -60,7 +60,7 @@ docker rmi <PUT_IMAGE_NAME_OR_ID_HERE>
 ```
 This means you'll need to grab the container ID, either from Docker desktop or by running `docker image ls`.
 
-Note! If you try to remove an image that is currrently being used to run a container you won't be allowed to! So stop and remove containers first, then you can remove the image. 
+Note! If you try to remove an image that is currently being used to run a container you won't be allowed to! So stop and remove containers first, then you can remove the image. 
 
 
 **Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. **

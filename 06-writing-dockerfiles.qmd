@@ -61,7 +61,7 @@ Make sure that whatever changes you make to your Dockerfile, that you add versio
 
 1. Look for a good base image to start with on your `FROM` Something that has a lot of what you need but not more software packages than you need.
     - If you know you want use `R` on your container then take a look at [the `rocker` images](https://hub.docker.com/u/rocker). 
-    - If you know you want to use Jupyter notebooks on your containe, go to the [Jupyter Project images](https://hub.docker.com/u/jupyter). 
+    - If you know you want to use Jupyter notebooks on your container, go to the [Jupyter Project images](https://hub.docker.com/u/jupyter). 
     - If you are doing anything with bioinformatics software, [take a look at Biocontainers](https://biocontainers.pro/). 
 2. When adding packages, look for other Dockerfiles folks have written that have the same operating system aka usually Ubuntu, and copy their installation steps. 
 3. Use version numbers so if you rebuild the same versions will be installed and that won't be a moving target for you. 
