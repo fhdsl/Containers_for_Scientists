@@ -14,6 +14,7 @@ When learning another software skill like containers, it sometimes means you'll 
 **IMPORTANT**: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because steps have to be done and in order!
 
 ```{r panel-setup, include = FALSE}
+install.packages("xaringanExtra", repos = 'https://cloud.r-project.org')
 xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```
