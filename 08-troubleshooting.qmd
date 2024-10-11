@@ -1,2 +1,53 @@
 
 # Troubleshooting Tips
+
+
+
+```{r panel-setup, include = FALSE}
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset_tabs(font_family = "inherit")
+```
+
+## Activity Instructions {.panelset}
+
+## Docker 
+
+There are three Dockerfiles in this folder. Each has something slightly wrong with it.
+
+Use the following `docker build` commands and work to pinpoint the error and fix it.
+
+## Bad Dockerfile 1:
+
+```
+docker build -f Bad_Dockerfile_1 .
+```
+
+## Bad Dockerfile 2:
+```
+docker build -f Bad_Dockerfile_2 .
+```
+
+## Bad Dockerfile 3:
+```
+docker build -f Bad_Dockerfile_3 .
+```
+
+
+## Podman 
+
+There are three Dockerfiles in this folder. Each has something slightly wrong with it.
+
+Use the following `podman build` commands and work to pinpoint the error and fix it.
+
+```
+podman build -f Bad_Dockerfile_1 .
+```
+
+```
+podman build -f Bad_Dockerfile_2 .
+```
+
+```
+podman build -f Bad_Dockerfile_3 .
+```
+

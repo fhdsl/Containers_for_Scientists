@@ -1,2 +1,41 @@
 
 # Sharing Containers
+
+
+```{r panel-setup, include = FALSE}
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset_tabs(font_family = "inherit")
+```
+
+## Activity Instructions {.panelset}
+
+To share our docker image with others (or ourselves), we can push it to an online repository.
+
+While there are lots of container registry options, for the purposes of this tutorial, we'll use Dockerhub.
+
+First you'll need to make sure you have a dockerhub account.
+
+Go to the website and login: https://hub.docker.com/
+
+Next, locally you'll need to log into your account.
+
+```
+docker login -u your_user_name
+```
+
+It will ask for your password.
+
+If you've logged in successfully, now we need to prep our image by putting our username in the name.
+
+That may mean we need to rename it like this:
+```
+docker tag cool-new-image:2 username/cool-new-image:2
+```
+
+Now we can push it to our repository.
+```
+docker push username/cool-new-image:2
+```
+
+Go to https://hub.docker.com/repositories/ and you should see your image listed there!
+
