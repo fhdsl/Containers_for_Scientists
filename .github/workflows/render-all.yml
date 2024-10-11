@@ -35,7 +35,7 @@ jobs:
       toggle_quiz_check: "${{ env.CHECK_QUIZZES }}"
 
   render-course:
-    name: Render course preview
+    name: Render course
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
@@ -101,7 +101,7 @@ jobs:
           git add --force docs/*
           git commit -m 'Render course' || echo "No changes to commit"
           git status docs/*
-          git push -u origin main  || echo "No changes to push"
+          git push -u --force origin main  || echo "No changes to push"
 
   render-tocless:
     name: Render TOC-less version for Leanpub or Coursera
