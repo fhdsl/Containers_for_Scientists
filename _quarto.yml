@@ -20,12 +20,14 @@ book:
     - 01-intro.qmd
     - 02-why-containers.qmd
     - 03-using-containers.qmd
-    - 04-modifying-containers.qmd
-    - 05-more-about-dockerfiles.qmd
-    - 06-sharing-containers.qmd
-    - 07-cleaning-up.qmd
-    - 08-troubleshooting.qmd
-    - 09-advanced-techniques.qmd
+    - 04-using-volumes.qmd
+    - 05-modifying-containers.qmd
+    - 06-writing-dockerfiles.qmd
+    - 07-sharing-images.qmd
+    - 08-cleaning-up.qmd
+    - 09-troubleshooting.qmd
+    - 10-IDE-from-containers.qmd
+    - 11-advanced-techniques.qmd
     - References.qmd
 
   sidebar:
