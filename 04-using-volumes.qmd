@@ -104,6 +104,10 @@ If you have a windows machine you may have to run this variant instead. This ver
 podman run -v ${pwd}:/home cansav09/practice-image:1
 ```
 
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_15")
+```
+
 #### Step 2: Retry calling the script
 
 <input type="checkbox"> Now we can run the following command but we will have to run `podman ps` and get the container ID we need to put here.   

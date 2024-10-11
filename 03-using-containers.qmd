@@ -87,7 +87,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ##### Step 3: Run the docker image to start a container!
 
-Remember Images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do `docker run`
+Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do `docker run`
 
 ```{r, out.width = "65%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_760")
@@ -132,6 +132,31 @@ docker exec -it <PUT_CONTAINER_ID_HERE> bash
 ```{r, out.width = "65%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_803")
 ```
+
+If you run this you should see your terminal/command prompt now have the initial part change to something like: 
+
+```
+root@e7b19cfb4461:/
+```
+
+Where you'll noticed the `CONTAINER ID` is now shown there. 
+
+You are now using command line inside of your container. Trying running any bash command like 
+`ls` to see what files are here for example. 
+
+Your screen will end up looking like this (but this printout is from a Mac, windows will look a little different in some parts): 
+```
+(base) firstnamelastname@FirstNames-MacBook-Pro ~ % docker exec -it e7b19cfb4461 bash
+
+root@e7b19cfb4461:/# ls
+bin   etc   lib    libexec  mnt   rocker_scripts  sbin  tmp
+boot  home  lib32  libx32   opt   root            srv   usr
+dev   init  lib64  media    proc  run             sys   var
+root@e7b19cfb4461:/#
+```
+
+<input type="checkbox"> When you are ready to leave your container type `exit` and press Enter.  
+
 
 ##### Step 5: Try calling a script
 
@@ -209,20 +234,42 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 podman pull cansav09/practice-image:1
 ```
 
+If this command is running properly you should see some output that looks like this: 
 
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_0") 
+```
 
 ##### Step 2: Check what images you have
 
 <input type="checkbox"> To see what images we have we can run `podman image ls`.  
-<input type="checkbox"> You should see `cansav09/practice-image:1` show up in the output.  
+<input type="checkbox"> You should see `cansav09/practice-image:1` show up in the output and it will look a bit like this below: 
 
-##### Step 3: Run the docker image to start a container!
+```
+docker.io/cansav09/practice-image  1   91619ca583b8  1 month ago  2.39 GB
+```
 
-<input type="checkbox"> Now if want to launch the image for use, we can use `podman run` to turn it into a **container**.
+##### Step 3: Run the image to start a container!
+
+Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do `podman run`
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_760")
+```
+
+<input type="checkbox"> To launch the image for use, we can use `podman run` to turn it into a **container**.
 
 ```
 podman run cansav09/practice-image:1
 ```
+
+If this command has run properly it will return something like this: 
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_9") 
+```
+
+Don't worry too much about all this output, every image is configured differently and this output will change depending on that. 
 
 <input type="checkbox"> To see what containers we have running we have we can run:
 
@@ -230,21 +277,67 @@ podman run cansav09/practice-image:1
 podman ps
 ```
 
-##### Step 4: Run a single command
+Your output will look a little like this.
+NOTE though that the `CONTAINER ID` and `NAMES` are randomly generated for each container and will change, so that part won't be the same! 
+
+```
+CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS        PORTS       NAMES
+e7b19cfb4461  docker.io/cansav09/practice-image:1  /init       2 minutes ago  Up 2 minutes  8787/tcp    hopeful_proskuriakova
+```
+
+Pat yourself on the back! You have a running container!
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_786")
+```
+
+What can we do with running containers?
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_791")
+```
+
+##### Step 4: Run the container interactively
 
 <input type="checkbox"> To run stuff interactively from the command line we can do:
 
+But you'll need to replace the `<PUT_CONTAINER_ID_HERE>` portion of this command with the `CONTAINER ID` reported when you ran `podman ps`. 
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash
 ```
 
+If you run this you should see your terminal/command prompt now have the initial part change to something like: 
+```
+root@e7b19cfb4461:/
+```
+
+Where you'll noticed the `CONTAINER ID` is now shown there. 
+
+You are now using command line inside of your container. Trying running any bash command like 
+`ls` to see what files are here for example. 
+
+Your screen will end up looking like this: 
+```
+(base) firstnamelastname@FirstNames-MacBook-Pro ~ % podman exec -it e7b19cfb4461 bash
+
+root@e7b19cfb4461:/# ls
+bin   etc   lib    libexec  mnt   rocker_scripts  sbin  tmp
+boot  home  lib32  libx32   opt   root            srv   usr
+dev   init  lib64  media    proc  run             sys   var
+root@e7b19cfb4461:/#
+```
+
+<input type="checkbox"> When you are ready to leave your container type `exit` and press Enter.  
+
+
 ##### Step 5: Try calling a script
 
-<input type="checkbox"> To run a script using the docker container we could just add reference to a script at the end:
+<input type="checkbox"> To run a script using the container we could just add reference to a script at the end:
 
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
 ```
+
 **BUT! You will find that this command won't work yet though, why?**
 
 This won't work because the file `run_analysis.sh` is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.
