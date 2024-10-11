@@ -39,46 +39,46 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## Activity Instructions {.panelset}
 
-## Docker 
+### Docker 
 
 There are three Dockerfiles in this folder. Each has something slightly wrong with it.
 
 Use the following `docker build` commands and work to pinpoint the error and fix it using the tips we discussed in this chapter. 
 
-## Bad Dockerfile 1:
+#### Bad Dockerfile 1:
 
 ```
 docker build -f Bad_Dockerfile_1 .
 ```
 
-## Bad Dockerfile 2:
+#### Bad Dockerfile 2:
 ```
 docker build -f Bad_Dockerfile_2 .
 ```
 
-## Bad Dockerfile 3:
+#### Bad Dockerfile 3:
 ```
 docker build -f Bad_Dockerfile_3 .
 ```
 
 
-## Podman 
+### Podman 
 
 There are three Dockerfiles in this folder. Each has something slightly wrong with it.
 
 Use the following `podman build` commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.
 
-## Bad Dockerfile 1:
+#### Bad Dockerfile 1:
 ```
 podman build -f Bad_Dockerfile_1 .
 ```
 
-## Bad Dockerfile 2:
+#### Bad Dockerfile 2:
 ```
 podman build -f Bad_Dockerfile_2 .
 ```
 
-## Bad Dockerfile 3:
+#### Bad Dockerfile 3:
 ```
 podman build -f Bad_Dockerfile_3 .
 ```
