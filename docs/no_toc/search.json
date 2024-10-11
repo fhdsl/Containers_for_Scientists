@@ -1,0 +1,522 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Containers for Scientists",
+    "section": "",
+    "text": "About this Course\nThis course is part of a series of courses for the Informatics Technology for Cancer Research (ITCR) called the Informatics Technology for Cancer Research Education Resource. This material was created by the ITCR Training Network (ITN) which is a collaborative effort of researchers around the United States to support cancer informatics and data science training through resources, technology, and events. This initiative is funded by the following grant: National Cancer Institute (NCI) UE5 CA254170. Our courses feature tools developed by ITCR Investigators and make it easier for principal investigators, scientists, and analysts to integrate cancer informatics into their workflows. Please see our website at www.itcrtraining.org for more information.",
+    "crumbs": [
+      "About this Course"
+    ]
+  },
+  {
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
+    "title": "\n1  Introduction\n",
+    "section": "",
+    "text": "1.1 Target Audience\nThe course is intended for students in the biomedical sciences and researchers who use informatics tools in their research\nThis course is written for individuals who:",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#target-audience",
+    "href": "01-intro.html#target-audience",
+    "title": "\n1  Introduction\n",
+    "section": "",
+    "text": "Are comfortable with bash and command line\nWrite code for scientific projects\nPerhaps tried to use Docker or another containerization software before but felt overwhelmed or confused on how to get started\nWant to learn best practices for using containers",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#topics-covered",
+    "href": "01-intro.html#topics-covered",
+    "title": "\n1  Introduction\n",
+    "section": "\n1.2 Topics covered",
+    "text": "1.2 Topics covered\nThis course covers how to use containers for scientific software development. We encourage the recognition that scientific software can take many forms that can all benefit from the concepts of continuous integration and continuous deployment.\n\n\n\n\n\n\n\n\nThis course builds on concepts introduced in the Reproducibility and Advanced Reproducibility courses from the ITCR Training Network. If you are unfamiliar with GitHub and/or do not have an account, we’d suggest you start with those courses by using the links above.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#motivation",
+    "href": "01-intro.html#motivation",
+    "title": "\n1  Introduction\n",
+    "section": "\n1.3 Motivation",
+    "text": "1.3 Motivation\nCancer datasets are plentiful, complicated, and hold untold amounts of information regarding cancer biology. Cancer researchers are working to apply their expertise to the analysis of these vast amounts of data but training opportunities to properly equip them in these efforts can be sparse. This includes training in reproducible data analysis methods.\nData analyses are generally not reproducible without direct contact with the original researchers and a substantial amount of time and effort (BeaulieuJones2017?). Reproducibility in cancer informatics (as with other fields) is still not monitored or incentivized despite that it is fundamental to the scientific method. Despite the lack of incentive, many researchers strive for reproducibility in their own work but often lack the skills or training to do so effectively.\nEquipping researchers with the skills to create reproducible data analyses increases the efficiency of everyone involved. One tool among many for creating reproducible analyses is utilizing automation. Many individuals performing analyses on cancer data may not have formal training in software development and may be unfamiliar with the ideas of continuous integration and continuous deployment. By recognizing that biological data analysis code is a form of software development, we can try to adapt good development practices in scientific analyses and software contexts.\nScientific software projects may include (but aren’t limited to):\n\nSoftware that built as tools to be utilized by others to analyze biologically derived data.\nCode that is built primarily for analyzing one project’s data.\nCode that is built as a workflow for a series of steps and analyses that might be reused among collaborators or within a lab.\nAny scripts and code that are built to handle data in a research setting.\nAny scripts and code a researcher might interact with.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#curriculum",
+    "href": "01-intro.html#curriculum",
+    "title": "\n1  Introduction\n",
+    "section": "\n1.4 Curriculum",
+    "text": "1.4 Curriculum\nThe course includes hands-on exercises for how to use, modify, share, and troubleshoot containers for scientific software development purposes.\nGoal of this course:\nEquip learners with basics skills and confidence to utilize the containers within the context of scientific software analyses.\nWhat is not the goal\nThis course is meant to teach learners how to create sophisticated GitHub Actions, but instead introduce learners to basic fundamentals of continuous integration and continuous deployment. This course focuses on GitHub Actions and will not cover any other (perfectly fine) tools for CI/CD.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#how-to-use-the-course",
+    "href": "01-intro.html#how-to-use-the-course",
+    "title": "\n1  Introduction\n",
+    "section": "\n1.5 How to use the course",
+    "text": "1.5 How to use the course\nIdeally you should follow along with the chapters and perform the activities as they are described. These activities involve using Docker or optionally Podman.\nWe also recommend that if you’d like to fully leverage your container skills after taking this course you may also enjoy our GitHub Actions course that pairs well with the skillset taught here.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "02-why-containers.html",
+    "href": "02-why-containers.html",
+    "title": "\n2  Why Containers?\n",
+    "section": "",
+    "text": "2.1 The problem\nIn today’s data driven world, science is driven by computer work. But each of these computers is unique. This goes far beyond “Mac vs PC”. Every computer has a special configuration of software and software versions that is installed on it. Some of this is determined by the user of the computer, some was designed by company that sells the computers, and some is even controlled by institutions and their IT departments that manage the computers.\nSoftware programs can give us a very example of what differing computing environments can look like by printing out this information. This side-by-side example below shows two different computers’ computing environments. This printout comes from using sessionInfo() in the R programming language. You can see it not only do these two computing environments differ by operating system, but also by software packages installed, software packages loaded, and the versions of these software packages.\nNot only are our computers at one point in time very unique, but as time moves forward computers and the software environments change very rapidly. Some of this happens through intentional installations of programs by computer users and some are automatic software updates that they may not be aware of that are instigated by the developers of the hardware and software that make up the computer.\nComputing environments are a moving target.\nThis can be a real problem for science because prior research has shown that these computing environments can effect results (BeaulieuJones2017?). In a genomic analysis for example, where the output might be a list of genes, differing computing environments may result in different numbers of genes!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Containers?</span>"
+    ]
+  },
+  {
+    "objectID": "02-why-containers.html#containers-as-an-aid-for-reproducibility",
+    "href": "02-why-containers.html#containers-as-an-aid-for-reproducibility",
+    "title": "\n2  Why Containers?\n",
+    "section": "\n2.2 Containers as an aid for reproducibility",
+    "text": "2.2 Containers as an aid for reproducibility\nIt turns out computing environments are another variable in reproducibility.\nFor the purposes of informatics and data analysis, a reproducible analysis is one that can be re-run by a different researcher and the same result and conclusion is found.\n\n\n\n\n\n\n\n\nIn science, more variables means we’re lacking true clarity in what we are observing. More variables means things are messier. And reproducibility is the pillar of how science works.\nScience progresses when data and hypotheses are put through these levels thoroughly and sequentially. If results are not repeatable, they won’t be reproducible or replicable.\n\n\n\n\n\n\n\n\nAn important note: although your results can be reproducibly wrong (you’re coming to a faulty conclusion consistently) they can NOT be irreproducibly right.\n\n\n\n\n\n\n\n\nIf we control the computing environments, that is one less variable we need to deal with in our science. Control the computing environment = That much more reproducible science.\nWe could think of bad ways to control our computing environment: We could have one laptop that we ship back and forth between all our collaborators. Clearly although this may make the computing environment slightly more controlled, it is not a practical solution\n\n\n\n\n\n\n\n\nThat’s where containers come in.\nA container is kinda like your computer is running a computer inside of it. It is isolated from the rest of your computer so your science can be more reproducible.\n\n\n\n\n\n\n\n\nContainerization allows computing environments to be shared over the internet easily.\n\n\n\n\n\n\n\n\nThis guarantees that the same computing environment is being used no matter where the analysis is being run.\n\n\n\n\n\n\n\n\nAnd containerization works for aiding in reproducibility as shown by (BeaulieuJones2017?)\n\n\n\n\n\n\n\n\nWhen a container is used, and the computing environment is controlled for, the results are more reproducible!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Containers?</span>"
+    ]
+  },
+  {
+    "objectID": "02-why-containers.html#top-reasons-for-containers",
+    "href": "02-why-containers.html#top-reasons-for-containers",
+    "title": "\n2  Why Containers?\n",
+    "section": "\n2.3 Top reasons for containers!",
+    "text": "2.3 Top reasons for containers!\nBut more than this, there are even more benefits to using containers:\nInstalling software can be a huge headache. Bioinformatics involves using software that is often fringe and developed and maintained by small teams – or sometimes that software isn’t maintained at all. This means installation can take a lot of valuable time that scientists don’t often have.\n\n\n\n\n\n\n\n\nTo summarize:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Containers?</span>"
+    ]
+  },
+  {
+    "objectID": "02-why-containers.html#how-does-this-work",
+    "href": "02-why-containers.html#how-does-this-work",
+    "title": "\n2  Why Containers?\n",
+    "section": "\n2.4 How does this work?",
+    "text": "2.4 How does this work?\nImages are like a snapshot of a computing environment. Its frozen but can accurately depict what’s in the environment.\nThe image is what is easily shareable. There are huge repositories where you can find all kinds of images that folks around the world have made – each with a different configuration and purpose.\n\n\n\n\n\n\n\n\nFrom the image, a container can be built. A container is then where you can work and do science (or other things). You can run scripts, interact with files, etc. All the things you would do on your computer, you do in the container.\n\n\n\n\n\n\n\n\nBasically going from image to container is like this scene from Mary Poppins.\n\n\n\nvia GIPHY\n\nThis course’s goal is to make learning containers go down like a spoonful of sugar.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Containers?</span>"
+    ]
+  },
+  {
+    "objectID": "03-using-containers.html",
+    "href": "03-using-containers.html",
+    "title": "\n3  Using Containers\n",
+    "section": "",
+    "text": "3.0.1 A note about “window juggling”\nWhen learning another software skill like containers, it sometimes means you’ll have to keep track of more windows. We call this “Window Juggling”. It’s an overlooked skill but something you’ll become more comfortable with.\nIMPORTANT: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because steps have to be done and in order!",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using Containers</span>"
+    ]
+  },
+  {
+    "objectID": "03-using-containers.html#activity-instructions",
+    "href": "03-using-containers.html#activity-instructions",
+    "title": "\n3  Using Containers\n",
+    "section": "\n3.1 Activity Instructions",
+    "text": "3.1 Activity Instructions\n\n3.1.1 Docker\n\n3.1.1.1 Set up\n Go here to install Docker, following the instructions for your particular operating system. If you don’t have a Docker account create an account when prompted, or go here. After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.\n\n\n\n\n\n\n\n\n\n3.1.1.2 Get workshop files\n Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip Put this file on your desktop so it is easily findable. Double click the zip file (or right click and choose “unzip” or “decompress” to unzip the file.\n\n\n\n\n\n\n\n\n\n3.1.1.3 Activity 1: Pull and run a Docker image\nThis activity is built so that you will encounter errors that this guide will work you through! Most common container stumbling block is understanding the idea that containers are isolated from your computer\n\n\n\n\n\n\n\n\nWhich means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.\n\n\n\n\n\n\n\n\nWe will encounter both an error of when we don’t have a file we need AND an error of when we don’t have a software package we need. We will guide you through what to do when these expected errors occur.\n\n3.1.1.4 Step 1: Docker pull\nWe need to get the Docker image we want to use. We do this by “pulling” it. Pulling is a term used in GitHub terminology too. It just means we’re taking something from the internet and getting a copy locally (on our computer).\n\n\n\n\n\n\n\n\n Run this command in your Terminal or Command Prompt window:\ndocker pull cansav09/practice-image:1\n\n\n\n\n\n\n\n\n\n3.1.1.4.1 Step 2: Check what images you have\n To see what images we have we can run docker image ls. We should see cansav09/practice-image:1 show up in the output.\n\n\n\n\n\n\n\n\n\n3.1.1.4.2 Step 3: Run the docker image to start a container!\nRemember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do docker run\n\n\n\n\n\n\n\n\n To launch the image for use, we can use docker run to turn it into a container.\ndocker run cansav09/practice-image:1\n To see what containers we have running we have we can run:\ndocker ps\n\n\n\n\n\n\n\n\nPat yourself on the back! You have a running container!\n\n\n\n\n\n\n\n\nWhat can we do with running containers?\n\n\n\n\n\n\n\n\n\n3.1.1.4.3 Step 4: Run a single command\n To run stuff interactively from the command line we can do:\ndocker exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash\n\n\n\n\n\n\n\n\nIf you run this you should see your terminal/command prompt now have the initial part change to something like:\nroot@e7b19cfb4461:/\nWhere you’ll noticed the CONTAINER ID is now shown there.\nYou are now using command line inside of your container. Trying running any bash command like ls to see what files are here for example.\nYour screen will end up looking like this (but this printout is from a Mac, windows will look a little different in some parts):\n(base) firstnamelastname@FirstNames-MacBook-Pro ~ % docker exec -it e7b19cfb4461 bash\n\nroot@e7b19cfb4461:/# ls\nbin   etc   lib    libexec  mnt   rocker_scripts  sbin  tmp\nboot  home  lib32  libx32   opt   root            srv   usr\ndev   init  lib64  media    proc  run             sys   var\nroot@e7b19cfb4461:/#\n When you are ready to leave your container type exit and press Enter.\n\n3.1.1.4.4 Step 5: Try calling a script\n To run a script using the docker container we could just add reference to a script at the end:\ndocker exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash run_analysis.sh\n\n\n\n\n\n\n\n\nBUT! You will find that this command won’t work yet though, why?\nbash: run_analysis.sh: No such file or directory\nQuestion: Does our container have all of the same files that our computer has?\n\n\n\n\n\n\n\n\nThis won’t work because the file run_analysis.sh is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.\n\n3.1.2 Podman\n\n3.1.2.1 Set up Podman\n Go here to install Podman, following the instructions for your particular operating system. Open up your command line. Start up Podman by running the following:\npodman machine init\npodman machine start\n\n3.1.2.2 Get workshop files\n Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip Put this file on your desktop so it is easily findable. Double click the zip file (or right click and choose “unzip” or “decompress” to unzip the file.\n\n\n\n\n\n\n\n\nThis activity is built so that you will encounter errors that this guide will work you through! Most common container stumbling block is understanding the idea that containers are isolated from your computer\n\n\n\n\n\n\n\n\nWhich means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.\n\n\n\n\n\n\n\n\nWe will encounter both an error of when we don’t have a file we need AND an error of when we don’t have a software package we need. We will guide you through what to do when these expected errors occur.\n\n3.1.2.2.1 Step 1: Podman pull\nWe need to get the image we want to use. We do this by “pulling” it. Pulling is a term used in GitHub terminology too. It just means we’re taking something from the internet and getting a copy locally (on our computer).\n\n\n\n\n\n\n\n\n Run this command in your Terminal or Command Prompt window:\npodman pull cansav09/practice-image:1\nIf this command is running properly you should see some output that looks like this:\n\n\n\n\n\n\n\n\n\n3.1.2.2.2 Step 2: Check what images you have\n To see what images we have we can run podman image ls. You should see cansav09/practice-image:1 show up in the output and it will look a bit like this below:\ndocker.io/cansav09/practice-image  1   91619ca583b8  1 month ago  2.39 GB\n\n3.1.2.2.3 Step 3: Run the image to start a container!\nRemember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do podman run\n\n\n\n\n\n\n\n\n To launch the image for use, we can use podman run to turn it into a container.\npodman run cansav09/practice-image:1\nIf this command has run properly it will return something like this:\n\n\n\n\n\n\n\n\nDon’t worry too much about all this output, every image is configured differently and this output will change depending on that.\n To see what containers we have running we have we can run:\npodman ps\nYour output will look a little like this. NOTE though that the CONTAINER ID and NAMES are randomly generated for each container and will change, so that part won’t be the same!\nCONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS        PORTS       NAMES\ne7b19cfb4461  docker.io/cansav09/practice-image:1  /init       2 minutes ago  Up 2 minutes  8787/tcp    hopeful_proskuriakova\nPat yourself on the back! You have a running container!\n\n\n\n\n\n\n\n\nWhat can we do with running containers?\n\n\n\n\n\n\n\n\n\n3.1.2.2.4 Step 4: Run the container interactively\n To run stuff interactively from the command line we can do:\nBut you’ll need to replace the &lt;PUT_CONTAINER_ID_HERE&gt; portion of this command with the CONTAINER ID reported when you ran podman ps.\npodman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash\nIf you run this you should see your terminal/command prompt now have the initial part change to something like:\nroot@e7b19cfb4461:/\nWhere you’ll noticed the CONTAINER ID is now shown there.\nYou are now using command line inside of your container. Trying running any bash command like ls to see what files are here for example.\nYour screen will end up looking like this:\n(base) firstnamelastname@FirstNames-MacBook-Pro ~ % podman exec -it e7b19cfb4461 bash\n\nroot@e7b19cfb4461:/# ls\nbin   etc   lib    libexec  mnt   rocker_scripts  sbin  tmp\nboot  home  lib32  libx32   opt   root            srv   usr\ndev   init  lib64  media    proc  run             sys   var\nroot@e7b19cfb4461:/#\n When you are ready to leave your container type exit and press Enter.\n\n3.1.2.2.5 Step 5: Try calling a script\n To run a script using the container we could just add reference to a script at the end:\npodman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash run_analysis.sh\nBUT! You will find that this command won’t work yet though, why?\nThis won’t work because the file run_analysis.sh is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.\nbash: run_analysis.sh: No such file or directory\nQuestion: Does our container have all of the same files that our computer has?\n\n\n\n\n\n\n\n\nThis won’t work because the file run_analysis.sh is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using Containers</span>"
+    ]
+  },
+  {
+    "objectID": "04-using-volumes.html",
+    "href": "04-using-volumes.html",
+    "title": "\n4  Using Volumes\n",
+    "section": "",
+    "text": "4.1 Activity Instructions",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using Volumes</span>"
+    ]
+  },
+  {
+    "objectID": "04-using-volumes.html#activity-instructions",
+    "href": "04-using-volumes.html#activity-instructions",
+    "title": "\n4  Using Volumes\n",
+    "section": "",
+    "text": "4.1.1 Docker\nOur container is separate from our computer so if we want to use a file we have to attach it using a “volume”.\n\n4.1.1.0.1 Step 1: Let’s add our containers-for-scientists-sandbox files\nLet’s point a volume to our workshop files so we have them on our container.\nWe can specify a particular file path on our computer or give it $PWD Then optionally we can give a : and a file path we’d like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.\n\n\n\n\n\n\n\n\n Now we can run:\ndocker run -v $pwd:/home cansav09/practice-image:1\nIf you have a windows machine you may have to run this variant instead. This version has a different ${} around the pwd part.\ndocker run -v ${pwd}:/home cansav09/practice-image:1\nIn Docker desktop you can specify a portal like this:\n\n\n\n\n\n\n\n\n\n4.1.1.1 Step 2: Retry calling the script\n Now we can run the following command but we will have to run docker ps and get the container ID we need to put here.\ndocker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh\n\n\n\n\n\n\n\n\nNow we have a new error! What does this mean?\nQuestion: Does our container have all of the same software that our computer has?\n\n\n\n\n\n\n\n\n\n4.1.2 Podman\nOur container is separate from our computer so if we want to use a file we have to attach it using a “volume”.\n\n4.1.2.0.1 Step 1: Let’s add our containers-for-scientists-sandbox files\nLet’s point a volume to our workshop files so we have them on our container.\nWe can specify a particular file path on our computer or give it $PWD Then optionally we can give a : and a file path we’d like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.\n Now we can run:\npodman run -v $pwd:/home cansav09/practice-image:1\nIf you have a windows machine you may have to run this variant instead. This version has a different ${} around the pwd part.\npodman run -v ${pwd}:/home cansav09/practice-image:1\n\n\n\n\n\n\n\n\n\n4.1.2.1 Step 2: Retry calling the script\n Now we can run the following command but we will have to run podman ps and get the container ID we need to put here.\npodman exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh\nNow we have a new error:\nError in loadNamespace(x): There is no package called 'rmarkdown'\nWhat does this mean?\nQuestion: Does our container have all of the same software that our computer has?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using Volumes</span>"
+    ]
+  },
+  {
+    "objectID": "05-modifying-containers.html",
+    "href": "05-modifying-containers.html",
+    "title": "\n5  Modifying Containers\n",
+    "section": "",
+    "text": "5.1 Activity Instructions\nA Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.\nOpen up the Dockerfile in the activity-files folder.\nYou’ll notice we have this at the top for you:\nThis means we’re going to take the existing image called, cansav09/practice-image:1 and build on to it. This image will be our base. There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.\nThe trick is to find a base image that has most of the software things you need, but not extra stuff you don’t need. You want to make your image have all the stuff it needs but also be as small as possible. IMages that are overly big are harder to deal with and to download.\nThere are (at least) two strategies you can take:\nLet’s take a look at a Dockerfile.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modifying Containers</span>"
+    ]
+  },
+  {
+    "objectID": "05-modifying-containers.html#activity-instructions",
+    "href": "05-modifying-containers.html#activity-instructions",
+    "title": "\n5  Modifying Containers\n",
+    "section": "",
+    "text": "FROM cansav09/practice-image:1\n\n\n\n\n\nStart with the smallest images possible and add only what you need for the specific case you are working on.\nMake more than one docker image for each use case you have. Don’t make one really large docker image you use for everything, that will take forever to pull from the internet or forever to build.\n\n\n\n5.1.0.1 Step 1: Use any file editor to open up the Dockerfile\nUsually double clicking will work.\n\n5.1.0.2 Step 2: Inspect the Dockerfile\n Double click it and open the file to take a look at it with any default text editor.\n\n5.1.0.3 Step 3: Change your working directory to activity-files\n Now in your Command Prompt or Terminal navigate to the activity-files folder. Use cd and don’t forget to use tabs so you don’t have to spell everything exactly.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modifying Containers</span>"
+    ]
+  },
+  {
+    "objectID": "05-modifying-containers.html#section",
+    "href": "05-modifying-containers.html#section",
+    "title": "\n5  Modifying Containers\n",
+    "section": "\n5.2 ",
+    "text": "5.2 \n\n5.2.1 Docker\n\n5.2.1.1 Step 4: Build the image from the Dockerfile\n With activity-files as your working directory, run the following:\ndocker build . -t cool-new-image\nOptionally you could call this from somewhere else and use the -f option to specify the file path to the Dockerfile. But in the scenario above it just grabs the Dockerfile in our working directory.\nIf your image builds properly you should see something like this:\n\n\n\n\n\n\n\n\n\n5.2.1.2 Step 4: Inspect new image!\n Let’s see if we have an image!\ndocker image ls\nAnd if you check Docker desktop you should now see this image show up in your list:\n\n\n\n\n\n\n\n\n\n5.2.1.3 Step 5: Run the new image\n Navigate back to your Docker desktop and the images window or run docker ps or podman ps. If your image built successfully, you should see a new image in your list! Let’s try running that image.\ndocker run cool-new-image\n\n\n\n\n\n\n\n\n\n5.2.1.4 Step 6: See the minor difference!\n We should have a message: Yay! I built a Docker image pop up upon building the image. Not super useful but we can see how we’ve edited the original image.\n\n\n\n\n\n\n\n\n\n5.2.1.5 Step 7: Edit the Dockerfile so it has the installation step for rmarkdown package and remove the CMD step\nFor anything we need ran in this image we are building we need to use the RUN command followed by the installation steps we’d need.\n Open up the file called Dockerfile in activity-files.Copy and paste this into your Dockerfile below where it says # Add a new package here so we can add the rmarkdown package.\nRUN Rscript -e  \"options(warn = 2);install.packages('rmarkdown', \\\n    repos = 'https://cloud.r-project.org/')\"\nAND remove the CMD line. Save your edited Dockerfile.\n\n\n\n\n\n\n\n\n\n5.2.1.6 Step 8: Re-build now that we’ve edited the Dockerfile\nNow re-run docker build (or podman build) as you did in the previous section. This time we’ll add a versioning tag using : in the -t option.\ndocker build . -t cool-new-image:2\nIf all built successfully, you should see a message like:\n=&gt; exporting to image                                                     0.0s\n=&gt; =&gt; exporting layers                                                    0.0s\n=&gt; =&gt; writing image sha256:ayuahgfuiseohfauwheufhauwihefuahweufhawfbuibe  0.0s\n=&gt; =&gt; naming to docker.io/library/cool-new-image:2\n\n5.2.1.7 Step 9: Run container from cool-new-image:2\nNow let’s retry running the script from here but we will need to specify the volume again!\n First run the container using the 2 image:\ndocker run -v $PWD:/home cool-new-image:2\n\n5.2.1.8 Step 10: Re-Retry calling the script\n Run docker ps or podman ps can get you the container ID. Or look on your Docker Desktop.  Try running the script using the following command:\ndocker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh\n\n5.2.2 Podman\n\n5.2.2.1 Step 4: Build the image from the Dockerfile\n With activity-files as your working directory, run the following:\npodman build . -t cool-new-image\nOptionally you could call this from somewhere else and use the -f option to specify the file path to the Dockerfile. But in the scenario above it just grabs the Dockerfile in our working directory.\n\n5.2.2.2 Step 4: Inspect new image!\n Let’s see if we have an image!\npodman image ls\n\n5.2.2.3 Step 5: Run the new image\n Navigate back to your Docker desktop and the images window or run docker ps or podman ps. If your image built successfully, you should see a new image in your list! Let’s try running that image.\npodman run cool-new-image\n\n5.2.2.4 Step 6: See the minor difference!\n We should have a message: Yay! I built a Docker image pop up upon building the image. Not super useful but we can see how we’ve edited the original image.\n\n5.2.2.5 Step 7: Edit the Dockerfile so it has the installation step for rmarkdown package and remove the CMD step\nFor anything we need ran in this image we are building we need to use the RUN command followed by the installation steps we’d need.\n Open up the file called Dockerfile in activity-files.Copy and paste this into your Dockerfile below where it says # Add a new package here so we can add the rmarkdown package.\nRUN Rscript -e  \"options(warn = 2);install.packages('rmarkdown', \\\n    repos = 'https://cloud.r-project.org/')\"\nAND remove the CMD line. Save your edited Dockerfile.\n\n5.2.2.6 Step 8: Re-build now that we’ve edited the Dockerfile\nNow re-run docker build (or podman build) as you did in the previous section. This time we’ll add a versioning tag using : in the -t option.\npodman build . -t cool-new-image:2\nIf all built successfully, you should see a message like:\n=&gt; exporting to image                                                     0.0s\n=&gt; =&gt; exporting layers                                                    0.0s\n=&gt; =&gt; writing image sha256:ayuahgfuiseohfauwheufhauwihefuahweufhawfbuibe  0.0s\n=&gt; =&gt; naming to docker.io/library/cool-new-image:2\n\n5.2.2.7 Step 9: Run container from cool-new-image:2\nNow let’s retry running the script from here but we will need to specify the volume again!\n First run the container using the 2 image:\npodman run -v $PWD:/home cool-new-image:2\n\n5.2.2.8 Step 10: Re-Retry calling the script\n Run docker ps or podman ps can get you the container ID. Or look on your Docker Desktop.  Try running the script using the following command:\npodman exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modifying Containers</span>"
+    ]
+  },
+  {
+    "objectID": "05-modifying-containers.html#essential-docker-commands",
+    "href": "05-modifying-containers.html#essential-docker-commands",
+    "title": "\n5  Modifying Containers\n",
+    "section": "\n5.3 Essential Docker commands:",
+    "text": "5.3 Essential Docker commands:\nNow that you’re familiar with the basics of Dockerfiles, let’s dive into some more\nFROM is one of the main commands that a Dockerfile can take as described by their documentation.\nNow you are also familiar with CMD which runs something when the container is built\n\nFROM creates a layer from the another Docker image. CMD specifies what command to run within the container. RUN builds your application with make. COPY adds files from your Docker client’s current directory.\n\nNext let’s use RUN to add a package to our image.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modifying Containers</span>"
+    ]
+  },
+  {
+    "objectID": "05-modifying-containers.html#templates-for-adding-packages",
+    "href": "05-modifying-containers.html#templates-for-adding-packages",
+    "title": "\n5  Modifying Containers\n",
+    "section": "\n5.4 Templates for adding packages!",
+    "text": "5.4 Templates for adding packages!\nStarting off with your example Dockerfile, we will practice adding another package and re-build the docker image with a new package.\nNote that spacing is important as well as having a \\ at the end of each line if the command is continuing.\nTo add R packages from CRAN, you can use this kind of format:\nRUN Rscript -e  \"install.packages( \\\n    c('BiocManager', \\\n      'R.utils', \\\n      'newpackagename'))\"\nTo add an R package from Bioconductor, you can follow this kind of format:\nRUN Rscript -e \"options(warn = 2); BiocManager::install( \\\n  c('limma', \\\n    'newpackagename')\n\nTo add a Python package using pip, you will need to add pip3 to install Python packages using this format. But first you’ll need to make sure you have pip installed using:\nInstall pip:\nRUN apt-get update && apt-get install -y --no-install-recommends \\\n    python3-pip\nThen you can use pip install to install packages\nRUN pip3 install \\\n    \"somepackage==0.1.0\"\nThere are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.\nTo figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their RUN command. Then try to re-build your Docker image with that added RUN command and see if it builds successfully.\nAnd lastly, make sure that whatever changes you make to your Dockerfile, that you add it to your GitHub repository!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modifying Containers</span>"
+    ]
+  },
+  {
+    "objectID": "06-writing-dockerfiles.html",
+    "href": "06-writing-dockerfiles.html",
+    "title": "6  Writing Dockerfiles",
+    "section": "",
+    "text": "6.1 Templates for adding packages!\nStarting off with your example Dockerfile, we will practice adding another package and re-build the docker image with a new package.\nNote that spacing is important as well as having a \\ at the end of each line if the command is continuing.\nTo add R packages from CRAN, you can use this kind of format:\nTo add an R package from Bioconductor, you can follow this kind of format:\nTo add a Python package using pip, you will need to add pip3 to install Python packages using this format. But first you’ll need to make sure you have pip installed using:\nInstall pip:\nThen you can use pip install to install packages\nThere are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.\nTo figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their RUN command. Then try to re-build your Docker image with that added RUN command and see if it builds successfully.\nMake sure that whatever changes you make to your Dockerfile, that you add version control it and add it to your GitHub repository!",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing Dockerfiles</span>"
+    ]
+  },
+  {
+    "objectID": "06-writing-dockerfiles.html#templates-for-adding-packages",
+    "href": "06-writing-dockerfiles.html#templates-for-adding-packages",
+    "title": "6  Writing Dockerfiles",
+    "section": "",
+    "text": "RUN Rscript -e  \"install.packages( \\\n    c('BiocManager', \\\n      'R.utils', \\\n      'newpackagename'))\"\n\nRUN Rscript -e \"options(warn = 2); BiocManager::install( \\\n  c('limma', \\\n    'newpackagename')\n\n\n\nRUN apt-get update && apt-get install -y --no-install-recommends \\\n    python3-pip\n\nRUN pip3 install \\\n    \"somepackage==0.1.0\"",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing Dockerfiles</span>"
+    ]
+  },
+  {
+    "objectID": "06-writing-dockerfiles.html#troubleshooting-tips-for-building-images",
+    "href": "06-writing-dockerfiles.html#troubleshooting-tips-for-building-images",
+    "title": "6  Writing Dockerfiles",
+    "section": "6.2 Troubleshooting tips for building images",
+    "text": "6.2 Troubleshooting tips for building images\n\nLook for a good base image to start with on your FROM Something that has a lot of what you need but not more software packages than you need.\n\nIf you know you want use R on your container then take a look at the rocker images.\nIf you know you want to use Jupyter notebooks on your container, go to the Jupyter Project images.\nIf you are doing anything with bioinformatics software, take a look at Biocontainers.\n\nWhen adding packages, look for other Dockerfiles folks have written that have the same operating system aka usually Ubuntu, and copy their installation steps.\nUse version numbers so if you rebuild the same versions will be installed and that won’t be a moving target for you.\nShould the installation steps fail, try to pinpoint what is the first part it is failing on. Look for if there’s a message like “missing dependency” or something similar. It may mean you need to add another package in there before installing this package.\nGoogle your error messages. Look on StackOverflow. Post on StackOverflow.\nIf all else fails, can you just install a different software or a different version number of that software that can do the same functionality?\nIf you change something in a base image or in a file that is copied over you may need to use --no-cache so that everything really gets rebuilt from scratch.\n\n\n6.2.1 More learning\nFor more about Dockerfiles go to Docker’s documentation tutorials",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing Dockerfiles</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html",
+    "href": "07-sharing-images.html",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "",
+    "text": "7.1 Best practices of working with containers",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html#best-practices-of-working-with-containers",
+    "href": "07-sharing-images.html#best-practices-of-working-with-containers",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "",
+    "text": "7.1.1 Do NOT put protected data on your shared image\nSharing is crucial to community driven science.\nNot sharing at all is not an option, this impedes the progress of research. BUT we do need to discuss when, what, and who of appropriate sharing. If you work with protected data types, like Protected Health Information (PHI) or Personally Identifiable Information (PII) and want to use your protected data with containers, that’s great!\nHowever, there are some very strong dos and don’ts associated with protected data.\nIf you are working with protected data (or are not sure if you are), we also HIGHLY encourage you to talk with data privacy experts and ensure that the practices you are using are appropriate and making sure they protect the individuals’ whose data you have.\nBottom line: DO NOT put protected data like PII or PHI on publicly shared Docker images!\nThe more layers of safety checks and cushions for human mistakes (which will happen), the better!\n\n7.1.1.1 Alternatives:\nYou can use one or more of these alternatives just make sure you clear it with the proper channels like IRBs and security experts!\n\nDo NOT put the data on the image. Store the data separately from the image. Don’t even build the docker image near where those data are stored. You may be able to, from a secure location, run a Docker container and access the data through a volume assuming the data is not moved anywhere. Not only does storing data on an image make the image really big, but obviously in the case of protected data its just not a good idea.\nIf for some reason you must put something protected on an image, your other option is you can push the image to a secure and protected location site where only IRB approved individuals have access to it. Amazon Web Services Container registry has options as does Microsoft Azure for example.\nIf for some reason you must put something protected on an image, and you can’t use a private registry, your other option is: Don’t push the image anywhere This obviously makes it harder to share methods, but it also could be possible you could share a version of the Dockerfile of this image that doesn’t have protected data information on there and this Dockerfile could just be shared for methods purposes.\n\n\n\n\n\n\n\n\n\nData privacy is just one concern of best practices with containers. There’s also some other tips we can talk about at this time.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html#do-not-make-one-super-large-image-that-covers-all-your-use-cases",
+    "href": "07-sharing-images.html#do-not-make-one-super-large-image-that-covers-all-your-use-cases",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "\n7.2 Do not make one super large image that covers all your use cases",
+    "text": "7.2 Do not make one super large image that covers all your use cases\nJust as in Lord of the Rings that the “one ring to rule them all” was dangerous, so too is “one docker image to rule them all”. Big images are a headache to deal with. They take a long time to build and to pull, and if anything is broken on them, it can be a headache to troubleshoot.\n\n7.2.1 Alternatives:\nThere’s no limit on the number of images you can make! There can be a fine art to making separate images for each use case. Obviously too many images could be hard to keep track of which is which, but a very intentional organizational plan for your images can take you far.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html#version-control-your-dockerfiles",
+    "href": "07-sharing-images.html#version-control-your-dockerfiles",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "\n7.3 Version control your Dockerfiles",
+    "text": "7.3 Version control your Dockerfiles\nKeeping your Dockerfile stored only locally and untracked is likely to lead to headaches. Version control is always a good idea and containerization is no exception! To learn more about version control.\nIf you do decide to keep your Dockerfiles on GitHub, there are a lot of useful tools to help you manage your images there. GitHub Actions marketplace for examples has a lot of handy tools. See our GitHub Actions course for more on this.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html#versioning-is-always-a-good-idea",
+    "href": "07-sharing-images.html#versioning-is-always-a-good-idea",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "\n7.4 Versioning is always a good idea",
+    "text": "7.4 Versioning is always a good idea\nJust like with software development, it’s good to have a system to keep track of things as you develop. Container development can easily get out of hand. Especially if others are using your images you want to be clear about which versions of containers are in a more risky earlier “development” stage and which have been more vetted and ready for use.\nVersioning tags can be whatever you’d like them to be. Versioning number systems used elsewhere like major.minor.patch are also used with images.\nYou can alter versioning numbers either when you are building your image initially or by using the tag command:\ndocker tag cool-new-image:2 username/cool-new-image:2\nOther strategies for versioning can mirror git branch naming conventions, so main for the vetted version of the image and dev or stage for a version that’s still being worked on but will probably eventually be released.\nThere’s no one size fits all for image tags, its really up to whatever you and your team decide works best for your project. Regardless being intentional, consistent, and clearly documenting any system you choose to use are the main keys.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html#dont-use-random-developers-docker-images",
+    "href": "07-sharing-images.html#dont-use-random-developers-docker-images",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "\n7.5 Don’t use random developers’ docker images",
+    "text": "7.5 Don’t use random developers’ docker images\nImages and containers can be difficult to have transparency into the build at times. And unfrotunately not everyone on the internet who makes images is trustworthy. To avoid security issues make sure to stick to trusted sources for your docker images. Either verified individuals or companies. Try not to wander too far off the beaten path. Better to make your own image from a trusted source’s base image than to use a random strangers’ image that promises to do it all.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html#summary-of-best-practices",
+    "href": "07-sharing-images.html#summary-of-best-practices",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "\n7.6 Summary of best practices",
+    "text": "7.6 Summary of best practices",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html#container-registries",
+    "href": "07-sharing-images.html#container-registries",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "\n7.7 Container Registries",
+    "text": "7.7 Container Registries\nTo share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes.\nThis article has a nice summary of some of the most popular ones.\nAnd here’s a TL;DR of the most common registries:\n\n\nDockerhub – widely used, a default\n\nAmazon Web Services Container Registry - options for keeping private\n\n\nGithub container registry - If you are using GitHub packages works with that nicely\n\nSingularity – if you need more robust security\n\nWe encourage you to consider what container registries work best for you specific project and team. Here’s a starter list of considerations you may want to think of, roughly in the order of importance.\n\nIf you have protected data and security concerns (like we discussed earlier in this chapter) you may need to pick a container registry that allows privacy and strong security.\nPrice – not all container registries are free, but many of them are what kind of budget do you have for this purpose? Paying is generally not a necessity so don’t pay for a container registry subscription unless you need to.\nWhat tools are you already using? For example GitHub, Azure, and AWS have their own container registries, if you already are using these services you may consider using their associated registry. (Note GitHub actions works quite seamlessly with Dockerhub, so personally I haven’t had a reason to use GitHub Container Registry but it is an option.)\nIs there an industry standard? Where are your collaborators or those at your institution storing your images?\n\nWhile there are lots of container registry options, for the purposes of this tutorial, we’ll use Dockerhub. Dockerhub is one of the first container registries and still remains one of the largest. For most purposes, using Dockerhub will be just fine.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "07-sharing-images.html#activity-instructions",
+    "href": "07-sharing-images.html#activity-instructions",
+    "title": "\n7  Best practices for sharing images\n",
+    "section": "\n7.8 Activity Instructions",
+    "text": "7.8 Activity Instructions\n First you’ll need to make sure you have a dockerhub account.  Go to the website and login or create an account https://hub.docker.com/  Next, locally you’ll need to log into your account.\ndocker login -u your_user_name\n\n\n\n\n\n\n\n\n It will ask for your password. Enter that password.  If you’ve logged in successfully, now we need to prep our image by putting our username in the name. We can do that by using the tag command. But replace &lt;your_username&gt; with whatever your Dockerhub username is.\ndocker tag cool-new-image:2 &lt;your_username&gt;/cool-new-image:2\n\n\n\n\n\n\n\n\n Now we can push it to our repository.\ndocker &lt;your_username&gt; push username/cool-new-image:2\nYou can also do this with this button on Docker Desktop:\n\n\n\n\n\n\n\n\nGo to https://hub.docker.com/repositories/ and you should see your image listed there!",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Best practices for sharing images</span>"
+    ]
+  },
+  {
+    "objectID": "08-cleaning-up.html",
+    "href": "08-cleaning-up.html",
+    "title": "\n8  Cleaning Up\n",
+    "section": "",
+    "text": "8.1 Activity Instructions",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Cleaning Up</span>"
+    ]
+  },
+  {
+    "objectID": "08-cleaning-up.html#docker",
+    "href": "08-cleaning-up.html#docker",
+    "title": "\n8  Cleaning Up\n",
+    "section": "\n8.2 Docker",
+    "text": "8.2 Docker\nTo remove a container we can run:\ndocker rm &lt;PUT_CONTAINER_ID_HERE&gt; \nThis means you’ll need to grab the container ID, either from Docker desktop or by running docker ps.\nNote! If you try to remove an image that is currently being used to run a container you won’t be allowed to! So stop and remove containers first, then you can remove the image.\nBelow are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. \n\n8.2.0.1 Remove non-running containers\ndocker rm $(docker ps -a -q)\n\n8.2.0.2 Stop all containers\ndocker stop $(docker ps -a -q)\n\n8.2.0.3 Remove all images\ndocker rmi -f $(docker images -q)",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Cleaning Up</span>"
+    ]
+  },
+  {
+    "objectID": "08-cleaning-up.html#podman",
+    "href": "08-cleaning-up.html#podman",
+    "title": "\n8  Cleaning Up\n",
+    "section": "\n8.3 Podman",
+    "text": "8.3 Podman\nTo remove a container we can run\ndocker rm &lt;PUT_CONTAINER_ID_HERE&gt; \nThis means you’ll need to grab the container ID by running podman ps.\nTo remove an image we can run\ndocker rmi &lt;PUT_IMAGE_NAME_OR_ID_HERE&gt; \nThis means you’ll need to grab the container ID, either from Docker desktop or by running docker image ls.\nNote! If you try to remove an image that is currently being used to run a container you won’t be allowed to! So stop and remove containers first, then you can remove the image.\nBelow are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. \n\n8.3.0.1 Remove all non-running containers\npodman rm $(podman ps -a -q)\n\n8.3.0.2 Stop all containers\npodman stop $(podman ps -a -q)\n\n8.3.0.3 Remove all images\npodman rmi -f $(podman images -q)",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Cleaning Up</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html",
+    "href": "09-troubleshooting.html",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "",
+    "text": "9.0.1 Tips for troubleshooting\nFirst remind yourself of the lessons we discussed in the activities in Chapter 3:\nThen ask yourself the following questions:\nNow you have the basics of using containers but this is really just the beginning! As you continue to work with containers you will encounter errors and need to troubleshoot. This table has a quick rundown on some of the most common errors:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#activity-instructions",
+    "href": "09-troubleshooting.html#activity-instructions",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.1 Activity Instructions",
+    "text": "9.1 Activity Instructions",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#docker",
+    "href": "09-troubleshooting.html#docker",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.2 Docker",
+    "text": "9.2 Docker\nThere are three Dockerfiles in this folder. Each has something slightly wrong with it.\nUse the following docker build commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#bad-dockerfile-1",
+    "href": "09-troubleshooting.html#bad-dockerfile-1",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.3 Bad Dockerfile 1:",
+    "text": "9.3 Bad Dockerfile 1:\ndocker build -f Bad_Dockerfile_1 .",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#bad-dockerfile-2",
+    "href": "09-troubleshooting.html#bad-dockerfile-2",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.4 Bad Dockerfile 2:",
+    "text": "9.4 Bad Dockerfile 2:\ndocker build -f Bad_Dockerfile_2 .",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#bad-dockerfile-3",
+    "href": "09-troubleshooting.html#bad-dockerfile-3",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.5 Bad Dockerfile 3:",
+    "text": "9.5 Bad Dockerfile 3:\ndocker build -f Bad_Dockerfile_3 .",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#podman",
+    "href": "09-troubleshooting.html#podman",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.6 Podman",
+    "text": "9.6 Podman\nThere are three Dockerfiles in this folder. Each has something slightly wrong with it.\nUse the following podman build commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#bad-dockerfile-1-1",
+    "href": "09-troubleshooting.html#bad-dockerfile-1-1",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.7 Bad Dockerfile 1:",
+    "text": "9.7 Bad Dockerfile 1:\npodman build -f Bad_Dockerfile_1 .",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#bad-dockerfile-2-1",
+    "href": "09-troubleshooting.html#bad-dockerfile-2-1",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.8 Bad Dockerfile 2:",
+    "text": "9.8 Bad Dockerfile 2:\npodman build -f Bad_Dockerfile_2 .",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#bad-dockerfile-3-1",
+    "href": "09-troubleshooting.html#bad-dockerfile-3-1",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.9 Bad Dockerfile 3:",
+    "text": "9.9 Bad Dockerfile 3:\npodman build -f Bad_Dockerfile_3 .",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "09-troubleshooting.html#spoilers-hints-for-each-of-the-dockerfiles",
+    "href": "09-troubleshooting.html#spoilers-hints-for-each-of-the-dockerfiles",
+    "title": "\n9  Troubleshooting Tips\n",
+    "section": "\n9.10 SPOILERS: Hints for each of the dockerfiles",
+    "text": "9.10 SPOILERS: Hints for each of the dockerfiles\n\nBad_Dockerfile_1 hint\n\nCarefully look at the name of base image that is being pulled from.\n\nBad_Dockerfile_2 hint\n\nAre the commands that are referenced all things that are installed on the base image?\n\nBad_Dockerfile_3 hint\n\nIs the file that is being COPY over specified correctly?",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
+    ]
+  },
+  {
+    "objectID": "10-IDE-from-containers.html",
+    "href": "10-IDE-from-containers.html",
+    "title": "\n10  Using Containers as your Development Space\n",
+    "section": "",
+    "text": "10.1 Activity Instructions",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Containers as your Development Space</span>"
+    ]
+  },
+  {
+    "objectID": "10-IDE-from-containers.html#activity-instructions",
+    "href": "10-IDE-from-containers.html#activity-instructions",
+    "title": "\n10  Using Containers as your Development Space\n",
+    "section": "",
+    "text": "10.1.1 Jupyter analysis IDE example:\n Navigate to the folder that you would like to work in.\n Use this command:\ndocker run --rm -v $PWD:/home/jovyan/work -e JUPYTER_ENABLE_LAB=yes -p 8888:8888 jhudsl/reproducible-python\n Copy and paste the output URL to your favorite browser\n Develop to your heart’s content as you normally would with Jupyter notebooks.\nIf you need packages that aren’t here, now you know how to take the Dockerfile and modify it. Here’s the dockerfile and associated GitHub repo for this image.\n\n10.1.2 RStudio analysis IDE example:\n Navigate to the folder that you would like to work in.\n Use this command but replace the password part with your own password.\ndocker run -it -v $PWD:/home/rstudio -e PASSWORD=password -p 8787:8787 jhudsl/reproducible-r\n Then copy and paste localhost:8787 in your internet browser  On this page, your username will be rstudio and your password will be whatever you specified.  Develop to your heart’s content in this RStudio IDE normally would.\nIf you need packages that aren’t here, now you know how to take the Dockerfile and modify it. Here’s the dockerfile and associated GitHub repo for this image.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Containers as your Development Space</span>"
+    ]
+  },
+  {
+    "objectID": "11-advanced-techniques.html",
+    "href": "11-advanced-techniques.html",
+    "title": "\n11  Advanced Container Techniques\n",
+    "section": "",
+    "text": "11.1 GitHub Actions to manage your containers\nGitHub Actions pairs really well with images We encourage you to take a look at our course on GitHub Actions for science!\nGitHub Actions can use Docker containers really seamlessly to automate things for you. GitHub Actions can also be a way for you to manage your Docker images and Dockerfiles.\nSee an example of one we actually maintain here: https://github.com/jhudsl/ottr-docker",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Advanced Container Techniques</span>"
+    ]
+  },
+  {
+    "objectID": "11-advanced-techniques.html#personal-access-tokens",
+    "href": "11-advanced-techniques.html#personal-access-tokens",
+    "title": "\n11  Advanced Container Techniques\n",
+    "section": "\n11.2 Personal Access Tokens",
+    "text": "11.2 Personal Access Tokens\nTo give GitHub Actions or other items access to your Dockerhub you will need to use Personal access Tokens. As with most Personal Access Tokens, be very careful to not share these or post them anywhere publicly!",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Advanced Container Techniques</span>"
+    ]
+  },
+  {
+    "objectID": "11-advanced-techniques.html#docker-compose",
+    "href": "11-advanced-techniques.html#docker-compose",
+    "title": "\n11  Advanced Container Techniques\n",
+    "section": "\n11.3 Docker compose",
+    "text": "11.3 Docker compose\nIn this course, we introduced you to docker run. But what if you have a ton of arguments to specify and things that you can’t do from a single command? Enter docker compose. This allows you to get very fancy with your docker containers and specify a bunch of things in your yaml file.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Advanced Container Techniques</span>"
+    ]
+  },
+  {
+    "objectID": "11-advanced-techniques.html#whats-kubernetes",
+    "href": "11-advanced-techniques.html#whats-kubernetes",
+    "title": "\n11  Advanced Container Techniques\n",
+    "section": "\n11.4 What’s Kubernetes",
+    "text": "11.4 What’s Kubernetes\nKubernetes is a way you can use a bunch of containers at once. It’s mostly not needed for scientific analyses but now you know about it.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Advanced Container Techniques</span>"
+    ]
+  }
+]

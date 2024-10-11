@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>3&nbsp; Using Containers – Containers for Scientists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-using-volumes.html" rel="next">
+<link href="./02-why-containers.html" rel="prev">
+<link href="./assets/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link href="site_libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="site_libs/panelset-0.3.0/panelset.js"></script><link rel="stylesheet" href="style.css">
+</head>
+<body class="fullcontent">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using Containers</span>
+</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2effc5b673e_0_833.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Let’s actually dive into to using containers. You can follow along with this activity with either Docker or Podman. We recommend using Docker but if for admin reasons you are unable to use Docker, Podman’s commands work nearly identically to Docker.</p>
+<section id="a-note-about-window-juggling" class="level3" data-number="3.0.1"><h3 data-number="3.0.1" class="anchored" data-anchor-id="a-note-about-window-juggling">
+<span class="header-section-number">3.0.1</span> A note about “window juggling”</h3>
+<p>When learning another software skill like containers, it sometimes means you’ll have to keep track of more windows. We call this “Window Juggling”. It’s an overlooked skill but something you’ll become more comfortable with.</p>
+<p><strong>IMPORTANT</strong>: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because steps have to be done and in order!</p>
+</section><section id="activity-instructions" class="level2 panelset" data-number="3.1"><h2 class="panelset anchored" data-number="3.1" data-anchor-id="activity-instructions">
+<span class="header-section-number">3.1</span> Activity Instructions</h2>
+<section id="docker" class="level3" data-number="3.1.1"><h3 data-number="3.1.1" class="anchored" data-anchor-id="docker">
+<span class="header-section-number">3.1.1</span> Docker</h3>
+<section id="set-up" class="level4" data-number="3.1.1.1"><h4 data-number="3.1.1.1" class="anchored" data-anchor-id="set-up">
+<span class="header-section-number">3.1.1.1</span> Set up</h4>
+<p><input type="checkbox"> Go here to <a href="https://www.docker.com/get-started">install Docker</a>, following the instructions for your particular operating system.<br><input type="checkbox"> If you don’t have a Docker account create an account when prompted, or <a href="https://hub.docker.com/">go here</a>.<br><input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_686.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="get-workshop-files" class="level4" data-number="3.1.1.2"><h4 data-number="3.1.1.2" class="anchored" data-anchor-id="get-workshop-files">
+<span class="header-section-number">3.1.1.2</span> Get workshop files</h4>
+<p><input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip<br><input type="checkbox"> Put this file on your desktop so it is easily findable.<br><input type="checkbox"> Double click the zip file (or right click and choose “unzip” or “decompress” to unzip the file.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_693.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="activity-1-pull-and-run-a-docker-image" class="level4" data-number="3.1.1.3"><h4 data-number="3.1.1.3" class="anchored" data-anchor-id="activity-1-pull-and-run-a-docker-image">
+<span class="header-section-number">3.1.1.3</span> Activity 1: Pull and run a Docker image</h4>
+<p><strong>This activity is built so that you will encounter errors that this guide will work you through!</strong> Most common container stumbling block is understanding the idea that containers are isolated from your computer</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_700.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Which means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_713.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We will encounter both an error of when we don’t have a file we need AND an error of when we don’t have a software package we need. We will guide you through what to do when these expected errors occur.</p>
+</section><section id="step-1-docker-pull" class="level4" data-number="3.1.1.4"><h4 data-number="3.1.1.4" class="anchored" data-anchor-id="step-1-docker-pull">
+<span class="header-section-number">3.1.1.4</span> Step 1: Docker pull</h4>
+<p>We need to get the Docker <strong>image</strong> we want to use. We do this by “pulling” it. Pulling is a term used in GitHub terminology too. It just means we’re taking something from the internet and getting a copy locally (on our computer).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_732.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><input type="checkbox"> Run this command in your Terminal or Command Prompt window:</p>
+<pre><code>docker pull cansav09/practice-image:1</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_745.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="step-2-check-what-images-you-have" class="level5" data-number="3.1.1.4.1"><h5 data-number="3.1.1.4.1" class="anchored" data-anchor-id="step-2-check-what-images-you-have">
+<span class="header-section-number">3.1.1.4.1</span> Step 2: Check what images you have</h5>
+<p><input type="checkbox"> To see what images we have we can run <code>docker image ls</code>.<br><input type="checkbox"> We should see <code>cansav09/practice-image:1</code> show up in the output.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_752.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="step-3-run-the-docker-image-to-start-a-container" class="level5" data-number="3.1.1.4.2"><h5 data-number="3.1.1.4.2" class="anchored" data-anchor-id="step-3-run-the-docker-image-to-start-a-container">
+<span class="header-section-number">3.1.1.4.2</span> Step 3: Run the docker image to start a container!</h5>
+<p>Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do <code>docker run</code></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_760.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><input type="checkbox"> To launch the image for use, we can use <code>docker run</code> to turn it into a <strong>container</strong>.</p>
+<pre><code>docker run cansav09/practice-image:1</code></pre>
+<p><input type="checkbox"> To see what containers we have running we have we can run:</p>
+<pre><code>docker ps</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_775.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Pat yourself on the back! You have a running container!</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_786.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>What can we do with running containers?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_791.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="step-4-run-a-single-command" class="level5" data-number="3.1.1.4.3"><h5 data-number="3.1.1.4.3" class="anchored" data-anchor-id="step-4-run-a-single-command">
+<span class="header-section-number">3.1.1.4.3</span> Step 4: Run a single command</h5>
+<p><input type="checkbox"> To run stuff interactively from the command line we can do:</p>
+<pre><code>docker exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_803.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If you run this you should see your terminal/command prompt now have the initial part change to something like:</p>
+<pre><code>root@e7b19cfb4461:/</code></pre>
+<p>Where you’ll noticed the <code>CONTAINER ID</code> is now shown there.</p>
+<p>You are now using command line inside of your container. Trying running any bash command like <code>ls</code> to see what files are here for example.</p>
+<p>Your screen will end up looking like this (but this printout is from a Mac, windows will look a little different in some parts):</p>
+<pre><code>(base) firstnamelastname@FirstNames-MacBook-Pro ~ % docker exec -it e7b19cfb4461 bash
+
+root@e7b19cfb4461:/# ls
+bin   etc   lib    libexec  mnt   rocker_scripts  sbin  tmp
+boot  home  lib32  libx32   opt   root            srv   usr
+dev   init  lib64  media    proc  run             sys   var
+root@e7b19cfb4461:/#</code></pre>
+<p><input type="checkbox"> When you are ready to leave your container type <code>exit</code> and press Enter.</p>
+</section><section id="step-5-try-calling-a-script" class="level5" data-number="3.1.1.4.4"><h5 data-number="3.1.1.4.4" class="anchored" data-anchor-id="step-5-try-calling-a-script">
+<span class="header-section-number">3.1.1.4.4</span> Step 5: Try calling a script</h5>
+<p><input type="checkbox"> To run a script using the docker container we could just add reference to a script at the end:</p>
+<pre><code>docker exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash run_analysis.sh</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_812.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>BUT! You will find that this command won’t work yet though, why?</strong></p>
+<pre><code>bash: run_analysis.sh: No such file or directory</code></pre>
+<p><strong>Question: Does our container have all of the same files that our computer has?</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_833.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This won’t work because the file <code>run_analysis.sh</code> is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.</p>
+</section></section></section><section id="podman" class="level3" data-number="3.1.2"><h3 data-number="3.1.2" class="anchored" data-anchor-id="podman">
+<span class="header-section-number">3.1.2</span> Podman</h3>
+<section id="set-up-podman" class="level4" data-number="3.1.2.1"><h4 data-number="3.1.2.1" class="anchored" data-anchor-id="set-up-podman">
+<span class="header-section-number">3.1.2.1</span> Set up Podman</h4>
+<p><input type="checkbox"> Go here to <a href="https://podman.io/docs/installation">install Podman</a>, following the instructions for your particular operating system.<br><input type="checkbox"> Open up your <a href="https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955">command line</a>.<br><input type="checkbox"> Start up Podman by running the following:</p>
+<pre><code>podman machine init
+podman machine start</code></pre>
+</section><section id="get-workshop-files-1" class="level4" data-number="3.1.2.2"><h4 data-number="3.1.2.2" class="anchored" data-anchor-id="get-workshop-files-1">
+<span class="header-section-number">3.1.2.2</span> Get workshop files</h4>
+<p><input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip<br><input type="checkbox"> Put this file on your desktop so it is easily findable.<br><input type="checkbox"> Double click the zip file (or right click and choose “unzip” or “decompress” to unzip the file.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_693.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>This activity is built so that you will encounter errors that this guide will work you through!</strong> Most common container stumbling block is understanding the idea that containers are isolated from your computer</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_700.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Which means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_713.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We will encounter both an error of when we don’t have a file we need AND an error of when we don’t have a software package we need. We will guide you through what to do when these expected errors occur.</p>
+<section id="step-1-podman-pull" class="level5" data-number="3.1.2.2.1"><h5 data-number="3.1.2.2.1" class="anchored" data-anchor-id="step-1-podman-pull">
+<span class="header-section-number">3.1.2.2.1</span> Step 1: Podman pull</h5>
+<p>We need to get the <strong>image</strong> we want to use. We do this by “pulling” it. Pulling is a term used in GitHub terminology too. It just means we’re taking something from the internet and getting a copy locally (on our computer).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_732.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><input type="checkbox"> Run this command in your Terminal or Command Prompt window:</p>
+<pre><code>podman pull cansav09/practice-image:1</code></pre>
+<p>If this command is running properly you should see some output that looks like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a80783034_1_0.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="step-2-check-what-images-you-have-1" class="level5" data-number="3.1.2.2.2"><h5 data-number="3.1.2.2.2" class="anchored" data-anchor-id="step-2-check-what-images-you-have-1">
+<span class="header-section-number">3.1.2.2.2</span> Step 2: Check what images you have</h5>
+<p><input type="checkbox"> To see what images we have we can run <code>podman image ls</code>.<br><input type="checkbox"> You should see <code>cansav09/practice-image:1</code> show up in the output and it will look a bit like this below:</p>
+<pre><code>docker.io/cansav09/practice-image  1   91619ca583b8  1 month ago  2.39 GB</code></pre>
+</section><section id="step-3-run-the-image-to-start-a-container" class="level5" data-number="3.1.2.2.3"><h5 data-number="3.1.2.2.3" class="anchored" data-anchor-id="step-3-run-the-image-to-start-a-container">
+<span class="header-section-number">3.1.2.2.3</span> Step 3: Run the image to start a container!</h5>
+<p>Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do <code>podman run</code></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_760.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><input type="checkbox"> To launch the image for use, we can use <code>podman run</code> to turn it into a <strong>container</strong>.</p>
+<pre><code>podman run cansav09/practice-image:1</code></pre>
+<p>If this command has run properly it will return something like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a80783034_1_9.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Don’t worry too much about all this output, every image is configured differently and this output will change depending on that.</p>
+<p><input type="checkbox"> To see what containers we have running we have we can run:</p>
+<pre><code>podman ps</code></pre>
+<p>Your output will look a little like this. NOTE though that the <code>CONTAINER ID</code> and <code>NAMES</code> are randomly generated for each container and will change, so that part won’t be the same!</p>
+<pre><code>CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS        PORTS       NAMES
+e7b19cfb4461  docker.io/cansav09/practice-image:1  /init       2 minutes ago  Up 2 minutes  8787/tcp    hopeful_proskuriakova</code></pre>
+<p>Pat yourself on the back! You have a running container!</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_786.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>What can we do with running containers?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_791.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="step-4-run-the-container-interactively" class="level5" data-number="3.1.2.2.4"><h5 data-number="3.1.2.2.4" class="anchored" data-anchor-id="step-4-run-the-container-interactively">
+<span class="header-section-number">3.1.2.2.4</span> Step 4: Run the container interactively</h5>
+<p><input type="checkbox"> To run stuff interactively from the command line we can do:</p>
+<p>But you’ll need to replace the <code>&lt;PUT_CONTAINER_ID_HERE&gt;</code> portion of this command with the <code>CONTAINER ID</code> reported when you ran <code>podman ps</code>.</p>
+<pre><code>podman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash</code></pre>
+<p>If you run this you should see your terminal/command prompt now have the initial part change to something like:</p>
+<pre><code>root@e7b19cfb4461:/</code></pre>
+<p>Where you’ll noticed the <code>CONTAINER ID</code> is now shown there.</p>
+<p>You are now using command line inside of your container. Trying running any bash command like <code>ls</code> to see what files are here for example.</p>
+<p>Your screen will end up looking like this:</p>
+<pre><code>(base) firstnamelastname@FirstNames-MacBook-Pro ~ % podman exec -it e7b19cfb4461 bash
+
+root@e7b19cfb4461:/# ls
+bin   etc   lib    libexec  mnt   rocker_scripts  sbin  tmp
+boot  home  lib32  libx32   opt   root            srv   usr
+dev   init  lib64  media    proc  run             sys   var
+root@e7b19cfb4461:/#</code></pre>
+<p><input type="checkbox"> When you are ready to leave your container type <code>exit</code> and press Enter.</p>
+</section><section id="step-5-try-calling-a-script-1" class="level5" data-number="3.1.2.2.5"><h5 data-number="3.1.2.2.5" class="anchored" data-anchor-id="step-5-try-calling-a-script-1">
+<span class="header-section-number">3.1.2.2.5</span> Step 5: Try calling a script</h5>
+<p><input type="checkbox"> To run a script using the container we could just add reference to a script at the end:</p>
+<pre><code>podman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash run_analysis.sh</code></pre>
+<p><strong>BUT! You will find that this command won’t work yet though, why?</strong></p>
+<p>This won’t work because the file <code>run_analysis.sh</code> is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.</p>
+<pre><code>bash: run_analysis.sh: No such file or directory</code></pre>
+<p><strong>Question: Does our container have all of the same files that our computer has?</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_833.png" class="img-fluid figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This won’t work because the file <code>run_analysis.sh</code> is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.</p>
+
+
+</section></section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./02-why-containers.html" class="pagination-link" aria-label="Why Containers?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Why Containers?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-using-volumes.html" class="pagination-link" aria-label="Using Volumes">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Volumes</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This book was built with <a href="https://quarto.org/" style="color: #fff;">Quarto</a> using <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #fff;">OTTR</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+<p>All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #fff;">CC-BY. </a> <br> All other materials <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #fff;"> CC-BY </a> unless noted otherwise.</p>
+<div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/Containers_for_Scientists/edit/main/03-using-containers.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://fhdata.slack.com/join/signup#/domain-signup">
+      <i class="bi bi-slack" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+</div>
+  </div>
+</footer>
+
+
+</body></html>
