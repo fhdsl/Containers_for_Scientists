@@ -47,10 +47,6 @@ In science, more variables means we're lacking true clarity in what we are obser
 
 Science progresses when data and hypotheses are put through these levels thoroughly and sequentially. If results are not repeatable, they won’t be reproducible or replicable.
 
-```{r, out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_0")
-```
-
 An important note: although your results can be reproducibly wrong (you're coming to a faulty conclusion consistently) they can NOT be irreproducibly right.
 
 ```{r, out.width = "100%", echo = FALSE}
