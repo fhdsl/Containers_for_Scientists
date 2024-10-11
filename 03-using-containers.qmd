@@ -22,18 +22,18 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ## Activity Instructions {.panelset}
 ### Docker
 #### Set up
-<input type="checkbox"> Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.    
-<input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).    
-<input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.   
+<input type="checkbox"> Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.
+<input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).
+<input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_686")
 ```
 
 #### Get workshop files
-<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip  
-<input type="checkbox"> Put this file on your desktop so it is easily findable.  
-<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
+<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip
+<input type="checkbox"> Put this file on your desktop so it is easily findable.
+<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
@@ -50,7 +50,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 Which means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_713")
 ```
 
@@ -79,8 +79,8 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ##### Step 2: Check what images you have
 
-<input type="checkbox"> To see what images we have we can run `docker image ls`.  
-<input type="checkbox"> We should see `cansav09/practice-image:1` show up in the output.  
+<input type="checkbox"> To see what images we have we can run `docker image ls`.
+<input type="checkbox"> We should see `cansav09/practice-image:1` show up in the output.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_752")
@@ -124,7 +124,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ##### Step 4: Run a single command
 
-<input type="checkbox"> To run stuff interactively from the command line we can do:  
+<input type="checkbox"> To run stuff interactively from the command line we can do:
 
 ```
 docker exec -it <PUT_CONTAINER_ID_HERE> bash
@@ -134,18 +134,18 @@ docker exec -it <PUT_CONTAINER_ID_HERE> bash
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_803")
 ```
 
-If you run this you should see your terminal/command prompt now have the initial part change to something like: 
+If you run this you should see your terminal/command prompt now have the initial part change to something like:
 
 ```
 root@e7b19cfb4461:/
 ```
 
-Where you'll noticed the `CONTAINER ID` is now shown there. 
+Where you'll noticed the `CONTAINER ID` is now shown there.
 
-You are now using command line inside of your container. Trying running any bash command like 
-`ls` to see what files are here for example. 
+You are now using command line inside of your container. Trying running any bash command like
+`ls` to see what files are here for example.
 
-Your screen will end up looking like this (but this printout is from a Mac, windows will look a little different in some parts): 
+Your screen will end up looking like this (but this printout is from a Mac, windows will look a little different in some parts):
 ```
 (base) firstnamelastname@FirstNames-MacBook-Pro ~ % docker exec -it e7b19cfb4461 bash
 
@@ -156,12 +156,12 @@ dev   init  lib64  media    proc  run             sys   var
 root@e7b19cfb4461:/#
 ```
 
-<input type="checkbox"> When you are ready to leave your container type `exit` and press Enter.  
+<input type="checkbox"> When you are ready to leave your container type `exit` and press Enter.
 
 
 ##### Step 5: Try calling a script
 
-<input type="checkbox"> To run a script using the docker container we could just add reference to a script at the end:  
+<input type="checkbox"> To run a script using the docker container we could just add reference to a script at the end:
 
 ```
 docker exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
@@ -188,18 +188,18 @@ This won't work because the file `run_analysis.sh` is not a file that our contai
 
 ### Podman
 #### Set up Podman
-<input type="checkbox"> Go here to [install Podman](https://podman.io/docs/installation), following the instructions for your particular operating system.  
-<input type="checkbox"> Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).  
-<input type="checkbox"> Start up Podman by running the following:  
+<input type="checkbox"> Go here to [install Podman](https://podman.io/docs/installation), following the instructions for your particular operating system.
+<input type="checkbox"> Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).
+<input type="checkbox"> Start up Podman by running the following:
 ```
 podman machine init
 podman machine start
 ```
 
 #### Get workshop files
-<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip  
-<input type="checkbox"> Put this file on your desktop so it is easily findable.  
-<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
+<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip
+<input type="checkbox"> Put this file on your desktop so it is easily findable.
+<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
@@ -226,7 +226,7 @@ We need to get the **image** we want to use. We do this by "pulling" it.
 Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer).
 
 ```{r, out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_732") 
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_732")
 ```
 
 <input type="checkbox"> Run this command in your Terminal or Command Prompt window:
@@ -235,16 +235,16 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 podman pull cansav09/practice-image:1
 ```
 
-If this command is running properly you should see some output that looks like this: 
+If this command is running properly you should see some output that looks like this:
 
 ```{r, out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_0") 
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_0")
 ```
 
 ##### Step 2: Check what images you have
 
-<input type="checkbox"> To see what images we have we can run `podman image ls`.  
-<input type="checkbox"> You should see `cansav09/practice-image:1` show up in the output and it will look a bit like this below: 
+<input type="checkbox"> To see what images we have we can run `podman image ls`.
+<input type="checkbox"> You should see `cansav09/practice-image:1` show up in the output and it will look a bit like this below:
 
 ```
 docker.io/cansav09/practice-image  1   91619ca583b8  1 month ago  2.39 GB
@@ -264,13 +264,13 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 podman run cansav09/practice-image:1
 ```
 
-If this command has run properly it will return something like this: 
+If this command has run properly it will return something like this:
 
 ```{r, out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_9") 
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_9")
 ```
 
-Don't worry too much about all this output, every image is configured differently and this output will change depending on that. 
+Don't worry too much about all this output, every image is configured differently and this output will change depending on that.
 
 <input type="checkbox"> To see what containers we have running we have we can run:
 
@@ -279,7 +279,7 @@ podman ps
 ```
 
 Your output will look a little like this.
-NOTE though that the `CONTAINER ID` and `NAMES` are randomly generated for each container and will change, so that part won't be the same! 
+NOTE though that the `CONTAINER ID` and `NAMES` are randomly generated for each container and will change, so that part won't be the same!
 
 ```
 CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS        PORTS       NAMES
@@ -302,22 +302,22 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 <input type="checkbox"> To run stuff interactively from the command line we can do:
 
-But you'll need to replace the `<PUT_CONTAINER_ID_HERE>` portion of this command with the `CONTAINER ID` reported when you ran `podman ps`. 
+But you'll need to replace the `<PUT_CONTAINER_ID_HERE>` portion of this command with the `CONTAINER ID` reported when you ran `podman ps`.
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash
 ```
 
-If you run this you should see your terminal/command prompt now have the initial part change to something like: 
+If you run this you should see your terminal/command prompt now have the initial part change to something like:
 ```
 root@e7b19cfb4461:/
 ```
 
-Where you'll noticed the `CONTAINER ID` is now shown there. 
+Where you'll noticed the `CONTAINER ID` is now shown there.
 
-You are now using command line inside of your container. Trying running any bash command like 
-`ls` to see what files are here for example. 
+You are now using command line inside of your container. Trying running any bash command like
+`ls` to see what files are here for example.
 
-Your screen will end up looking like this: 
+Your screen will end up looking like this:
 ```
 (base) firstnamelastname@FirstNames-MacBook-Pro ~ % podman exec -it e7b19cfb4461 bash
 
@@ -328,7 +328,7 @@ dev   init  lib64  media    proc  run             sys   var
 root@e7b19cfb4461:/#
 ```
 
-<input type="checkbox"> When you are ready to leave your container type `exit` and press Enter.  
+<input type="checkbox"> When you are ready to leave your container type `exit` and press Enter.
 
 
 ##### Step 5: Try calling a script
