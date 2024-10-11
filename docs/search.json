@@ -364,87 +364,7 @@
     "href": "09-troubleshooting.html#activity-instructions",
     "title": "\n9  Troubleshooting Tips\n",
     "section": "\n9.1 Activity Instructions",
-    "text": "9.1 Activity Instructions",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
-    ]
-  },
-  {
-    "objectID": "09-troubleshooting.html#docker",
-    "href": "09-troubleshooting.html#docker",
-    "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.2 Docker",
-    "text": "9.2 Docker\nThere are three Dockerfiles in this folder. Each has something slightly wrong with it.\nUse the following docker build commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
-    ]
-  },
-  {
-    "objectID": "09-troubleshooting.html#bad-dockerfile-1",
-    "href": "09-troubleshooting.html#bad-dockerfile-1",
-    "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.3 Bad Dockerfile 1:",
-    "text": "9.3 Bad Dockerfile 1:\ndocker build -f Bad_Dockerfile_1 .",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
-    ]
-  },
-  {
-    "objectID": "09-troubleshooting.html#bad-dockerfile-2",
-    "href": "09-troubleshooting.html#bad-dockerfile-2",
-    "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.4 Bad Dockerfile 2:",
-    "text": "9.4 Bad Dockerfile 2:\ndocker build -f Bad_Dockerfile_2 .",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
-    ]
-  },
-  {
-    "objectID": "09-troubleshooting.html#bad-dockerfile-3",
-    "href": "09-troubleshooting.html#bad-dockerfile-3",
-    "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.5 Bad Dockerfile 3:",
-    "text": "9.5 Bad Dockerfile 3:\ndocker build -f Bad_Dockerfile_3 .",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
-    ]
-  },
-  {
-    "objectID": "09-troubleshooting.html#podman",
-    "href": "09-troubleshooting.html#podman",
-    "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.6 Podman",
-    "text": "9.6 Podman\nThere are three Dockerfiles in this folder. Each has something slightly wrong with it.\nUse the following podman build commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
-    ]
-  },
-  {
-    "objectID": "09-troubleshooting.html#bad-dockerfile-1-1",
-    "href": "09-troubleshooting.html#bad-dockerfile-1-1",
-    "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.7 Bad Dockerfile 1:",
-    "text": "9.7 Bad Dockerfile 1:\npodman build -f Bad_Dockerfile_1 .",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
-    ]
-  },
-  {
-    "objectID": "09-troubleshooting.html#bad-dockerfile-2-1",
-    "href": "09-troubleshooting.html#bad-dockerfile-2-1",
-    "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.8 Bad Dockerfile 2:",
-    "text": "9.8 Bad Dockerfile 2:\npodman build -f Bad_Dockerfile_2 .",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
-    ]
-  },
-  {
-    "objectID": "09-troubleshooting.html#bad-dockerfile-3-1",
-    "href": "09-troubleshooting.html#bad-dockerfile-3-1",
-    "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.9 Bad Dockerfile 3:",
-    "text": "9.9 Bad Dockerfile 3:\npodman build -f Bad_Dockerfile_3 .",
+    "text": "9.1 Activity Instructions\n\n9.1.1 Docker\nThere are three Dockerfiles in this folder. Each has something slightly wrong with it.\nUse the following docker build commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.\n\n9.1.1.1 Bad Dockerfile 1:\ndocker build -f Bad_Dockerfile_1 .\n\n9.1.1.2 Bad Dockerfile 2:\ndocker build -f Bad_Dockerfile_2 .\n\n9.1.1.3 Bad Dockerfile 3:\ndocker build -f Bad_Dockerfile_3 .\n\n9.1.2 Podman\nThere are three Dockerfiles in this folder. Each has something slightly wrong with it.\nUse the following podman build commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.\n\n9.1.2.1 Bad Dockerfile 1:\npodman build -f Bad_Dockerfile_1 .\n\n9.1.2.2 Bad Dockerfile 2:\npodman build -f Bad_Dockerfile_2 .\n\n9.1.2.3 Bad Dockerfile 3:\npodman build -f Bad_Dockerfile_3 .",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
     ]
@@ -453,8 +373,8 @@
     "objectID": "09-troubleshooting.html#spoilers-hints-for-each-of-the-dockerfiles",
     "href": "09-troubleshooting.html#spoilers-hints-for-each-of-the-dockerfiles",
     "title": "\n9  Troubleshooting Tips\n",
-    "section": "\n9.10 SPOILERS: Hints for each of the dockerfiles",
-    "text": "9.10 SPOILERS: Hints for each of the dockerfiles\n\nBad_Dockerfile_1 hint\n\nCarefully look at the name of base image that is being pulled from.\n\nBad_Dockerfile_2 hint\n\nAre the commands that are referenced all things that are installed on the base image?\n\nBad_Dockerfile_3 hint\n\nIs the file that is being COPY over specified correctly?",
+    "section": "\n9.2 SPOILERS: Hints for each of the dockerfiles",
+    "text": "9.2 SPOILERS: Hints for each of the dockerfiles\n\nBad_Dockerfile_1 hint\n\nCarefully look at the name of base image that is being pulled from.\n\nBad_Dockerfile_2 hint\n\nAre the commands that are referenced all things that are installed on the base image?\n\nBad_Dockerfile_3 hint\n\nIs the file that is being COPY over specified correctly?",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Troubleshooting Tips</span>"
     ]

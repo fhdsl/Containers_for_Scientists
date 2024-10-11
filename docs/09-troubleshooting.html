@@ -188,16 +188,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
 <li><a href="#tips-for-troubleshooting" id="toc-tips-for-troubleshooting" class="nav-link active" data-scroll-target="#tips-for-troubleshooting"><span class="header-section-number">9.0.1</span> Tips for troubleshooting</a></li>
-  <li><a href="#activity-instructions" id="toc-activity-instructions" class="nav-link" data-scroll-target="#activity-instructions"><span class="header-section-number">9.1</span> Activity Instructions</a></li>
-  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker"><span class="header-section-number">9.2</span> Docker</a></li>
-  <li><a href="#bad-dockerfile-1" id="toc-bad-dockerfile-1" class="nav-link" data-scroll-target="#bad-dockerfile-1"><span class="header-section-number">9.3</span> Bad Dockerfile 1:</a></li>
-  <li><a href="#bad-dockerfile-2" id="toc-bad-dockerfile-2" class="nav-link" data-scroll-target="#bad-dockerfile-2"><span class="header-section-number">9.4</span> Bad Dockerfile 2:</a></li>
-  <li><a href="#bad-dockerfile-3" id="toc-bad-dockerfile-3" class="nav-link" data-scroll-target="#bad-dockerfile-3"><span class="header-section-number">9.5</span> Bad Dockerfile 3:</a></li>
-  <li><a href="#podman" id="toc-podman" class="nav-link" data-scroll-target="#podman"><span class="header-section-number">9.6</span> Podman</a></li>
-  <li><a href="#bad-dockerfile-1-1" id="toc-bad-dockerfile-1-1" class="nav-link" data-scroll-target="#bad-dockerfile-1-1"><span class="header-section-number">9.7</span> Bad Dockerfile 1:</a></li>
-  <li><a href="#bad-dockerfile-2-1" id="toc-bad-dockerfile-2-1" class="nav-link" data-scroll-target="#bad-dockerfile-2-1"><span class="header-section-number">9.8</span> Bad Dockerfile 2:</a></li>
-  <li><a href="#bad-dockerfile-3-1" id="toc-bad-dockerfile-3-1" class="nav-link" data-scroll-target="#bad-dockerfile-3-1"><span class="header-section-number">9.9</span> Bad Dockerfile 3:</a></li>
-  <li><a href="#spoilers-hints-for-each-of-the-dockerfiles" id="toc-spoilers-hints-for-each-of-the-dockerfiles" class="nav-link" data-scroll-target="#spoilers-hints-for-each-of-the-dockerfiles"><span class="header-section-number">9.10</span> SPOILERS: Hints for each of the dockerfiles</a></li>
+  <li>
+<a href="#activity-instructions" id="toc-activity-instructions" class="nav-link" data-scroll-target="#activity-instructions"><span class="header-section-number">9.1</span> Activity Instructions</a>
+  <ul class="collapse">
+<li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker"><span class="header-section-number">9.1.1</span> Docker</a></li>
+  <li><a href="#podman" id="toc-podman" class="nav-link" data-scroll-target="#podman"><span class="header-section-number">9.1.2</span> Podman</a></li>
+  </ul>
+</li>
+  <li><a href="#spoilers-hints-for-each-of-the-dockerfiles" id="toc-spoilers-hints-for-each-of-the-dockerfiles" class="nav-link" data-scroll-target="#spoilers-hints-for-each-of-the-dockerfiles"><span class="header-section-number">9.2</span> SPOILERS: Hints for each of the dockerfiles</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/Containers_for_Scientists/edit/main/09-troubleshooting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -257,34 +255,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section><section id="activity-instructions" class="level2 panelset" data-number="9.1"><h2 class="panelset anchored" data-number="9.1" data-anchor-id="activity-instructions">
 <span class="header-section-number">9.1</span> Activity Instructions</h2>
-</section><section id="docker" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="docker">
-<span class="header-section-number">9.2</span> Docker</h2>
+<section id="docker" class="level3" data-number="9.1.1"><h3 data-number="9.1.1" class="anchored" data-anchor-id="docker">
+<span class="header-section-number">9.1.1</span> Docker</h3>
 <p>There are three Dockerfiles in this folder. Each has something slightly wrong with it.</p>
 <p>Use the following <code>docker build</code> commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.</p>
-</section><section id="bad-dockerfile-1" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="bad-dockerfile-1">
-<span class="header-section-number">9.3</span> Bad Dockerfile 1:</h2>
+<section id="bad-dockerfile-1" class="level4" data-number="9.1.1.1"><h4 data-number="9.1.1.1" class="anchored" data-anchor-id="bad-dockerfile-1">
+<span class="header-section-number">9.1.1.1</span> Bad Dockerfile 1:</h4>
 <pre><code>docker build -f Bad_Dockerfile_1 .</code></pre>
-</section><section id="bad-dockerfile-2" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="bad-dockerfile-2">
-<span class="header-section-number">9.4</span> Bad Dockerfile 2:</h2>
+</section><section id="bad-dockerfile-2" class="level4" data-number="9.1.1.2"><h4 data-number="9.1.1.2" class="anchored" data-anchor-id="bad-dockerfile-2">
+<span class="header-section-number">9.1.1.2</span> Bad Dockerfile 2:</h4>
 <pre><code>docker build -f Bad_Dockerfile_2 .</code></pre>
-</section><section id="bad-dockerfile-3" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="bad-dockerfile-3">
-<span class="header-section-number">9.5</span> Bad Dockerfile 3:</h2>
+</section><section id="bad-dockerfile-3" class="level4" data-number="9.1.1.3"><h4 data-number="9.1.1.3" class="anchored" data-anchor-id="bad-dockerfile-3">
+<span class="header-section-number">9.1.1.3</span> Bad Dockerfile 3:</h4>
 <pre><code>docker build -f Bad_Dockerfile_3 .</code></pre>
-</section><section id="podman" class="level2" data-number="9.6"><h2 data-number="9.6" class="anchored" data-anchor-id="podman">
-<span class="header-section-number">9.6</span> Podman</h2>
+</section></section><section id="podman" class="level3" data-number="9.1.2"><h3 data-number="9.1.2" class="anchored" data-anchor-id="podman">
+<span class="header-section-number">9.1.2</span> Podman</h3>
 <p>There are three Dockerfiles in this folder. Each has something slightly wrong with it.</p>
 <p>Use the following <code>podman build</code> commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.</p>
-</section><section id="bad-dockerfile-1-1" class="level2" data-number="9.7"><h2 data-number="9.7" class="anchored" data-anchor-id="bad-dockerfile-1-1">
-<span class="header-section-number">9.7</span> Bad Dockerfile 1:</h2>
+<section id="bad-dockerfile-1-1" class="level4" data-number="9.1.2.1"><h4 data-number="9.1.2.1" class="anchored" data-anchor-id="bad-dockerfile-1-1">
+<span class="header-section-number">9.1.2.1</span> Bad Dockerfile 1:</h4>
 <pre><code>podman build -f Bad_Dockerfile_1 .</code></pre>
-</section><section id="bad-dockerfile-2-1" class="level2" data-number="9.8"><h2 data-number="9.8" class="anchored" data-anchor-id="bad-dockerfile-2-1">
-<span class="header-section-number">9.8</span> Bad Dockerfile 2:</h2>
+</section><section id="bad-dockerfile-2-1" class="level4" data-number="9.1.2.2"><h4 data-number="9.1.2.2" class="anchored" data-anchor-id="bad-dockerfile-2-1">
+<span class="header-section-number">9.1.2.2</span> Bad Dockerfile 2:</h4>
 <pre><code>podman build -f Bad_Dockerfile_2 .</code></pre>
-</section><section id="bad-dockerfile-3-1" class="level2" data-number="9.9"><h2 data-number="9.9" class="anchored" data-anchor-id="bad-dockerfile-3-1">
-<span class="header-section-number">9.9</span> Bad Dockerfile 3:</h2>
+</section><section id="bad-dockerfile-3-1" class="level4" data-number="9.1.2.3"><h4 data-number="9.1.2.3" class="anchored" data-anchor-id="bad-dockerfile-3-1">
+<span class="header-section-number">9.1.2.3</span> Bad Dockerfile 3:</h4>
 <pre><code>podman build -f Bad_Dockerfile_3 .</code></pre>
-</section><section id="spoilers-hints-for-each-of-the-dockerfiles" class="level2" data-number="9.10"><h2 data-number="9.10" class="anchored" data-anchor-id="spoilers-hints-for-each-of-the-dockerfiles">
-<span class="header-section-number">9.10</span> SPOILERS: Hints for each of the dockerfiles</h2>
+</section></section></section><section id="spoilers-hints-for-each-of-the-dockerfiles" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="spoilers-hints-for-each-of-the-dockerfiles">
+<span class="header-section-number">9.2</span> SPOILERS: Hints for each of the dockerfiles</h2>
 <details><summary>
 Bad_Dockerfile_1 hint
 </summary>
