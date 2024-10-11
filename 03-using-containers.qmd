@@ -1,7 +1,7 @@
 
 # Using Containers
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_833")
 ```
 
@@ -26,7 +26,7 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 <input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).    
 <input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.   
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_686")
 ```
 
@@ -35,7 +35,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 <input type="checkbox"> Put this file on your desktop so it is easily findable.  
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
 ```
 
@@ -44,7 +44,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 **This activity is built so that you will encounter errors that this guide will work you through!**
 Most common container stumbling block is understanding the idea that containers are isolated from your computer
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_700")
 ```
 
@@ -61,7 +61,7 @@ We will encounter both an error of when we don't have a file we need AND an erro
 We need to get the Docker **image** we want to use. We do this by "pulling" it.
 Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer).
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_732")
 ```
 
@@ -72,7 +72,7 @@ docker pull cansav09/practice-image:1
 ```
 
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_745")
 ```
 
@@ -82,7 +82,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 <input type="checkbox"> To see what images we have we can run `docker image ls`.  
 <input type="checkbox"> We should see `cansav09/practice-image:1` show up in the output.  
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_752")
 ```
 
@@ -90,7 +90,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do `docker run`
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_760")
 ```
 
@@ -105,20 +105,20 @@ docker run cansav09/practice-image:1
 docker ps
 ```
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_775")
 ```
 
 Pat yourself on the back! You have a running container!
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_786")
 ```
 
 
 What can we do with running containers?
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_791")
 ```
 
@@ -130,7 +130,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 docker exec -it <PUT_CONTAINER_ID_HERE> bash
 ```
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_803")
 ```
 
@@ -167,7 +167,7 @@ root@e7b19cfb4461:/#
 docker exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
 ```
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_812")
 ```
 
@@ -180,7 +180,7 @@ bash: run_analysis.sh: No such file or directory
 **Question: Does our container have all of the same files that our computer has?**
 
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_833")
 ```
 
@@ -201,20 +201,20 @@ podman machine start
 <input type="checkbox"> Put this file on your desktop so it is easily findable.  
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
 ```
 
 **This activity is built so that you will encounter errors that this guide will work you through!**
 Most common container stumbling block is understanding the idea that containers are isolated from your computer
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_700")
 ```
 
 Which means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_713")
 ```
 
@@ -225,7 +225,7 @@ We will encounter both an error of when we don't have a file we need AND an erro
 We need to get the **image** we want to use. We do this by "pulling" it.
 Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer).
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_732") 
 ```
 
@@ -237,7 +237,7 @@ podman pull cansav09/practice-image:1
 
 If this command is running properly you should see some output that looks like this: 
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_0") 
 ```
 
@@ -254,7 +254,7 @@ docker.io/cansav09/practice-image  1   91619ca583b8  1 month ago  2.39 GB
 
 Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do `podman run`
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_760")
 ```
 
@@ -266,7 +266,7 @@ podman run cansav09/practice-image:1
 
 If this command has run properly it will return something like this: 
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_9") 
 ```
 
@@ -288,13 +288,13 @@ e7b19cfb4461  docker.io/cansav09/practice-image:1  /init       2 minutes ago  Up
 
 Pat yourself on the back! You have a running container!
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_786")
 ```
 
 What can we do with running containers?
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_791")
 ```
 
@@ -350,7 +350,7 @@ bash: run_analysis.sh: No such file or directory
 **Question: Does our container have all of the same files that our computer has?**
 
 
-```{r, out.width = "65%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_833")
 ```
 
