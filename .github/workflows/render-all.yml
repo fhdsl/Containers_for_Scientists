@@ -8,7 +8,8 @@ on:
   push:
     branches: [ main, staging ]
     paths:
-      - 'qmd$'
+      - *.qmd
+      - *.Rmd
       - assets/*
       - quizzes/*
 
