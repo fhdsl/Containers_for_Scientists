@@ -328,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
 <p>While there are lots of container registry options, for the purposes of this tutorial, we’ll use Dockerhub. Dockerhub is one of the first container registries and still remains one of the largest. For most purposes, using Dockerhub will be just fine.</p>
 </section><section id="activity-instructions" class="level2" data-number="7.8"><h2 data-number="7.8" class="anchored" data-anchor-id="activity-instructions">
 <span class="header-section-number">7.8</span> Activity Instructions</h2>
-<p><input type="checkbox"> First you’ll need to make sure you have a dockerhub account. <input type="checkbox"> Go to the website and login or create an account https://hub.docker.com/ <input type="checkbox"> Next, locally you’ll need to log into your account.</p>
+<p><input type="checkbox"> First you’ll need to make sure you have a dockerhub account.<br><input type="checkbox"> Go to the website and login or create an account https://hub.docker.com/<br><input type="checkbox"> Next, locally you’ll need to log into your account.</p>
 <pre><code>docker login -u your_user_name</code></pre>
 <div class="cell">
 <div class="cell-output-display">
@@ -338,7 +338,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p><input type="checkbox"> It will ask for your password. Enter that password. <input type="checkbox"> If you’ve logged in successfully, now we need to prep our image by putting our username in the name. We can do that by using the <code>tag</code> command. But replace <code>&lt;your_username&gt;</code> with whatever your Dockerhub username is.</p>
+<p><input type="checkbox"> It will ask for your password. Enter that password.<br><input type="checkbox"> If you’ve logged in successfully, now we need to prep our image by putting our username in the name.<br>
+We can do that by using the <code>tag</code> command. But replace <code>&lt;your_username&gt;</code> with whatever your Dockerhub username is.</p>
 <pre><code>docker tag cool-new-image:2 &lt;your_username&gt;/cool-new-image:2</code></pre>
 <div class="cell">
 <div class="cell-output-display">
