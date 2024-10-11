@@ -117,9 +117,9 @@ While there are lots of container registry options, for the purposes of this tut
 
 ## Activity Instructions 
 
-<input type="checkbox"> First you'll need to make sure you have a dockerhub account.
-<input type="checkbox"> Go to the website and login or create an account https://hub.docker.com/
-<input type="checkbox"> Next, locally you'll need to log into your account.
+<input type="checkbox"> First you'll need to make sure you have a dockerhub account.  
+<input type="checkbox"> Go to the website and login or create an account https://hub.docker.com/  
+<input type="checkbox"> Next, locally you'll need to log into your account.  
 
 ```
 docker login -u your_user_name
@@ -130,9 +130,9 @@ docker login -u your_user_name
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_523") 
 ```
 
-<input type="checkbox"> It will ask for your password. Enter that password.
-<input type="checkbox"> If you've logged in successfully, now we need to prep our image by putting our username in the name.
-We can do that by using the `tag` command. But replace `<your_username>` with whatever your Dockerhub username is. 
+<input type="checkbox"> It will ask for your password. Enter that password.  
+<input type="checkbox"> If you've logged in successfully, now we need to prep our image by putting our username in the name.  
+We can do that by using the `tag` command. But replace `<your_username>` with whatever your Dockerhub username is.   
 
 ```
 docker tag cool-new-image:2 <your_username>/cool-new-image:2
@@ -142,7 +142,7 @@ docker tag cool-new-image:2 <your_username>/cool-new-image:2
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_530") 
 ```
 
-<input type="checkbox"> Now we can push it to our repository.
+<input type="checkbox"> Now we can push it to our repository.  
 ```
 docker <your_username> push username/cool-new-image:2
 ```
