@@ -42,19 +42,16 @@ The trick is to find a base image that has most of the software things you need,
 
 _There are (at least) two strategies you can take_:
 
-- Start with the smallest images possible and add only what you need for the specific case you are working on.
-- Make more than one docker image for each use case you have. Don't make one really large docker image you use for everything, that will take forever to pull from the internet or forever to build.
+- Start with the smallest images possible and add only what you need for the specific case you are working on.  
+- Make more than one docker image for each use case you have. Don't make one really large docker image you use for everything, that will take forever to pull from the internet or forever to build.  
 
 
 Let's take a look at a Dockerfile.
 
 #### Step 1: Use any file editor to open up the Dockerfile
-Usually double clicking will work.
-
-#### Step 2: Inspect the Dockerfile
 <input type="checkbox"> Double click it and open the file to take a look at it with any default text editor.
 
-#### Step 3: Change your working directory to activity-files
+#### Step 2: Change your working directory to activity-files
 
 <input type="checkbox">  Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly.
 
@@ -66,7 +63,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 ## {.panelset}
 
 ### Docker
-#### Step 4: Build the image from the Dockerfile
+#### Step 3: Build the image from the Dockerfile
 
 <input type="checkbox">  With `activity-files` as your working directory, run the following:
 
@@ -171,7 +168,7 @@ docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 
 ### Podman
 
-#### Step 4: Build the image from the Dockerfile
+#### Step 3: Build the image from the Dockerfile
 
 <input type="checkbox">  With `activity-files` as your working directory, run the following:
 
