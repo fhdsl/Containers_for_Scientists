@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <p><input type="checkbox"> Navigate to the folder that you would like to work in.</p>
 <p><input type="checkbox"> Use this command:</p>
 <pre><code>docker run --rm -v $PWD:/home/jovyan/work -e JUPYTER_ENABLE_LAB=yes -p 8888:8888 jhudsl/reproducible-python</code></pre>
-<p><input type="checkbox"> Copy and paste the output URL to your favorite browser</p>
+<p><input type="checkbox"> Copy and paste the output URL to your favorite browser.</p>
 <p><input type="checkbox"> Develop to your heart’s content as you normally would with Jupyter notebooks.</p>
 <p>If you need packages that aren’t here, now you know how to take the Dockerfile and modify it. <a href="https://github.com/jhudsl/reproducible-python-example/tree/main/docker">Here’s the dockerfile and associated GitHub repo for this image</a>.</p>
 </section><section id="rstudio-analysis-ide-example" class="level3" data-number="10.1.2"><h3 data-number="10.1.2" class="anchored" data-anchor-id="rstudio-analysis-ide-example">
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <p><input type="checkbox"> Navigate to the folder that you would like to work in.</p>
 <p><input type="checkbox"> Use this command but replace the <code>password</code> part with your own password.</p>
 <pre><code>docker run -it -v $PWD:/home/rstudio -e PASSWORD=password -p 8787:8787 jhudsl/reproducible-r</code></pre>
-<p><input type="checkbox"> Then copy and paste <code>localhost:8787</code> in your internet browser <input type="checkbox"> On this page, your username will be <code>rstudio</code> and your password will be whatever you specified. <input type="checkbox"> Develop to your heart’s content in this RStudio IDE normally would.</p>
+<p><input type="checkbox"> Then copy and paste <code>localhost:8787</code> in your internet browser.<br><input type="checkbox"> On this page, your username will be <code>rstudio</code> and your password will be whatever you specified.<br><input type="checkbox"> Develop to your heart’s content in this RStudio IDE normally would.</p>
 <p>If you need packages that aren’t here, now you know how to take the Dockerfile and modify it. <a href="https://github.com/jhudsl/reproducible-r-example/tree/main/docker">Here’s the dockerfile and associated GitHub repo for this image</a>.</p>
 
 
