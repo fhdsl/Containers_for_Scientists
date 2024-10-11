@@ -1,21 +1,13 @@
-<<<<<<< HEAD
 chapt_title	data_level	url	img_path
-Introduction to the Course	1	http://hutchdatascience.org/OTTR_Quarto/intro.html	resources/chapt_screen_images/intro.png
-New Chapter	2	http://hutchdatascience.org/OTTR_Quarto/first-section-new-chapter.html	resources/chapt_screen_images/first-section-new-chapter.png
-New Chapter	3	http://hutchdatascience.org/OTTR_Quarto/second-section-new-chapter.html	resources/chapt_screen_images/second-section-new-chapter.png
-New Chapter	4	http://hutchdatascience.org/OTTR_Quarto/third-section-new-chapter.html	resources/chapt_screen_images/third-section-new-chapter.png
-Conclusion	5	http://hutchdatascience.org/OTTR_Quarto/conclusion.html	resources/chapt_screen_images/conclusion.png
-=======
-url	chapt_title	img_path
-http://hutchdatascience.org/Containers_for_Scientists/index.html	About this Course	resources/chapt_screen_images/index.png
-http://hutchdatascience.org/Containers_for_Scientists/introduction.html	1 Introduction	resources/chapt_screen_images/introduction.png
-http://hutchdatascience.org/Containers_for_Scientists/why-containers.html	2 Why Containers?	resources/chapt_screen_images/why-containers.png
-http://hutchdatascience.org/Containers_for_Scientists/using-containers.html	3 Using Containers	resources/chapt_screen_images/using-containers.png
-http://hutchdatascience.org/Containers_for_Scientists/modifying-containers.html	4 Modifying Containers	resources/chapt_screen_images/modifying-containers.png
-http://hutchdatascience.org/Containers_for_Scientists/sharing-containers.html	5 Sharing Containers	resources/chapt_screen_images/sharing-containers.png
-http://hutchdatascience.org/Containers_for_Scientists/cleaning-up.html	6 Cleaning Up	resources/chapt_screen_images/cleaning-up.png
-http://hutchdatascience.org/Containers_for_Scientists/troubleshooting-tips.html	7 Troubleshooting Tips	resources/chapt_screen_images/troubleshooting-tips.png
-http://hutchdatascience.org/Containers_for_Scientists/advanced-container-techniques.html	8 Advanced Container Techniques	resources/chapt_screen_images/advanced-container-techniques.png
-http://hutchdatascience.org/Containers_for_Scientists/about-the-authors.html	About the Authors	resources/chapt_screen_images/about-the-authors.png
-http://hutchdatascience.org/Containers_for_Scientists/references.html	9 References	resources/chapt_screen_images/references.png
->>>>>>> origin/main
+Introduction	1	http://hutchdatascience.org/Containers_for_Scientists/01-intro.html	resources/chapt_screen_images/01-intro.png
+Why Containers?	2	http://hutchdatascience.org/Containers_for_Scientists/02-why-containers.html	resources/chapt_screen_images/02-why-containers.png
+Using Containers	3	http://hutchdatascience.org/Containers_for_Scientists/03-using-containers.html	resources/chapt_screen_images/03-using-containers.png
+Using Volumes	4	http://hutchdatascience.org/Containers_for_Scientists/04-using-volumes.html	resources/chapt_screen_images/04-using-volumes.png
+Modifying Containers	5	http://hutchdatascience.org/Containers_for_Scientists/05-modifying-containers.html	resources/chapt_screen_images/05-modifying-containers.png
+Writing Dockerfiles	6	http://hutchdatascience.org/Containers_for_Scientists/06-writing-dockerfiles.html	resources/chapt_screen_images/06-writing-dockerfiles.png
+Best practices for sharing images	7	http://hutchdatascience.org/Containers_for_Scientists/07-sharing-images.html	resources/chapt_screen_images/07-sharing-images.png
+Cleaning Up	8	http://hutchdatascience.org/Containers_for_Scientists/08-cleaning-up.html	resources/chapt_screen_images/08-cleaning-up.png
+Troubleshooting Tips	9	http://hutchdatascience.org/Containers_for_Scientists/09-troubleshooting.html	resources/chapt_screen_images/09-troubleshooting.png
+Using Containers as your Development Space	10	http://hutchdatascience.org/Containers_for_Scientists/10-IDE-from-containers.html	resources/chapt_screen_images/10-IDE-from-containers.png
+Advanced Container Techniques	11	http://hutchdatascience.org/Containers_for_Scientists/11-advanced-techniques.html	resources/chapt_screen_images/11-advanced-techniques.png
+References	12	http://hutchdatascience.org/Containers_for_Scientists/References.html	resources/chapt_screen_images/References.png
