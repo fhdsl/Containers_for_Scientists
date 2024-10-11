@@ -1,0 +1,47 @@
+
+# Advanced Container Techniques
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_857") 
+```
+
+```{r panel-setup, include = FALSE}
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset_tabs(font_family = "inherit")
+```
+
+
+## GitHub Actions to manage your containers 
+
+GitHub Actions pairs really well with images [We encourage you to take a look at our course on GitHub Actions for science!](https://hutchdatascience.org/GitHub_Automation_for_Scientists/)
+
+GitHub Actions can use Docker containers really seamlessly to automate things for you. 
+GitHub Actions can also be a way for you to manage your Docker images and Dockerfiles. 
+
+See an example of one we actually maintain here: https://github.com/jhudsl/ottr-docker 
+
+
+## Personal Access Tokens 
+
+To give GitHub Actions or other items access to your Dockerhub you will need to use Personal access Tokens. 
+As with most Personal Access Tokens, be very careful to not share these or post them anywhere publicly!
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_647") 
+```
+
+## Docker compose 
+
+In this course, we introduced you to docker run. But what if you have a ton of arguments to specify and things that you can't do from a single command? Enter docker compose. This allows you to get very fancy with your docker containers and specify a bunch of things in your yaml file. 
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_655") 
+```
+
+## What's Kubernetes
+
+[Kubernetes is a way you can use a bunch of containers at once](https://kubernetes.io/docs/concepts/overview/). It's mostly not needed for scientific analyses but now you know about it. 
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_660") 
+```

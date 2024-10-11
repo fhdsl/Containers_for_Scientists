@@ -12,12 +12,12 @@ spell-check: yes
 style-code: yes
 # Test build the docker image if any docker-relevant files have been changed
 docker-test: no
-# Should URLs be tested periodically?
-url-check-periodically: yes
+# Do we need to make the book txt file automatically?
+make_book_txt: yes
 
 ##### Renderings run upon merge to main branch #####
 # Rendering each platform's content
-render-website: rmd
+render-website: quarto
 render-leanpub: yes
 render-coursera: no
 
@@ -26,5 +26,5 @@ render-coursera: no
 make-book-txt: yes
 
 # What docker image should be used for rendering?
-# The default is jhudsl/base_ottr:main
+# The default is jhudsl/base_ottr:latest
 rendering-docker-image: 'jhudsl/base_ottr:main'

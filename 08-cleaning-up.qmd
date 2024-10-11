@@ -1,0 +1,80 @@
+
+# Cleaning Up
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_857") 
+```
+
+```{r panel-setup, include = FALSE}
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset_tabs(font_family = "inherit")
+```
+
+Now having gone through some activities in this course, you may find you're acquiring quite a list of images and containers. 
+
+```{r, out.width = "65%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1521") 
+```
+
+This is okay for a time, but note that these containers and images do take up space on your computer. If you have too many running and too many stored, you'll run out of space for other stuff on your computer and it might start to get slow or otherwise unhappy with you. 
+
+## Activity Instructions {.panelset}
+
+## Docker 
+
+To remove a container we can run:
+```
+docker rm <PUT_CONTAINER_ID_HERE> 
+```
+This means you'll need to grab the container ID, either from Docker desktop or by running `docker ps`.
+
+Note! **If you try to remove an image that is currently being used to run a container you won't be allowed to!** So stop and remove containers first, then you can remove the image. 
+
+
+**Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. **
+
+#### Remove non-running containers
+```
+docker rm $(docker ps -a -q)
+```
+#### Stop all containers
+```
+docker stop $(docker ps -a -q)
+```
+#### Remove all images
+```
+docker rmi -f $(docker images -q)
+```
+
+## Podman
+
+To remove a container we can run 
+```
+docker rm <PUT_CONTAINER_ID_HERE> 
+```
+This means you'll need to grab the container ID by running `podman ps`.
+
+To remove an image we can run 
+```
+docker rmi <PUT_IMAGE_NAME_OR_ID_HERE> 
+```
+This means you'll need to grab the container ID, either from Docker desktop or by running `docker image ls`.
+
+Note! If you try to remove an image that is currently being used to run a container you won't be allowed to! So stop and remove containers first, then you can remove the image. 
+
+
+**Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. **
+
+#### Remove all non-running containers
+```
+podman rm $(podman ps -a -q)
+```
+#### Stop all containers
+```
+podman stop $(podman ps -a -q)
+```
+#### Remove all images
+```
+podman rmi -f $(podman images -q)
+```
+

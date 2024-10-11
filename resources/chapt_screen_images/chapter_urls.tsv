@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+chapt_title	data_level	url	img_path
+Introduction to the Course	1	http://hutchdatascience.org/OTTR_Quarto/intro.html	resources/chapt_screen_images/intro.png
+New Chapter	2	http://hutchdatascience.org/OTTR_Quarto/first-section-new-chapter.html	resources/chapt_screen_images/first-section-new-chapter.png
+New Chapter	3	http://hutchdatascience.org/OTTR_Quarto/second-section-new-chapter.html	resources/chapt_screen_images/second-section-new-chapter.png
+New Chapter	4	http://hutchdatascience.org/OTTR_Quarto/third-section-new-chapter.html	resources/chapt_screen_images/third-section-new-chapter.png
+Conclusion	5	http://hutchdatascience.org/OTTR_Quarto/conclusion.html	resources/chapt_screen_images/conclusion.png
+=======
 url	chapt_title	img_path
 http://hutchdatascience.org/Containers_for_Scientists/index.html	About this Course	resources/chapt_screen_images/index.png
 http://hutchdatascience.org/Containers_for_Scientists/introduction.html	1 Introduction	resources/chapt_screen_images/introduction.png
@@ -10,3 +18,4 @@ http://hutchdatascience.org/Containers_for_Scientists/troubleshooting-tips.html	
 http://hutchdatascience.org/Containers_for_Scientists/advanced-container-techniques.html	8 Advanced Container Techniques	resources/chapt_screen_images/advanced-container-techniques.png
 http://hutchdatascience.org/Containers_for_Scientists/about-the-authors.html	About the Authors	resources/chapt_screen_images/about-the-authors.png
 http://hutchdatascience.org/Containers_for_Scientists/references.html	9 References	resources/chapt_screen_images/references.png
+>>>>>>> origin/main

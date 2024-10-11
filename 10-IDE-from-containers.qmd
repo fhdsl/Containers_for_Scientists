@@ -1,0 +1,70 @@
+
+# Using Containers as your Development Space
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_872") 
+```
+
+```{r panel-setup, include = FALSE}
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset_tabs(font_family = "inherit")
+```
+
+A very powerful and approachable way to use containers for science is to just use them to develop from. 
+
+In previous chapters we discussed how to attach volumes. So you know how you can access your files from a container. But perhaps you don't want to work completely from command line and would like a Integrated Development Environment (IDE) to work from. 
+
+If you use RStudio or Jupyter notebooks, you will really like this chapter. 
+
+Docker has a `port` option that allows you to work from the container with an IDE if the image you are using has it installed. 
+
+Here's an example of RStudio running from a container and being seen from a Docker port: 
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_626") 
+```
+
+Here's an example of Jupyter running from a container and being seen from a Docker port: 
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_39") 
+```
+
+If this is of interest to you, we'll walk you through how to do this in this chapter!
+
+## Activity Instructions {.panelset}
+
+### Jupyter analysis IDE example:
+
+<input type="checkbox"> Navigate to the folder that you would like to work in. 
+
+<input type="checkbox"> Use this command: 
+
+```
+docker run --rm -v $PWD:/home/jovyan/work -e JUPYTER_ENABLE_LAB=yes -p 8888:8888 jhudsl/reproducible-python
+```
+
+<input type="checkbox"> Copy and paste the output URL to your favorite browser
+
+<input type="checkbox"> Develop to your heart's content as you normally would with Jupyter notebooks. 
+
+If you need packages that aren't here, now you know how to take the Dockerfile and modify it. [Here's the dockerfile and associated GitHub repo for this image](https://github.com/jhudsl/reproducible-python-example/tree/main/docker).
+
+
+### RStudio analysis IDE example:
+
+<input type="checkbox"> Navigate to the folder that you would like to work in. 
+
+<input type="checkbox"> Use this command but replace the `password` part with your own password. 
+
+```
+docker run -it -v $PWD:/home/rstudio -e PASSWORD=password -p 8787:8787 jhudsl/reproducible-r
+```
+
+<input type="checkbox"> Then copy and paste `localhost:8787` in your internet browser
+<input type="checkbox"> On this page, your username will be `rstudio` and your password will be whatever you specified. 
+<input type="checkbox"> Develop to your heart's content in this RStudio IDE normally would.
+
+If you need packages that aren't here, now you know how to take the Dockerfile and modify it. [Here's the dockerfile and associated GitHub repo for this image](https://github.com/jhudsl/reproducible-r-example/tree/main/docker).
+
+
