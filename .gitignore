@@ -11,3 +11,5 @@ docker/git_token.txt
 docs/*
 
 /.quarto/
+
+docs/
