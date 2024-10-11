@@ -260,18 +260,16 @@ ul.task-list li input[type="checkbox"] {
 <p>The trick is to find a base image that has most of the software things you need, but not extra stuff you don’t need. You want to make your image have all the stuff it needs but also be as small as possible. IMages that are overly big are harder to deal with and to download.</p>
 <p><em>There are (at least) two strategies you can take</em>:</p>
 <ul>
-<li>Start with the smallest images possible and add only what you need for the specific case you are working on.</li>
+<li>Start with the smallest images possible and add only what you need for the specific case you are working on.<br>
+</li>
 <li>Make more than one docker image for each use case you have. Don’t make one really large docker image you use for everything, that will take forever to pull from the internet or forever to build.</li>
 </ul>
 <p>Let’s take a look at a Dockerfile.</p>
 <section id="step-1-use-any-file-editor-to-open-up-the-dockerfile" class="level4" data-number="5.1.0.1"><h4 data-number="5.1.0.1" class="anchored" data-anchor-id="step-1-use-any-file-editor-to-open-up-the-dockerfile">
 <span class="header-section-number">5.1.0.1</span> Step 1: Use any file editor to open up the Dockerfile</h4>
-<p>Usually double clicking will work.</p>
-</section><section id="step-2-inspect-the-dockerfile" class="level4" data-number="5.1.0.2"><h4 data-number="5.1.0.2" class="anchored" data-anchor-id="step-2-inspect-the-dockerfile">
-<span class="header-section-number">5.1.0.2</span> Step 2: Inspect the Dockerfile</h4>
 <p><input type="checkbox"> Double click it and open the file to take a look at it with any default text editor.</p>
-</section><section id="step-3-change-your-working-directory-to-activity-files" class="level4" data-number="5.1.0.3"><h4 data-number="5.1.0.3" class="anchored" data-anchor-id="step-3-change-your-working-directory-to-activity-files">
-<span class="header-section-number">5.1.0.3</span> Step 3: Change your working directory to activity-files</h4>
+</section><section id="step-2-change-your-working-directory-to-activity-files" class="level4" data-number="5.1.0.2"><h4 data-number="5.1.0.2" class="anchored" data-anchor-id="step-2-change-your-working-directory-to-activity-files">
+<span class="header-section-number">5.1.0.2</span> Step 2: Change your working directory to activity-files</h4>
 <p><input type="checkbox"> Now in your Command Prompt or Terminal navigate to the <code>activity-files</code> folder. Use <code>cd</code> and don’t forget to use tabs so you don’t have to spell everything exactly.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -285,8 +283,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="header-section-number">5.2</span> </h2>
 <section id="docker" class="level3" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" data-anchor-id="docker">
 <span class="header-section-number">5.2.1</span> Docker</h3>
-<section id="step-4-build-the-image-from-the-dockerfile" class="level4" data-number="5.2.1.1"><h4 data-number="5.2.1.1" class="anchored" data-anchor-id="step-4-build-the-image-from-the-dockerfile">
-<span class="header-section-number">5.2.1.1</span> Step 4: Build the image from the Dockerfile</h4>
+<section id="step-3-build-the-image-from-the-dockerfile" class="level4" data-number="5.2.1.1"><h4 data-number="5.2.1.1" class="anchored" data-anchor-id="step-3-build-the-image-from-the-dockerfile">
+<span class="header-section-number">5.2.1.1</span> Step 3: Build the image from the Dockerfile</h4>
 <p><input type="checkbox"> With <code>activity-files</code> as your working directory, run the following:</p>
 <pre><code>docker build . -t cool-new-image</code></pre>
 <p>Optionally you could call this from somewhere else and use the <code>-f</code> option to specify the file path to the Dockerfile. But in the scenario above it just grabs the Dockerfile in our working directory.</p>
@@ -370,8 +368,8 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 </section></section><section id="podman" class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" data-anchor-id="podman">
 <span class="header-section-number">5.2.2</span> Podman</h3>
-<section id="step-4-build-the-image-from-the-dockerfile-1" class="level4" data-number="5.2.2.1"><h4 data-number="5.2.2.1" class="anchored" data-anchor-id="step-4-build-the-image-from-the-dockerfile-1">
-<span class="header-section-number">5.2.2.1</span> Step 4: Build the image from the Dockerfile</h4>
+<section id="step-3-build-the-image-from-the-dockerfile-1" class="level4" data-number="5.2.2.1"><h4 data-number="5.2.2.1" class="anchored" data-anchor-id="step-3-build-the-image-from-the-dockerfile-1">
+<span class="header-section-number">5.2.2.1</span> Step 3: Build the image from the Dockerfile</h4>
 <p><input type="checkbox"> With <code>activity-files</code> as your working directory, run the following:</p>
 <pre><code>podman build . -t cool-new-image</code></pre>
 <p>Optionally you could call this from somewhere else and use the <code>-f</code> option to specify the file path to the Dockerfile. But in the scenario above it just grabs the Dockerfile in our working directory.</p>
