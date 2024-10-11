@@ -248,7 +248,65 @@ podman run -v $PWD:/home cool-new-image:2
 podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
 
-
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1326") 
 ```
+
+
+## Essential Docker commands:
+
+Now that you're familiar with the basics of Dockerfiles, let's dive into some more 
+
+`FROM` is one of the [main commands that a Dockerfile can take as described by their documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
+
+Now you are also familiar with `CMD` which runs something when the container is built
+
+> **FROM** creates a layer from the another Docker image.
+> **CMD** specifies what command to run within the container.
+> **RUN** builds your application with make.
+> **COPY** adds files from your Docker client’s current directory.
+
+Next let's use `RUN` to add a package to our image.
+
+## Templates for adding packages!
+
+Starting off with your example Dockerfile, we will practice adding another package and re-build the docker image with a new package.
+
+**Note** that spacing is important as well as having a `\` at the end of each line if the command is continuing.
+
+To add R packages from CRAN, you can use this kind of format:
+```
+RUN Rscript -e  "install.packages( \
+    c('BiocManager', \
+      'R.utils', \
+      'newpackagename'))"
+```
+
+To add an R package from Bioconductor, you can follow this kind of format:
+
+```
+RUN Rscript -e "options(warn = 2); BiocManager::install( \
+  c('limma', \
+    'newpackagename')
+
+```
+
+To add a **Python package using pip**, you will need to add pip3 to install Python packages using this format. But first you'll need to make sure you have pip installed using:
+
+Install pip:
+```
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-pip
+```
+
+Then you can use pip install to install packages
+```  
+RUN pip3 install \
+    "somepackage==0.1.0"
+```
+
+There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.
+
+To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their `RUN` command. Then try to re-build your Docker image with that added `RUN` command and see if it builds successfully.
+
+And lastly, make sure that whatever changes you make to your Dockerfile, that you add it to your GitHub repository!

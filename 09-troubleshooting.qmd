@@ -11,16 +11,9 @@ xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```
 
-Now you have the basics of using containers but this is really just the beginning! 
-As you continue to work with containers you will encounter errors and need to troubleshoot. 
-This table has a quick rundown on some of the most common errors: 
-
-```{r, out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_574") 
-```
-
 
 ### Tips for troubleshooting
+
 First remind yourself of the lessons we discussed in the activities in Chapter 3: 
 
 ```{r, out.width = "100%", echo = FALSE}
@@ -32,7 +25,17 @@ Then ask yourself the following questions:
 - Is there a file that I'm assuming the image/container has that it does not? 
 - Is there a software package I'm assuming the image/container has that it does not? 
 - Is there a typo?
+- Am I missing a dependency? Make sure the dependency's RUN steps come before the software package that needs it. 
+- If my docker image isn't building is it because 
+- Did the base image I'm pulling from change or a file I'm `COPY`ing change? Do I need to use --no-cache to force a rebuild of everything so the changes are seen? 
 
+Now you have the basics of using containers but this is really just the beginning! 
+As you continue to work with containers you will encounter errors and need to troubleshoot. 
+This table has a quick rundown on some of the most common errors: 
+
+```{r, out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_574") 
+```
 
 ## Activity Instructions {.panelset}
 
@@ -40,7 +43,7 @@ Then ask yourself the following questions:
 
 There are three Dockerfiles in this folder. Each has something slightly wrong with it.
 
-Use the following `docker build` commands and work to pinpoint the error and fix it.
+Use the following `docker build` commands and work to pinpoint the error and fix it using the tips we discussed in this chapter. 
 
 ## Bad Dockerfile 1:
 
@@ -63,7 +66,7 @@ docker build -f Bad_Dockerfile_3 .
 
 There are three Dockerfiles in this folder. Each has something slightly wrong with it.
 
-Use the following `podman build` commands and work to pinpoint the error and fix it.
+Use the following `podman build` commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.
 
 ## Bad Dockerfile 1:
 ```
