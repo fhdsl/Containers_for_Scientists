@@ -10,11 +10,12 @@ In the last chapter we saw that we were using a container but were unable to acc
 So how do we get files we need onto a container we are using?
 
 There are a few options:
-- We could run our container and within that we could download the files we need from online! For example we could `git clone` files from a repository or otherwise `wget` or `curl` files that are stored.
+
+- We could run our container and within that we could download the files we need from online! For example we could `git clone` files from a repository or otherwise `wget` or `curl` files that are stored.  
 - We could `COPY` a file on to the docker image when we are building it (more on this next chapter). But this strategy we want to be careful with for two reasons:
-     - We don't want our image to be too big. so this strategy can be fine if the file is small and something we know will always be needed for any use of the container
-     - We DEFINITELY need to avoid ever having protected data on images that are shared. NEVER put protected data on images that we are sharing -- more on this later too.
-- Lastly we can add a `volume` of files that are local to our computer. We'll dive into this strategy in this chapter. This will probably be a common way you'll use to get access to files on your container.
+     - We don't want our image to be too big. so this strategy can be fine if the file is small and something we know will always be needed for any use of the container.  
+     - We DEFINITELY need to avoid ever having protected data on images that are shared. NEVER put protected data on images that we are sharing -- more on this later too.  
+- Lastly we can add a `volume` of files that are local to our computer. We'll dive into this strategy in this chapter. This will probably be a common way you'll use to get access to files on your container.  
 
 
 What is a volume? A volume is a folder, likely from your computer, that can be accessed by your container.
