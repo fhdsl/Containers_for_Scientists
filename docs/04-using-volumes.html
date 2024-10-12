@@ -224,7 +224,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>In the last chapter we saw that we were using a container but were unable to access files we needed. We were trying to call the <code>run_analysis.sh</code> script but the isolation of containers that makes them useful also means that we didn’t have this script on our container.</p>
 <p>So how do we get files we need onto a container we are using?</p>
-<p>There are a few options: - We could run our container and within that we could download the files we need from online! For example we could <code>git clone</code> files from a repository or otherwise <code>wget</code> or <code>curl</code> files that are stored. - We could <code>COPY</code> a file on to the docker image when we are building it (more on this next chapter). But this strategy we want to be careful with for two reasons: - We don’t want our image to be too big. so this strategy can be fine if the file is small and something we know will always be needed for any use of the container - We DEFINITELY need to avoid ever having protected data on images that are shared. NEVER put protected data on images that we are sharing – more on this later too. - Lastly we can add a <code>volume</code> of files that are local to our computer. We’ll dive into this strategy in this chapter. This will probably be a common way you’ll use to get access to files on your container.</p>
+<p>There are a few options:</p>
+<ul>
+<li>We could run our container and within that we could download the files we need from online! For example we could <code>git clone</code> files from a repository or otherwise <code>wget</code> or <code>curl</code> files that are stored.<br>
+</li>
+<li>We could <code>COPY</code> a file on to the docker image when we are building it (more on this next chapter). But this strategy we want to be careful with for two reasons:
+<ul>
+<li>We don’t want our image to be too big. so this strategy can be fine if the file is small and something we know will always be needed for any use of the container.<br>
+</li>
+<li>We DEFINITELY need to avoid ever having protected data on images that are shared. NEVER put protected data on images that we are sharing – more on this later too.<br>
+</li>
+</ul>
+</li>
+<li>Lastly we can add a <code>volume</code> of files that are local to our computer. We’ll dive into this strategy in this chapter. This will probably be a common way you’ll use to get access to files on your container.</li>
+</ul>
 <p>What is a volume? A volume is a folder, likely from your computer, that can be accessed by your container.</p>
 <div class="cell">
 <div class="cell-output-display">
