@@ -1,0 +1,19 @@
+{
+  "hash": "0802cbcf9e162154cf7d0c5b38d78152",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n# Troubleshooting Tips\n\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2effc5b673e_0_862.png){width=100%}\n:::\n:::\n\n\n\n\n\n\n\n### Tips for troubleshooting\n\nFirst remind yourself of the lessons we discussed in the activities in Chapter 3: \n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_1326.png){width=100%}\n:::\n:::\n\n\n\n\nThen ask yourself the following questions:\n\n- Is there a file that I'm assuming the image/container has that it does not? \n- Is there a software package I'm assuming the image/container has that it does not? \n- Is there a typo?\n- Am I missing a dependency? Make sure the dependency's RUN steps come before the software package that needs it. \n- If my docker image isn't building is it because \n- Did the base image I'm pulling from change or a file I'm `COPY`ing change? Do I need to use --no-cache to force a rebuild of everything so the changes are seen? \n\nNow you have the basics of using containers but this is really just the beginning! \nAs you continue to work with containers you will encounter errors and need to troubleshoot. \nThis table has a quick rundown on some of the most common errors: \n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2effc5b673e_0_574.png){width=100%}\n:::\n:::\n\n\n\n\n## Activity Instructions {.panelset}\n\n### Docker \n\nThere are three Dockerfiles in this folder. Each has something slightly wrong with it.\n\nUse the following `docker build` commands and work to pinpoint the error and fix it using the tips we discussed in this chapter. \n\n#### Bad Dockerfile 1:\n\n```\ndocker build -f Bad_Dockerfile_1 .\n```\n\n#### Bad Dockerfile 2:\n```\ndocker build -f Bad_Dockerfile_2 .\n```\n\n#### Bad Dockerfile 3:\n```\ndocker build -f Bad_Dockerfile_3 .\n```\n\n\n### Podman \n\nThere are three Dockerfiles in this folder. Each has something slightly wrong with it.\n\nUse the following `podman build` commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.\n\n#### Bad Dockerfile 1:\n```\npodman build -f Bad_Dockerfile_1 .\n```\n\n#### Bad Dockerfile 2:\n```\npodman build -f Bad_Dockerfile_2 .\n```\n\n#### Bad Dockerfile 3:\n```\npodman build -f Bad_Dockerfile_3 .\n```\n\n## SPOILERS: Hints for each of the dockerfiles\n\n<details><summary> Bad_Dockerfile_1 hint </summary>\nCarefully look at the name of base image that is being pulled from.\n</details> \n\n<details><summary> Bad_Dockerfile_2 hint </summary>\nAre the commands that are referenced all things that are installed on the base image?\n</details> \n\n<details><summary> Bad_Dockerfile_3 hint </summary>\nIs the file that is being `COPY` over specified correctly? \n</details> \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"site_libs/panelset-0.3.0/panelset.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/panelset-0.3.0/panelset.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
