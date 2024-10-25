@@ -5,13 +5,13 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_833")
 ```
 
-Let's actually dive into to using containers. You can follow along with this activity with either Docker or Podman. We recommend using Docker but if for admin reasons you are unable to use Docker, Podman's commands work nearly identically to Docker.
+Let's actually dive into using containers. You can follow along with this activity with either Docker or Podman. We recommend using Docker but if for admin reasons you are unable to use Docker, Podman's commands work nearly identically to Docker.
 
 ### A note about "window juggling"
 
-When learning another software skill like containers, it sometimes means you'll have to keep track of more windows. We call this "Window Juggling". It's an overlooked skill but something you'll become more comfortable with.
+When learning another software skill like containers, it sometimes means you'll have to keep track of more than one window. We call this "Window Juggling". It's an overlooked skill but something you'll become more comfortable with.
 
-**IMPORTANT**: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because steps have to be done and in order!
+**IMPORTANT**: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because steps have to be done in order!
 
 ```{r panel-setup, include = FALSE}
 install.packages("xaringanExtra", repos = 'https://cloud.r-project.org')
@@ -22,9 +22,9 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ## Activity Instructions {.panelset}
 ### Docker
 #### Set up
-<input type="checkbox"> Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.
-<input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).
-<input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.
+<input type="checkbox"> Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.<br>
+<input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).<br>
+<input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.<br>
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_686")
