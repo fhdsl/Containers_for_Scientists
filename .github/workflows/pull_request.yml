@@ -4,8 +4,7 @@
 name: Pull Request
 
 on:
-  pull_request:
-    branches: [ main, staging ]
+  pull_request
 
 jobs:
 
