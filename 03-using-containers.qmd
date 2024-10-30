@@ -39,6 +39,8 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
 ```
 
+*ADD: Kate to add a brief description of the files that are here*
+
 #### Activity 1: Pull and run a Docker image
 
 **This activity is built so that you will encounter errors that this guide will work you through!**
