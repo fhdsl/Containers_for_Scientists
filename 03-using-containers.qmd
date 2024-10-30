@@ -31,7 +31,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 ```
 
 #### Get workshop files
-<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip<br>
+<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip <br>
 <input type="checkbox"> Put this file on your desktop so it is easily findable.<br>
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.<br>
 
