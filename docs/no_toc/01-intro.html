@@ -17,7 +17,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -101,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="target-audience" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="target-audience">
 <span class="header-section-number">1.1</span> Target Audience</h2>
-<p>The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research</p>
+<p>The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research.</p>
 <p><em>This course is written for individuals who:</em></p>
 <ul>
 <li>Are comfortable with bash and command line</li>
@@ -112,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="resources/images/resources/images/figure//1x0Cnk2Wcsg8HYkmXnXo_0PxmYCxAwzVrUQzb8DUDvTA_g1173f7473f7_0_0.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="resources/images/resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2942096bb40_0_787.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -123,20 +143,28 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="resources/images/resources/images/figure//1x0Cnk2Wcsg8HYkmXnXo_0PxmYCxAwzVrUQzb8DUDvTA_gd422c5de97_0_10.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="resources/images/resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2942096bb40_0_464.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>This course builds on concepts introduced in the <a href="https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html">Reproducibility</a> and <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/introduction.html">Advanced Reproducibility</a> courses from the ITCR Training Network. If you are unfamiliar with GitHub and/or do not have an account, we’d suggest you start with those courses by using the links above.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="resources/images/resources/images/figure//1x0Cnk2Wcsg8HYkmXnXo_0PxmYCxAwzVrUQzb8DUDvTA_g101867ebdaa_18_0.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 </section><section id="motivation" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="motivation">
 <span class="header-section-number">1.3</span> Motivation</h2>
 <p>Cancer datasets are plentiful, complicated, and hold untold amounts of information regarding cancer biology. Cancer researchers are working to apply their expertise to the analysis of these vast amounts of data but training opportunities to properly equip them in these efforts can be sparse. This includes training in reproducible data analysis methods.</p>
-<p>Data analyses are generally not reproducible without direct contact with the original researchers and a substantial amount of time and effort <span class="citation" data-cites="BeaulieuJones2017">(<a href="#ref-BeaulieuJones2017" role="doc-biblioref"><strong>BeaulieuJones2017?</strong></a>)</span>. Reproducibility in cancer informatics (as with other fields) is still not monitored or incentivized despite that it is fundamental to the scientific method. Despite the lack of incentive, many researchers strive for reproducibility in their own work but often lack the skills or training to do so effectively.</p>
-<p>Equipping researchers with the skills to create reproducible data analyses increases the efficiency of everyone involved. One tool among many for creating reproducible analyses is utilizing automation. Many individuals performing analyses on cancer data may not have formal training in software development and may be unfamiliar with the ideas of continuous integration and continuous deployment. By recognizing that biological data analysis code is a form of software development, we can try to adapt good development practices in scientific analyses and software contexts.</p>
+<p>Data analyses are generally not reproducible without direct contact with the original researchers and a substantial amount of time and effort <span class="citation" data-cites="BeaulieuJones2017">(<a href="#ref-BeaulieuJones2017" role="doc-biblioref">Beaulieu-Jones and Greene 2017</a>)</span>. Reproducibility in cancer informatics (as with other fields) is still not monitored or incentivized despite that it is fundamental to the scientific method. Despite the lack of incentive, many researchers strive for reproducibility in their own work but often lack the skills or training to do so effectively.</p>
+<p>Equipping researchers with the skills to create reproducible data analyses increases the efficiency of everyone involved. One tool among many for creating reproducible analyses is utilizing containers. Many individuals performing analyses on cancer data may not have formal training in software development and may be unfamiliar with the ideas of continuous integration and continuous deployment. By recognizing that biological data analysis code is a form of software development, we can try to adapt good development practices in scientific analyses and software contexts.</p>
 <p><em>Scientific software projects may include (but aren’t limited to):</em></p>
 <ul>
-<li>Software that built as tools to be utilized by others to analyze biologically derived data.</li>
+<li>Software built as tools to be utilized by others to analyze biologically derived data.</li>
 <li>Code that is built primarily for analyzing one project’s data.</li>
 <li>Code that is built as a workflow for a series of steps and analyses that might be reused among collaborators or within a lab.</li>
 <li>Any scripts and code that are built to handle data in a research setting.</li>
@@ -144,16 +172,19 @@ ul.task-list li input[type="checkbox"] {
 </ul></section><section id="curriculum" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="curriculum">
 <span class="header-section-number">1.4</span> Curriculum</h2>
 <p>The course includes hands-on exercises for how to use, modify, share, and troubleshoot containers for scientific software development purposes.</p>
-<p><strong>Goal of this course:</strong><br>
-Equip learners with basics skills and confidence to utilize the containers within the context of scientific software analyses.</p>
-<p><strong>What is not the goal</strong><br>
-This course is meant to teach learners how to create sophisticated GitHub Actions, but instead introduce learners to basic fundamentals of continuous integration and continuous deployment. This course focuses on GitHub Actions and will not cover any other (perfectly fine) tools for CI/CD.</p>
+<p><strong>Goal of this course:</strong> Equip learners with basics skills and confidence to utilize containers within the context of scientific software analyses.</p>
+<p><strong>What is not the goal</strong> This course is not meant to teach learners how to create complex containers, but instead introduce learners to basic fundamentals of continuous integration and continuous deployment. This course focuses on containers (Docker or Podman) and will not cover any other (perfectly fine) tools for CI/CD.</p>
 </section><section id="how-to-use-the-course" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="how-to-use-the-course">
 <span class="header-section-number">1.5</span> How to use the course</h2>
 <p>Ideally you should follow along with the chapters and perform the activities as they are described. These activities involve using Docker or optionally Podman.</p>
 <p>We also recommend that if you’d like to fully leverage your container skills after taking this course you may also enjoy our <a href="https://hutchdatascience.org/GitHub_Automation_for_Scientists/">GitHub Actions course</a> that pairs well with the skillset taught here.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BeaulieuJones2017" class="csl-entry" role="listitem">
+Beaulieu-Jones, Brett K, and Casey S Greene. 2017. <span>“Reproducibility of Computational Workflows Is Automated Using Continuous Analysis.”</span> <em>Nature Biotechnology</em> 35 (4): 342–46. <a href="https://doi.org/10.1038/nbt.3780">https://doi.org/10.1038/nbt.3780</a>.
+</div>
+</div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
