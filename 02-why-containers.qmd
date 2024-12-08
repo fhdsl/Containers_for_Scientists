@@ -36,9 +36,9 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## Containers as an aid for reproducibility
 
-It turns out computing environments are another variable in reproducibility.
+It turns out computing environments are another variable that can affect reproducibility.
 
-For the purposes of informatics and data analysis, **a reproducible analysis is one that can be re-run by a different researcher and the same result and conclusion is found.**
+For the purposes of informatics and data analysis, **a reproducible analysis is one that can be re-run by a different researcher and produce the same results and conclusion.**
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_0")
