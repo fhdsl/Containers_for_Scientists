@@ -124,6 +124,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 ```
 
 Basically going from image to container is like this scene from Mary Poppins where Mary Poppins, Bert, and the kids seemingly jump onto a chalk drawing of the English countryside, but instead of remaining standing on the pavement in the city park, they end up in new outfits standing in the English countryside. The chalk image that Bert drew led to a fully functioning landscape.
+
 <iframe src="https://giphy.com/embed/bS93RNppr0aY0" width="480" height="319" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/disney-picture-magic-bS93RNppr0aY0">via GIPHY</a></p>
 
 This course's goal is to make learning containers go down like a spoonful of sugar.
