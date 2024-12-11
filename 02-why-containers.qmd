@@ -99,7 +99,16 @@ Installing software can be a huge headache. Bioinformatics involves using softwa
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_56")
 ```
 
-*ADD Something about testing since that's in the slide below*
+### Unit Testing 
+
+You may not think of yourself as a software developer if you primarily write code for analyses. But this is still software! Just a different kind. In fact any kind of scientific code can still benefit from testing and automation. [Our companion course about GitHub Actions and Continuous Integration / Continuous Deployment](https://hutchdatascience.org/GitHub_Automation_for_Scientists/introduction.html) principles go into more detail about this. 
+
+But containers and automated testing of code go hand in hand. Rather than having your collaborator test it, it may be worth your while to have the code automatically tested, or the analysis automatically re-run upon the creation of a pull request. 
+
+Unit testing then is a way to test each individual component of a code base. Whatever the smallest unit you can break your code down into should be tested. Each function should have a reproducible example that is re-run upon introducing new changes in a pull request. This way it will save you time by letting you know which part of the code may have broken with new changes. 
+
+Containers assist with unit testing by allowing for a standard computing environment as well as ways to easily test code as it would be run in different operating systems: Macs, PCs, Linuxes, etc. 
+
 
 To summarize:
 
