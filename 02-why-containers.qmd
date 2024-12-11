@@ -98,7 +98,7 @@ Installing software can be a huge headache. Bioinformatics involves using softwa
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_56")
 ```
 
-*ADD Something about testing since that's in the slide below*
+Containers simplify software testing by creating isolated, consistent environments that ensure the application behaves the same way everywhere, whether on a developer's laptop or a server. They allow testers to quickly set up and tear down environments, run tests in parallel to save time, and simulate real-world scenarios without affecting the underlying system. This means fewer surprises when software moves from development to production, making testing faster, more reliable, and easier to manage.
 
 To summarize:
 
@@ -108,7 +108,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## How does this work?
 
-Images are like a *snapshot* of a computing environment. It's frozen but can accurately depict what's in the environment.
+First, let's address some terminology and the difference between an "image" and a "container". Images are like a *snapshot* of a computing environment. It's frozen but can accurately depict what's in the environment. Think of an image as a recipe that describes how to prepare a specific environment.
 
 The image is what is easily shareable. There are huge repositories or libraries where you can find all kinds of images that folks around the world have made -- each with a different configuration and purpose.
 
@@ -116,13 +116,13 @@ The image is what is easily shareable. There are huge repositories or libraries 
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_108")
 ```
 
-From the image, a container can be built. A container is then where you can work and do science (or other things). You can run scripts, interact with files, etc. All the things you would do on your computer, you do in the container. But the container acts as a separate and controlled environment, ensuring that the computing environment contains the intended software.
+From the image, a container can be built. A container is a running instance of an image. A container is then where you can work and do science (or other things). You can run scripts, interact with files, etc. All the things you would do on your computer, you do in the container. But the container acts as a separate and controlled environment, ensuring that the computing environment contains the intended software. Think of a container as the meal prepared from the recipe.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_199")
 ```
 
-Basically going from image to container is like this scene from Mary Poppins. *ADD further explanation for accessibility purposes.*
+Basically going from image to container is like this scene from Mary Poppins.
 
 <iframe src="https://giphy.com/embed/bS93RNppr0aY0" width="480" height="319" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/disney-picture-magic-bS93RNppr0aY0">via GIPHY</a></p>
 
