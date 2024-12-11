@@ -208,7 +208,12 @@ div.csl-indent {
   <ul>
 <li><a href="#the-problem" id="toc-the-problem" class="nav-link active" data-scroll-target="#the-problem"><span class="header-section-number">2.1</span> The problem</a></li>
   <li><a href="#containers-as-an-aid-for-reproducibility" id="toc-containers-as-an-aid-for-reproducibility" class="nav-link" data-scroll-target="#containers-as-an-aid-for-reproducibility"><span class="header-section-number">2.2</span> Containers as an aid for reproducibility</a></li>
-  <li><a href="#top-reasons-for-containers" id="toc-top-reasons-for-containers" class="nav-link" data-scroll-target="#top-reasons-for-containers"><span class="header-section-number">2.3</span> Top reasons for containers!</a></li>
+  <li>
+<a href="#top-reasons-for-containers" id="toc-top-reasons-for-containers" class="nav-link" data-scroll-target="#top-reasons-for-containers"><span class="header-section-number">2.3</span> Top reasons for containers!</a>
+  <ul class="collapse">
+<li><a href="#unit-testing" id="toc-unit-testing" class="nav-link" data-scroll-target="#unit-testing"><span class="header-section-number">2.3.1</span> Unit Testing</a></li>
+  </ul>
+</li>
   <li><a href="#how-does-this-work" id="toc-how-does-this-work" class="nav-link" data-scroll-target="#how-does-this-work"><span class="header-section-number">2.4</span> How does this work?</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/Containers_for_Scientists/edit/main/02-why-containers.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -360,7 +365,12 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p><em>ADD Something about testing since that’s in the slide below</em></p>
+<section id="unit-testing" class="level3" data-number="2.3.1"><h3 data-number="2.3.1" class="anchored" data-anchor-id="unit-testing">
+<span class="header-section-number">2.3.1</span> Unit Testing</h3>
+<p>You may not think of yourself as a software developer if you primarily write code for analyses. But this is still software! Just a different kind. In fact any kind of scientific code can still benefit from testing and automation. <a href="https://hutchdatascience.org/GitHub_Automation_for_Scientists/introduction.html">Our companion course about GitHub Actions and Continuous Integration / Continuous Deployment</a> principles go into more detail about this.</p>
+<p>But containers and automated testing of code go hand in hand. Rather than having your collaborator test it, it may be worth your while to have the code automatically tested, or the analysis automatically re-run upon the creation of a pull request.</p>
+<p>Unit testing then is a way to test each individual component of a code base. Whatever the smallest unit you can break your code down into should be tested. Each function should have a reproducible example that is re-run upon introducing new changes in a pull request. This way it will save you time by letting you know which part of the code may have broken with new changes.</p>
+<p>Containers assist with unit testing by allowing for a standard computing environment as well as ways to easily test code as it would be run in different operating systems: Macs, PCs, Linuxes, etc.</p>
 <p>To summarize:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -370,7 +380,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</section><section id="how-does-this-work" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="how-does-this-work">
+</section></section><section id="how-does-this-work" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="how-does-this-work">
 <span class="header-section-number">2.4</span> How does this work?</h2>
 <p>Images are like a <em>snapshot</em> of a computing environment. It’s frozen but can accurately depict what’s in the environment.</p>
 <p>The image is what is easily shareable. There are huge repositories or libraries where you can find all kinds of images that folks around the world have made – each with a different configuration and purpose.</p>
@@ -391,7 +401,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Basically going from image to container is like this scene from Mary Poppins. <em>ADD further explanation for accessibility purposes.</em></p>
+<p>Basically going from image to container is like this scene from Mary Poppins where Mary Poppins, Bert, and the kids seemingly jump onto a chalk drawing of the English countryside, but instead of remaining standing on the pavement in the city park, they end up in new outfits standing in the English countryside. The chalk image that Bert drew led to a fully functioning landscape.</p>
 <iframe src="https://giphy.com/embed/bS93RNppr0aY0" width="480" height="319" style="" frameborder="0" class="giphy-embed" allowfullscreen="">
 </iframe>
 <p>
