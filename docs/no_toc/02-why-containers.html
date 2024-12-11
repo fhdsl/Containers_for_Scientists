@@ -160,8 +160,9 @@ div.csl-indent {
 </div>
 </section><section id="containers-as-an-aid-for-reproducibility" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="containers-as-an-aid-for-reproducibility">
 <span class="header-section-number">2.2</span> Containers as an aid for reproducibility</h2>
-<p>It turns out computing environments are another variable in reproducibility.</p>
-<p>For the purposes of informatics and data analysis, <strong>a reproducible analysis is one that can be re-run by a different researcher and the same result and conclusion is found.</strong></p>
+<p>Science progresses when data and hypotheses are thoroughly and sequentially tested at three levels: repeatability, reproducibility, and replicability. If results are not repeatable, they won’t be reproducible or replicable. These three concepts represent the pillars of ensuring a study’s reliability and validity.</p>
+<p>For the purposes of informatics and data analysis, <strong>a reproducible analysis is one that can be re-run by a different researcher and produce the same results and conclusion.</strong></p>
+<p>Generally speaking, the more variables involved in a system, the messier things get, and the less clarity we have in what we are observing. It turns out computing environments are another variable that can affect reproducibility.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -170,8 +171,6 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>In science, more variables means we’re lacking true clarity in what we are observing. More variables means things are messier. And reproducibility is the pillar of how science works.</p>
-<p>Science progresses when data and hypotheses are put through these levels thoroughly and sequentially. If results are not repeatable, they won’t be reproducible or replicable.</p>
 <p>An important note: although your results can be reproducibly wrong (you’re coming to a faulty conclusion consistently) they can NOT be irreproducibly right.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -182,7 +181,7 @@ div.csl-indent {
 </div>
 </div>
 <p>If we control the computing environments, that is one less variable we need to deal with in our science. <strong>Control the computing environment = That much more reproducible science.</strong></p>
-<p>We could think of impractical ways to control our computing environment: We could have one laptop that we ship back and forth between all our collaborators. Although this may make the computing environment slightly more controlled, clearly it is not a practical solution</p>
+<p>We could think of impractical ways to control our computing environment: We could have one laptop that we ship back and forth between all our collaborators. Although this may make the computing environment slightly more controlled, clearly it is not a practical solution.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -192,7 +191,7 @@ div.csl-indent {
 </div>
 </div>
 <p>That’s where containers come in.</p>
-<p>A container is kinda like your computer is running a computer inside of it. It is isolated from the rest of your computer so your science can be more reproducible.</p>
+<p>A container is kind of like your computer is running a computer inside of it. It is isolated from the rest of your computer so your science can be more reproducible.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -232,7 +231,7 @@ div.csl-indent {
 </section><section id="top-reasons-for-containers" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="top-reasons-for-containers">
 <span class="header-section-number">2.3</span> Top reasons for containers!</h2>
 <p>But more than this, there are even more benefits to using containers:</p>
-<p>Installing software can be a huge headache. Bioinformatics involves using software that is often fringe and developed and maintained by small teams – or sometimes that software isn’t maintained at all. This means installation can take a lot of valuable time that scientists often don’t have.</p>
+<p>Installing software can be a huge headache. Bioinformatics involves using software that is often fringe and developed and maintained by small teams – or sometimes the software isn’t maintained at all. This means installation can take a lot of valuable time that scientists often don’t have.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -258,7 +257,7 @@ div.csl-indent {
 </div>
 </section></section><section id="how-does-this-work" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="how-does-this-work">
 <span class="header-section-number">2.4</span> How does this work?</h2>
-<p>Images are like a <em>snapshot</em> of a computing environment. It’s frozen but can accurately depict what’s in the environment.</p>
+<p>First, let’s address some terminology and the difference between an “image” and a “container”. Images are like a <em>snapshot</em> of a computing environment. It’s frozen but can accurately depict what’s in the environment. Think of an image as a recipe that describes how to prepare a specific environment.</p>
 <p>The image is what is easily shareable. There are huge repositories or libraries where you can find all kinds of images that folks around the world have made – each with a different configuration and purpose.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -268,7 +267,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>From the image, a container can be built. A container is then where you can work and do science (or other things). You can run scripts, interact with files, etc. All the things you would do on your computer, you do in the container. But the container acts as a separate and controlled environment, ensuring that the computing environment contains the intended software.</p>
+<p>From the image, a container can be built. A container is a running instance of an image. A container is then where you can work and do science (or other things). You can run scripts, interact with files, etc. All the things you would do on your computer, you do in the container. But the container acts as a separate and controlled environment, ensuring that the computing environment contains the intended software. Think of a container as the meal prepared from the recipe.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
