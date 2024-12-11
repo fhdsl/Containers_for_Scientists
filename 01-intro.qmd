@@ -27,7 +27,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## Topics covered
 
-This course covers how to use containers for scientific software development. We encourage the recognition that scientific software can take many forms that can all benefit from the concepts of continuous integration and continuous deployment.
+This course covers how to use containers for scientific software development. Scientific software can take many forms but all can benefit from the concepts of continuous integration (CI) and continuous deployment (CD). Containers play a critical role in CI/CD by providing a consistent, portable, and isolated environment for building, testing, and deploying software.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2942096bb40_0_464")
@@ -43,9 +43,9 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1x0Cnk2Wcsg8HYkmX
 
 Cancer datasets are plentiful, complicated, and hold untold amounts of information regarding cancer biology. Cancer researchers are working to apply their expertise to the analysis of these vast amounts of data but training opportunities to properly equip them in these efforts can be sparse. This includes training in reproducible data analysis methods.
 
-Data analyses are generally not reproducible without direct contact with the original researchers and a substantial amount of time and effort [@BeaulieuJones2017]. Reproducibility in cancer informatics (as with other fields) is still not monitored or incentivized despite that it is fundamental to the scientific method. Despite the lack of incentive, many researchers strive for reproducibility in their own work but often lack the skills or training to do so effectively.
+Data analyses are generally not reproducible without direct contact with the original researchers and a substantial amount of time and effort [@BeaulieuJones2017]. Reproducibility in cancer informatics (as with other fields) is still not monitored or incentivized despite the fact that it is fundamental to the scientific method. Even without external incentives, many researchers strive for reproducibility in their own work but often lack the skills or training to do so effectively.
 
-Equipping researchers with the skills to create reproducible data analyses increases the efficiency of everyone involved. One tool among many for creating reproducible analyses is utilizing containers. Many individuals performing analyses on cancer data may not have formal training in software development and may be unfamiliar with the ideas of continuous integration and continuous deployment. By recognizing that biological data analysis code is a form of software development, we can try to adapt good development practices in scientific analyses and software contexts.
+Equipping researchers with the skills to create reproducible data analyses increases the efficiency of everyone involved. By recognizing that biological data analysis code is a form of software development, we can try to adapt good development practices in scientific analyses and software contexts.
 
 _Scientific software projects may include (but aren't limited to):_
 
@@ -54,6 +54,8 @@ _Scientific software projects may include (but aren't limited to):_
 - Code that is built as a workflow for a series of steps and analyses that might be reused among collaborators or within a lab.
 - Any scripts and code that are built to handle data in a research setting.
 - Any scripts and code a researcher might interact with.
+
+One tool among many for creating reproducible analyses is utilizing containers. A container is a lightweight, portable, and isolated environment that encapsulates an application and its dependencies, enabling it to run consistently across different computing environments. Many individuals performing analyses on cancer data may not have formal training in software development and may be unfamiliar with the idea of containers.
 
 ## Curriculum
 
