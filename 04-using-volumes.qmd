@@ -54,7 +54,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 <input type="checkbox"> Now we can run:
 ```
-docker run -v $pwd:/home cansav09/practice-image:1
+docker run -v $PWD:/home cansav09/practice-image:1
 ```
 If you have a windows machine you may have to run this variant instead. This version has a different `${}` around the `pwd` part.
 ```
