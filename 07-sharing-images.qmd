@@ -94,7 +94,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## Container Registries 
 
-To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes. 
+To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible, meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes. 
 
 [This article has a nice summary of some of the most popular ones](https://octopus.com/blog/top-8-container-registries). 
 
