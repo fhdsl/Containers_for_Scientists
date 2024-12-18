@@ -46,7 +46,7 @@ Our container is separate from our computer so if we want to use a file we have 
 
 Let's point a volume to our workshop files so we have them on our container.
 
-We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
+We can specify a particular file path on our computer, or `cd` to the desired file path then refer to the location with `$PWD`. Then optionally we can give a `:` and a file path name we'd like this to be stored on on the container (for example below, `/home`). Otherwise it will be stored at the absolute top of the container.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1128")
@@ -70,8 +70,14 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 #### Step 2: Retry calling the script
 
 <input type="checkbox"> Now we can run the following command but we will have to run `docker ps` and get the container ID we need to put here.
+In the terminal, run:
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
+```
+
+or in the exec tab of the container in Docker desktop app, run
+```
+bash /home/run_analysis.sh
 ```
 
 ```{r, out.width = "100%", echo = FALSE}
