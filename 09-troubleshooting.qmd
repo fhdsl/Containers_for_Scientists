@@ -26,7 +26,6 @@ Then ask yourself the following questions:
 - Is there a software package I'm assuming the image/container has that it does not? 
 - Is there a typo?
 - Am I missing a dependency? Make sure the dependency's RUN steps come before the software package that needs it. 
-- If my docker image isn't building is it because 
 - Did the base image I'm pulling from change or a file I'm `COPY`ing change? Do I need to use --no-cache to force a rebuild of everything so the changes are seen? 
 
 Now you have the basics of using containers but this is really just the beginning! 
