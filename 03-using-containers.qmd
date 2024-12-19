@@ -11,7 +11,7 @@ Let's actually dive into using containers. You can follow along with this activi
 
 When learning another software skill like containers, it sometimes means you'll have to keep track of more than one window. We call this "Window Juggling". It's an overlooked skill but something you'll become more comfortable with.
 
-**IMPORTANT**: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because steps have to be done in order!
+**IMPORTANT**: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because the steps have to be done in order!
 
 ```{r panel-setup, include = FALSE}
 install.packages("xaringanExtra", repos = 'https://cloud.r-project.org')
@@ -23,9 +23,9 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ### Docker
 #### Set up
 
-<input type="checkbox"> Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.<br>
+<input type="checkbox"> If not already installed, go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.<br>
 <input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).<br>
-<input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.<br>
+<input type="checkbox"> Start up Docker desktop by double clicking on the app. It may take some time to start up.<br>
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_686")
@@ -46,7 +46,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 #### Activity 1: Pull and run a Docker image
 
 **This activity is built so that you will encounter errors that this guide will work you through!**
-Most common container stumbling block is understanding the idea that containers are isolated from your computer
+One of the most common container stumbling blocks is understanding the idea that containers are isolated from your computer.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_700")
@@ -58,12 +58,12 @@ Which means: If your computer has files, software, or anything else. Your contai
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_713")
 ```
 
-We will encounter both an error of when we don't have a file we need AND an error of when we don't have a software package we need. We will guide you through what to do when these expected errors occur.
+We will encounter both an error when we don't have a file we need AND an error when we don't have a software package we need. We will guide you through what to do when these expected errors occur.
 
 #### Step 1: Docker pull
 
 We need to get the Docker **image** we want to use. We do this by "pulling" it.
-Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer).
+Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer). Pulling is basically like downloading.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_732")
@@ -84,15 +84,16 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 ##### Step 2: Check what images you have
 
 <input type="checkbox"> To see what images we have we can run `docker image ls`.<br>
+<input type="checkbox"> Alternatively, you can visit the Images tab of the docker desktop app.<br>
 <input type="checkbox"> We should see `cansav09/practice-image:1` show up in the output.<br>
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_752")
 ```
 
-##### Step 3: Run the docker image to start a container!
+##### Step 3: Use the Run command to start a container from the image!
 
-Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do `docker run`
+Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will use the `docker run` command
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_760")
@@ -103,11 +104,17 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 docker run cansav09/practice-image:1
 ```
 
-<input type="checkbox"> To see what containers we have running we have we can run:
+<input type="checkbox"> Alternatively, we can press the play button for the image in images tab of the desktop app.  
+
+
+<input type="checkbox"> To see what containers we have running we have we can run (in a new terminal session):
 
 ```
 docker ps
 ```
+
+<input type="checkbox"> Alternatively, you can visit the Containers tab of the Docker Desktop app.
+
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_775")
@@ -137,8 +144,9 @@ docker exec -it <PUT_CONTAINER_ID_HERE> bash
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_803")
 ```
+You can find the `CONTAINER ID` in the containers tab of the desktop app or by using the `docker container ls` command in the terminal. Note that whereas the `docker run` command creates a new container from a docker image, the `docker exec` command executes a command inside an already running container. The `-it` option tells docker to execute the command interactively. In this case the actual command being specified is `bash`. Altogether the result is an interactive Bash shell inside the already running container.
 
-If you run this you should see your terminal/command prompt now have the initial part change to something like:
+If you run the above command you should see your terminal/command prompt now have the initial part change to something like:
 
 ```
 root@e7b19cfb4461:/
@@ -165,9 +173,11 @@ root@e7b19cfb4461:/#
 
 ##### Step 5: Try calling a script
 
-<input type="checkbox"> To run a script using the docker container we could just add reference to a script at the end:  
+<input type="checkbox"> Make sure you are in the unzipped workshop directory.
+<input type="checkbox"> To run a script using the docker container we could just add reference to a script at the end. 
 
 ```
+cd containers-for-scientists-sandbox-main
 docker exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
 ```
 

@@ -11,12 +11,11 @@ So how do we get files we need onto a container we are using?
 
 There are a few options:
 
-- We could run our container and within that we could download the files we need from online! For example we could `git clone` files from a repository or otherwise `wget` or `curl` files that are stored.  
-- We could `COPY` a file on to the docker image when we are building it (more on this next chapter). But this strategy we want to be careful with for two reasons:
-     - We don't want our image to be too big. so this strategy can be fine if the file is small and something we know will always be needed for any use of the container.  
+- We could run our container and within that we could download the files we need from online! For example we could `git clone` files from a repository or otherwise `wget` or `curl` files that are stored online somewhere.  
+- We could `COPY` a file on to the docker image when we are building it (more on this next chapter). But we want to be careful with this strategy for two reasons:
+     - We don't want our image to be too big. So, this strategy can be fine if the file is small and something we know will always be needed for any use of the container.  
      - We DEFINITELY need to avoid ever having protected data on images that are shared. NEVER put protected data on images that we are sharing -- more on this later too.  
-- Lastly we can add a `volume` of files that are local to our computer. We'll dive into this strategy in this chapter. This will probably be a common way you'll use to get access to files on your container.  
-
+- Lastly we can add a `volume` of files that are local to our computer. We'll dive into this strategy in this chapter. This will probably be the most common way you'll use to get access to files on your container.  
 
 What is a volume? A volume is a folder, likely from your computer, that can be accessed by your container.
 
@@ -40,13 +39,13 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 
 ### Docker
 
-Our container is separate from our computer so if we want to use a file we have to attach it using a "volume".
+Our container is separate from our computer so if we want to use a file from our computer we have to attach it using a "volume".
 
 ##### Step 1: Let’s add our containers-for-scientists-sandbox files
 
 Let's point a volume to our workshop files so we have them on our container.
 
-We can specify a particular file path on our computer, or `cd` to the desired file path then refer to the location with `$PWD`. Then optionally we can give a `:` and a file path name we'd like this to be stored on on the container (for example below, `/home`). Otherwise it will be stored at the absolute top of the container.
+We can specify a particular file path on our computer or give it `$PWD`. Then optionally we can give a `:` and a file path where we'd like it to be stored on the container. Otherwise it will be stored at the absolute top of the container. Note that `$PWD` is a special environment variable that stores the absolute path of the current working directory. You will need to be in the `containers-for-scientists-sandbox-main` for this to work.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1128")
@@ -70,7 +69,6 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 #### Step 2: Retry calling the script
 
 <input type="checkbox"> Now we can run the following command but we will have to run `docker ps` and get the container ID we need to put here.
-In the terminal, run:
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
