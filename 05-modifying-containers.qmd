@@ -18,8 +18,6 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## Activity Instructions
 
-A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
-
 <input type="checkbox"> Open up the Dockerfile in the  `activity-files` folder.
 
 ```{r, out.width = "100%", echo = FALSE}
@@ -32,13 +30,13 @@ FROM cansav09/practice-image:1
 ```
 
 This means we're going to take the existing image called, `cansav09/practice-image:1` and build on to it.
-This image will be our base. There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.
+This image will be our base. There are so many Docker images out there that it might be that someone has already created a docker image with most of the functionality you need for your project.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1200")
 ```
 
-The trick is to find a base image that has most of the software things you need, but not extra stuff you don't need. You want to make your image have all the stuff it needs but also be as small as possible. IMages that are overly big are harder to deal with and to download.
+The trick is to find a base image that has most of the software things you need, but not extra stuff you don't need. You want to make your image have all the stuff it needs but also be as small as possible. Images that are overly big are harder to deal with and to download.
 
 _There are (at least) two strategies you can take_:
 
@@ -49,7 +47,7 @@ _There are (at least) two strategies you can take_:
 Let's take a look at a Dockerfile.
 
 #### Step 1: Use any file editor to open up the Dockerfile
-<input type="checkbox"> Double click it and open the file to take a look at it with any default text editor.
+<input type="checkbox"> Open the file to take a look at it with any text editor.
 
 #### Step 2: Change your working directory to activity-files
 
@@ -94,7 +92,6 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 #### Step 5: Run the new image
 
-<input type="checkbox">  Navigate back to your Docker desktop and the `images` window or run `docker ps` or `podman ps`. If your image built successfully, you should see a new image in your list!
 <input type="checkbox"> Let's try running that image.
 
 ```
@@ -116,16 +113,18 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 #### Step 7: Edit the Dockerfile so it has the installation step for rmarkdown package and remove the CMD step
 
-For anything we need ran in this image we are building we need to use the `RUN` command followed by the installation steps we'd need.
+For anything we need to run in the image we are building we need to use the `RUN` command followed by the installation steps we'd need.
 
 <input type="checkbox"> Open up the file called `Dockerfile` in `activity-files`.
+
 <input type="checkbox"> **Copy and paste** this into your Dockerfile below where it says `# Add a new package here ` so we can add the `rmarkdown` package.
 
 ```
 RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
     repos = 'https://cloud.r-project.org/')"
 ```
-<input type="checkbox"> **AND remove the `CMD` line**.
+<input type="checkbox"> **remove the `CMD` line**.
+
 <input type="checkbox"> Save your edited Dockerfile.
 
 
@@ -151,7 +150,7 @@ If all built successfully, you should see a message like:
 
 #### Step 9: Run container from cool-new-image:2
 
-Now let's retry running the script from here but we will need to specify the volume again!
+Now let's retry running the script from here but we will need to specify the volume again! Make sure that you are in the top level `containers-for-scientists-sandbox-main` directory.
 
 <input type="checkbox"> First run the container using the `2` image:
 ```
@@ -161,6 +160,7 @@ docker run -v $PWD:/home cool-new-image:2
 #### Step 10: Re-Retry calling the script
 
 <input type="checkbox"> Run `docker ps` or `podman ps` can get you the container ID. Or look on your Docker Desktop.
+
 <input type="checkbox"> Try running the script using the following command:
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
@@ -302,8 +302,8 @@ RUN pip3 install \
     "somepackage==0.1.0"
 ```
 
-There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.
+There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We have gotten you started with a simple example of how to write a Dockerfil and build a docker image from a base image plus some additional packages. But, what you put on your Docker image will be up to you.
 
-To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their `RUN` command. Then try to re-build your Docker image with that added `RUN` command and see if it builds successfully.
+To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their `RUN` command. Then try to re-build your Docker image with that added `RUN` command and see if it builds successfully. Another strategy is to enter an interactive terminal session on your base image, work out the required commands for installing the missing tool/package, then add those `RUN` commands to your Dockerfile.
 
 And lastly, make sure that whatever changes you make to your Dockerfile, that you add it to your GitHub repository!
