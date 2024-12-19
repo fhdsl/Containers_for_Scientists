@@ -68,10 +68,14 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 #### Step 2: Retry calling the script
 
-<input type="checkbox"> Now we can run the following command but we will have to run `docker ps` or `docker container ls` and get the container ID we need to put here.
-
+<input type="checkbox"> Now we can run the following command but we will have to run `docker ps` and get the container ID we need to put here.
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
+```
+
+or in the exec tab of the container in Docker desktop app, run
+```
+bash /home/run_analysis.sh
 ```
 
 ```{r, out.width = "100%", echo = FALSE}
