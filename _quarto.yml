@@ -29,6 +29,7 @@ book:
     - 10-IDE-from-containers.qmd
     - 11-advanced-techniques.qmd
     - References.qmd
+    - About.qmd
 
   sidebar:
     logo: "img/logo.png"
