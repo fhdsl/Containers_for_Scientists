@@ -100,10 +100,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Now that you’re familiar with the basics of Dockerfiles and how to use them to build images, let’s dive into some more of the things you can do with them.</p>
-<p><code>FROM</code> is one of the <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">main commands that a Dockerfile can take as described by their documentation</a>.</p>
-<p>Now you are also familiar with <code>CMD</code> which runs something when the container is built</p>
+<p><code>FROM</code> is one of the <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">main commands that a Dockerfile can take, as described by their documentation</a>.</p>
+<p>Now you are also familiar with <code>CMD</code> which runs something when the container is built.</p>
 <blockquote class="blockquote">
-<p><strong>FROM</strong> creates a layer from the another Docker image. <strong>CMD</strong> specifies what command to run within the container. <strong>RUN</strong> builds your application with make. <strong>COPY</strong> adds files from your Docker client’s current directory.</p>
+<p><strong>FROM</strong> creates a layer from another Docker image. <strong>CMD</strong> specifies what command to run within the container. <strong>RUN</strong> builds your application with make. <strong>COPY</strong> adds files from your Docker client’s current directory.</p>
 </blockquote>
 <p>Next let’s use <code>RUN</code> to add a package to our image.</p>
 <section id="templates-for-adding-packages" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="templates-for-adding-packages">
