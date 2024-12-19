@@ -113,7 +113,7 @@ docker run cansav09/practice-image:1
 docker ps
 ```
 
-<input type="checkbox"> Alternatively, you can visit the Containers tab of the docker desktop app.
+<input type="checkbox"> Alternatively, you can visit the Containers tab of the Docker Desktop app.
 
 
 ```{r, out.width = "100%", echo = FALSE}
