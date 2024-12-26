@@ -26,11 +26,11 @@ Some of these best practices are ethically and legally consequential, while othe
 
 Sharing is crucial to community driven science. 
 
-Not sharing at all is not an option, this impedes the progress of research. BUT we do need to discuss *when*, *what*, and *who* of appropriate sharing. If you work with protected data types, like Protected Health Information (PHI) or Personally Identifiable Information (PII) and want to use your protected data with containers, that's great! 
+Not sharing at all is not an option, this impedes the progress of research. BUT we do need to discuss the *when*, *what*, and *who* of appropriate sharing. If you work with protected data types, like Protected Health Information (PHI) or Personally Identifiable Information (PII) and want to use your protected data with containers, that's great! 
 
 However, there are some very strong dos and don'ts associated with protected data. 
 
-If you are working with protected data (or are not sure if you are), we also **HIGHLY encourage you to talk with data privacy experts** and ensure that the practices you are using are appropriate and making sure they protect the individuals' whose data you have. 
+If you are working with protected data (or are not sure if you are), we **HIGHLY encourage you to talk with data privacy experts** and ensure that the practices you are using are appropriate and make sure they protect the individuals' whose data you have. 
 
 Bottom line: **DO NOT put protected data like PII or PHI on publicly shared Docker images!**
 
@@ -38,11 +38,11 @@ The more layers of safety checks and cushions for human mistakes (which will hap
 
 #### Alternatives: 
 
-You can use one or more of these alternatives just make sure you clear it with the proper channels like IRBs and security experts! 
+You can use one or more of these alternatives. Just make sure you clear it with the proper channels like IRBs and security experts! 
 
-- Do NOT put the data on the image. Store the data separately from the image. Don't even build the docker image near where those data are stored. You may be able to, from a secure location, run a Docker container and access the data through a volume assuming the data is not moved anywhere. Not only does storing data on an image make the image really big, but obviously in the case of protected data its just not a good idea. 
-- If for some reason you must put something protected on an image, your other option is you can push the image to a secure and protected location site where only IRB approved individuals have access to it. Amazon Web Services Container registry has options as does Microsoft Azure for example. 
-- If for some reason you must put something protected on an image, and you can't use a private registry, your other option is: **Don’t push the image anywhere** This obviously makes it harder to share methods, but it also could be possible you could share a version of the Dockerfile of this image that doesn't have protected data information on there and this Dockerfile could just be shared for methods purposes.  
+- Do NOT put the data on the image. Store the data separately from the image. Don't even build the docker image near where those data are stored. You may be able to, from a secure location, run a Docker container and access the data through an attached volume, assuming the data is not moved anywhere. Not only does storing data on an image make the image really big, but in the case of protected data its just not a good idea. 
+- If for some reason you must put something protected on an image, your other option is to push the image only to a secure and protected location where only IRB approved individuals have access to it. Amazon Web Services Container registry has options as does Microsoft Azure for example. 
+- If for some reason you must put something protected on an image, and you can't use a private registry, your other option is: **Don’t push the image anywhere**. This makes it harder to share methods. You must take extra steps to, for example, share a version of the Dockerfile of the image that doesn't have protected data information on it.  
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1276") 
@@ -61,13 +61,13 @@ There's no limit on the number of images you can make! There can be a fine art t
 
 ## Version control your Dockerfiles 
 
-Keeping your Dockerfile stored only locally and untracked is likely to lead to headaches. Version control is always a good idea and containerization is no exception! To learn more about version control. 
+Keeping your Dockerfile stored only locally and untracked is likely to lead to headaches. Version control is always a good idea and containerization is no exception! To learn more about version control see our [Intro to Reproducibility in Cancer Informatics course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html) or [Advanced Reproducibility in Cancer Informatics course](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/introduction.html) sections on making your project open source with GitHub. 
 
 If you do decide to keep your Dockerfiles on GitHub, there are a lot of useful tools to help you manage your images there. GitHub Actions marketplace for examples has a lot of handy tools. [See our GitHub Actions course for more on this](https://hutchdatascience.org/GitHub_Automation_for_Scientists/).
      
 ## Versioning is always a good idea 
 
-Just like with software development, it's good to have a system to keep track of things as you develop. Container development can easily get out of hand. Especially if others are using your images you want to be clear about which versions of containers are in a more risky earlier "development" stage and which have been more vetted and ready for use. 
+Just like with software development, it's good to have a system to keep track of things as you develop. Container development can easily get out of hand. Especially if others are using your images, you want to be clear about which versions of containers are in a more risky earlier "development" stage and which are more vetted and ready for use. 
 
 Versioning tags can be whatever you'd like them to be. [Versioning number systems used elsewhere](https://en.wikipedia.org/wiki/Software_versioning#Schemes) like `major.minor.patch` are also used with images. 
 
@@ -79,12 +79,11 @@ docker tag cool-new-image:2 username/cool-new-image:2
  
 Other strategies for versioning can mirror git branch naming conventions, so `main` for the vetted version of the image and `dev` or `stage` for a version that's still being worked on but will probably eventually be released.  
 
-There's no one size fits all for image tags, its really up to whatever you and your team decide works best for your project. 
-Regardless being intentional, consistent, and clearly documenting any system you choose to use are the main keys. 
+There's no one size fits all for image tags, its really up to whatever you and your team decide works best for your project. Regardless, being intentional, consistent, and clearly documenting any system you choose to use are the main keys. 
 
 ## Don't use random developers’ docker images
 
-Images and containers can be difficult to have transparency into the build at times. And unfrotunately not everyone on the internet who makes images is trustworthy. To avoid security issues make sure to stick to trusted sources for your docker images. Either verified individuals or companies. Try not to wander too far off the beaten path. Better to make your own image from a trusted source's base image than to use a random strangers' image that promises to do it all. 
+Images and containers can be difficult to have transparency into the build at times. And unfortunately not everyone on the internet who makes images is trustworthy. To avoid security issues make sure to stick to trusted sources for your docker images. Trust only verified individuals or companies. Try not to wander too far off the beaten path. Better to make your own image from a trusted source's base image than to use a random strangers' image that promises to do it all. 
 
 ## Summary of best practices
 
@@ -94,22 +93,22 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## Container Registries 
 
-To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes. 
+To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes. 
 
 [This article has a nice summary of some of the most popular ones](https://octopus.com/blog/top-8-container-registries). 
 
 And here's a TL;DR of the most common registries: 
 
 - [Dockerhub](https://hub.docker.com/) – widely used, a default
-- [Amazon Web Services Container Registry](https://aws.amazon.com/containers/) - options for keeping private  
-- [Github container registry](https://aws.amazon.com/containers/) - If you are using GitHub packages works with that nicely
+- [Amazon Web Services Container Registry](https://aws.amazon.com/containers/) - includes options for keeping private  
+- [Github container registry](https://aws.amazon.com/containers/) - works nicely with GitHub Packages
 - [Singularity](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) – if you need more robust security
 
-We encourage you to consider what container registries work best for you specific project and team. Here's a starter list of considerations you may want to think of, roughly in the order of importance. 
+We encourage you to consider what container registries work best for your specific project and team. Here's a starter list of considerations you may want to think of, roughly in the order of importance. 
 
 1. If you have protected data and security concerns (like we discussed earlier in this chapter) you may need to pick a container registry that allows privacy and strong security.
-2. Price -- not all container registries are free, but many of them are what kind of budget do you have for this purpose? Paying is generally not a necessity so don't pay for a container registry subscription unless you need to. 
-2. What tools are you already using? For example GitHub, Azure, and AWS have their own container registries, if you already are using these services you may consider using their associated registry. (Note GitHub actions works quite seamlessly with Dockerhub, so personally I haven't had a reason to use GitHub Container Registry but it is an option.) 
+2. Price -- not all container registries are free, but many of them are. What kind of budget do you have for this purpose? Paying is generally not a necessity so don't pay for a container registry subscription unless you need to. 
+2. What tools are you already using? For example GitHub, Azure, and AWS have their own container registries, if you are already using these services you may consider using their associated registry. (Note GitHub actions works quite seamlessly with Dockerhub, so personally I haven't had a reason to use GitHub Container Registry but it is an option.) 
 4. Is there an industry standard? Where are your collaborators or those at your institution storing your images? 
 
 While there are lots of container registry options, for the purposes of this tutorial, we'll use Dockerhub. Dockerhub is one of the first container registries and still remains one of the largest. For most purposes, using Dockerhub will be just fine. 
