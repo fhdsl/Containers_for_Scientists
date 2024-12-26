@@ -7,13 +7,13 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 Now that you're familiar with the basics of Dockerfiles and how to use them to build images, let's dive into some more of the things you can do with them.
 
-`FROM` is one of the [main commands that a Dockerfile can take, as described by their documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
+`FROM` is one of the [main commands that a Dockerfile can take, as described by their documentation](https://docs.docker.com/reference/dockerfile/#from).
 
 Now you are also familiar with `CMD` which runs something when the container is built.
 
 > **FROM** creates a layer from another Docker image.
-> **CMD** specifies what command to run within the container.
-> **RUN** builds your application with make.
+> **CMD** specifies the default command to run when a container is started from an image.
+> **RUN** executes commands during the build process of the Docker image.
 > **COPY** adds files from your Docker client’s current directory.
 
 Next let's use `RUN` to add a package to our image.
@@ -32,16 +32,15 @@ RUN Rscript -e  "install.packages( \
       'newpackagename'))"
 ```
 
-To add an R package from Bioconductor, you can follow this kind of format:
+To add an R package from Bioconductor, you can use this kind of format:
 
 ```
 RUN Rscript -e "options(warn = 2); BiocManager::install( \
   c('limma', \
     'newpackagename')
-
 ```
 
-To add a **Python package using pip**, you will need to add pip3 to install Python packages using this format. But first you'll need to make sure you have pip installed using:
+To add a **Python package using pip**, you will first need to make sure you have pip installed using:
 
 Install pip:
 ```
@@ -49,29 +48,29 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip
 ```
 
-Then you can use pip install to install packages
+Then you can use pip install to install packages with the following format:
 ```  
 RUN pip3 install \
     "somepackage==0.1.0"
 ```
 
-There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.
+There are so many things you can add to your Docker image (Picture whatever software and packages you are using on your computer). We can only get you started on how to build a Dockerfile. What you put on your Docker image will be up to you.
 
-To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their `RUN` command. Then try to re-build your Docker image with that added `RUN` command and see if it builds successfully.
+To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their `RUN` command. Then try to re-build your Docker image with that added `RUN` command and see if it builds successfully. Another strategy is to enter an interactive terminal session on your base image, work out the required commands for installing the missing tool/package, then add those `RUN` commands to your Dockerfile.
 
-Make sure that whatever changes you make to your Dockerfile, that you add version control it and add it to your GitHub repository!
+And lastly, make sure that whatever changes you make to your Dockerfile, that you add it to your GitHub repository!
 
 ## Troubleshooting tips for building images 
 
-1. Look for a good base image to start with on your `FROM` Something that has a lot of what you need but not more software packages than you need.
+1. Look for a good base image to start with on your `FROM` command. This should be an image that has a lot of what you need and not a lot of software packages that you don't need.
     - If you know you want use `R` on your container then take a look at [the `rocker` images](https://hub.docker.com/u/rocker). 
     - If you know you want to use Jupyter notebooks on your container, go to the [Jupyter Project images](https://hub.docker.com/u/jupyter). 
     - If you are doing anything with bioinformatics software, [take a look at Biocontainers](https://biocontainers.pro/). 
-2. When adding packages, look for other Dockerfiles folks have written that have the same operating system aka usually Ubuntu, and copy their installation steps. 
-3. Use version numbers so if you rebuild the same versions will be installed and that won't be a moving target for you. 
-4. Should the installation steps fail, try to pinpoint what is the first part it is failing on. Look for if there's a message like "missing dependency" or something similar. It may mean you need to add another package in there before installing this package. 
+2. When adding packages, look for other Dockerfiles that folks have written with the same base operating system (e.g., Ubuntu), and copy their installation steps. 
+3. Specify version numbers for packages whenever possible so that when you rebuild the same versions will be installed and that won't be a moving target for you. 
+4. Should the installation steps fail, try to pinpoint what is the first part it is failing on. Look for a message like "missing dependency" or something similar. It may mean you need to add another package before installing this package. 
 5. Google your error messages. Look on StackOverflow. Post on StackOverflow.
-6. If all else fails, can you just install a different software or a different version number of that software that can do the same functionality? 
+6. If all else fails, try installing a different software or a different version number of that software that can provide the same functionality. 
 7. If you change something in a base image or in a file that is copied over you may need to use `--no-cache` so that everything really gets rebuilt from scratch. 
 
 ### More learning 
