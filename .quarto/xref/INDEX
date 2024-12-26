@@ -1,0 +1,47 @@
+{
+  "index.qmd": {
+    "index.html": "70f23fed"
+  },
+  "01-intro.qmd": {
+    "01-intro.html": "50069321"
+  },
+  "02-why-containers.qmd": {
+    "02-why-containers.html": "50aaabef"
+  },
+  "03-using-containers.qmd": {
+    "03-using-containers.html": "4a75c354"
+  },
+  "04-using-volumes.qmd": {
+    "04-using-volumes.html": "bd93aaca"
+  },
+  "05-modifying-containers.qmd": {
+    "05-modifying-containers.html": "d50906af"
+  },
+  "06-writing-dockerfiles.qmd": {
+    "06-writing-dockerfiles.html": "5d3e4ce3"
+  },
+  "07-sharing-images.qmd": {
+    "07-sharing-images.html": "7d7bfd34"
+  },
+  "08-cleaning-up.qmd": {
+    "08-cleaning-up.html": "d5882d38"
+  },
+  "09-troubleshooting.qmd": {
+    "09-troubleshooting.html": "c8c16665"
+  },
+  "10-IDE-from-containers.qmd": {
+    "10-IDE-from-containers.html": "56ffaf3e"
+  },
+  "11-advanced-techniques.qmd": {
+    "11-advanced-techniques.html": "b7268d0c"
+  },
+  "References.qmd": {
+    "References.html": "82683f6f"
+  },
+  "About.qmd": {
+    "About.html": "fbbb369e"
+  },
+  "404.qmd": {
+    "404.html": "a8a05064"
+  }
+}

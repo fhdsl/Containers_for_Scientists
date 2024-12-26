@@ -1,0 +1,19 @@
+{
+  "hash": "c74cc00039d1bc79810e4e2aa75fb100",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n# Cleaning Up\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2effc5b673e_0_857.png){width=100%}\n:::\n:::\n\n\n\n\n\n\nNow having gone through some activities in this course, you may find you're acquiring quite a list of images and containers.\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g30a4ed49e59_0_1521.png){width=100%}\n:::\n:::\n\n\n\n\nThis is okay for a time, but note that these containers and images do take up space on your computer. If you have too many running and too many stored, you'll run out of space for other stuff on your computer and it might start to get slow or otherwise unhappy with you.\n\n## Activity Instructions {.panelset}\n\n## Docker\n\nTo remove a container we can run:\n```\ndocker rm <PUT_CONTAINER_ID_HERE>\n```\nThis means you'll need to grab the container ID, either from Docker desktop or by running `docker ps`.\n\nNote! **If you try to remove an image that is currently being used to run a container you won't be allowed to!** So stop and remove containers first, then you can remove the image.\n\n\n**Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. **\n\n#### Remove non-running containers\n```\ndocker rm $(docker ps -a -q)\n```\n#### Stop all containers\n```\ndocker stop $(docker ps -a -q)\n```\n#### Remove all images\n```\ndocker rmi -f $(docker images -q)\n```\n\n## Podman\n\nTo remove a container we can run\n```\ndocker rm <PUT_CONTAINER_ID_HERE>\n```\nThis means you'll need to grab the container ID by running `podman ps`.\n\nTo remove an image we can run\n```\ndocker rmi <PUT_IMAGE_NAME_OR_ID_HERE>\n```\nThis means you'll need to grab the container ID, either from Docker desktop or by running `docker image ls`.\n\nNote! If you try to remove an image that is currently being used to run a container you won't be allowed to! So stop and remove containers first, then you can remove the image.\n\n\n**Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. **\n\n#### Remove all non-running containers\n```\npodman rm $(podman ps -a -q)\n```\n#### Stop all containers\n```\npodman stop $(podman ps -a -q)\n```\n#### Remove all images\n```\npodman rmi -f $(podman images -q)\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"site_libs/panelset-0.3.0/panelset.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/panelset-0.3.0/panelset.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
