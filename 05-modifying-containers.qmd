@@ -258,9 +258,9 @@ Now that you're familiar with the basics of Dockerfiles, let's dive into some mo
 
 Now you are also familiar with `CMD` which runs something when the container is built
 
-> **FROM** creates a layer from the another Docker image.
-> **CMD** specifies what command to run within the container.
-> **RUN** builds your application with make.
+> **FROM** creates a layer from another Docker image.
+> **CMD** specifies the default command to run when a container is started from an image.
+> **RUN** executes commands during the build process of the Docker image.
 > **COPY** adds files from your Docker client’s current directory.
 
 Next let's use `RUN` to add a package to our image.
@@ -279,16 +279,15 @@ RUN Rscript -e  "install.packages( \
       'newpackagename'))"
 ```
 
-To add an R package from Bioconductor, you can follow this kind of format:
+To add an R package from Bioconductor, you can use this kind of format:
 
 ```
 RUN Rscript -e "options(warn = 2); BiocManager::install( \
   c('limma', \
     'newpackagename')
-
 ```
 
-To add a **Python package using pip**, you will need to add pip3 to install Python packages using this format. But first you'll need to make sure you have pip installed using:
+To add a **Python package using pip**, you will first need to make sure you have pip installed using:
 
 Install pip:
 ```
@@ -296,7 +295,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip
 ```
 
-Then you can use pip install to install packages
+Then you can use pip install to install packages with the following format:
 ```
 RUN pip3 install \
     "somepackage==0.1.0"
