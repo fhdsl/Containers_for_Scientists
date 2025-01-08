@@ -179,6 +179,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./About.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the Authors</span></a>
+  </div>
+</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -304,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section><section id="container-registries" class="level2" data-number="7.7"><h2 data-number="7.7" class="anchored" data-anchor-id="container-registries">
 <span class="header-section-number">7.7</span> Container Registries</h2>
-<p>To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes.</p>
+<p>To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible, meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes.</p>
 <p><a href="https://octopus.com/blog/top-8-container-registries">This article has a nice summary of some of the most popular ones</a>.</p>
 <p>And here’s a TL;DR of the most common registries:</p>
 <ul>
@@ -321,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
 <p>We encourage you to consider what container registries work best for you specific project and team. Here’s a starter list of considerations you may want to think of, roughly in the order of importance.</p>
 <ol type="1">
 <li>If you have protected data and security concerns (like we discussed earlier in this chapter) you may need to pick a container registry that allows privacy and strong security.</li>
-<li>Price – not all container registries are free, but many of them are what kind of budget do you have for this purpose? Paying is generally not a necessity so don’t pay for a container registry subscription unless you need to.</li>
+<li>Price – not all container registries are free, but many of them aren’t. Think about what kind of budget do you have for specific purpose. Paying is generally not a necessity, so don’t pay for a container registry subscription unless you need to.</li>
 <li>What tools are you already using? For example GitHub, Azure, and AWS have their own container registries, if you already are using these services you may consider using their associated registry. (Note GitHub actions works quite seamlessly with Dockerhub, so personally I haven’t had a reason to use GitHub Container Registry but it is an option.)</li>
 <li>Is there an industry standard? Where are your collaborators or those at your institution storing your images?</li>
 </ol>

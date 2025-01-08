@@ -20,7 +20,7 @@ Software programs can give us a concrete example of what differing computing env
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_25")
 ```
 
-Not only are our computers very unique at any one point in time, but as time moves forward computers and the software environments change very rapidly. Some of this happens through intentional installations of programs by computer users and some are automatic software updates that they may not be aware of that are instigated by the developers of the hardware and software that make up the computer.
+Not only are our computers very unique at any one point in time, but as time moves forward computers and the software environments change very rapidly. These changes might happen through intentional installations of programs by computer users. Some are changes users may not be aware of, which took place through automatic software updates that are instigated by the developers of the hardware and software that make up the computer.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_6")
@@ -52,7 +52,7 @@ An important note: although your results can be reproducibly wrong (you're comin
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_219")
 ```
 
-If we control the computing environments, that is one less variable we need to deal with in our science. **Control the computing environment = That much more reproducible science.**
+If we control the computing environments, that is one less variable we need to deal with in our science. **Control the computing environment = much more reproducible science.**
 
 We could think of impractical ways to control our computing environment: We could have one laptop that we ship back and forth between all our collaborators. Although this may make the computing environment slightly more controlled, clearly it is not a practical solution.
 
@@ -80,25 +80,34 @@ Sharing computing environments and using those shared environments guarantee tha
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_90")
 ```
 
-And containerization works for aiding in reproducibility as shown by [@BeaulieuJones2017]
+And containerization aids in reproducibility as shown by [@BeaulieuJones2017]
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_94")
 ```
 
-When a container is used, an aspect of variability in scientific analysis -- the computing environment -- is controlled for, the results are more reproducible!
+When a container is used, an aspect of variability in scientific analysis -- the computing environment -- is controlled for, and as a result, the results are more reproducible!
 
 ## Top reasons for containers!
 
-But more than this, there are even more benefits to using containers:
+Beside reasons stated above, there are even more benefits to using containers:
 
-Installing software can be a huge headache. Bioinformatics involves using software that is often fringe and developed and maintained by small teams -- or sometimes the software isn't maintained at all. This means installation can take a lot of valuable time that scientists often don't have.
+Installing software can be a huge headache. Bioinformatics involves using software that is often fringe -- developed and maintained by small teams -- or sometimes the software isn't maintained at all. This means installation can take a lot of valuable time that scientists often don't have.
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_56")
 ```
 
-Containers simplify software testing by creating isolated, consistent environments that ensure the application behaves the same way everywhere, whether on a developer's laptop or a server. They allow testers to quickly set up and tear down environments, run tests in parallel to save time, and simulate real-world scenarios without affecting the underlying system. This means fewer surprises when software moves from development to production, making testing faster, more reliable, and easier to manage.
+### Unit Testing 
+
+You may not think of yourself as a software developer if you primarily write code for analyses. But this is still software! Just a different kind. In fact any kind of scientific code can still benefit from testing and automation. [Our companion course about GitHub Actions and Continuous Integration / Continuous Deployment](https://hutchdatascience.org/GitHub_Automation_for_Scientists/introduction.html) principles go into more detail about this. 
+
+But containers and automated testing of code go hand in hand. Rather than having your collaborator test it, it may be worth your while to have the code automatically tested, or the analysis automatically re-run upon the creation of a pull request. 
+
+Unit testing then is a way to test each individual component of a code base. Whatever the smallest unit you can break your code down into should be tested. Each function should have a reproducible example that is re-run upon introducing new changes in a pull request. This way it will save you time by letting you know which part of the code may have broken with new changes. 
+
+Containers assist with unit testing by allowing for a standard computing environment as well as ways to easily test code as it would be run in different operating systems: Macs, PCs, Linuxes, etc. 
+
 
 To summarize:
 
@@ -122,7 +131,7 @@ From the image, a container can be built. A container is a running instance of a
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_199")
 ```
 
-Basically going from image to container is like this scene from Mary Poppins.
+Basically going from image to container is like this scene from Mary Poppins where Mary Poppins, Bert, and the kids seemingly jump onto a chalk drawing of the English countryside, but instead of remaining standing on the pavement in the city park, they end up in new outfits standing in the English countryside. The chalk image that Bert drew led to a fully functioning landscape.
 
 <iframe src="https://giphy.com/embed/bS93RNppr0aY0" width="480" height="319" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/disney-picture-magic-bS93RNppr0aY0">via GIPHY</a></p>
 
