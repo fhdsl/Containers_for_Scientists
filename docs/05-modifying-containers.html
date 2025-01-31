@@ -431,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>FROM</code> is one of the <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">main commands that a Dockerfile can take as described by their documentation</a>.</p>
 <p>Now you are also familiar with <code>CMD</code> which runs something when the container is built</p>
 <blockquote class="blockquote">
-<p><strong>FROM</strong> creates a layer from the another Docker image. <strong>CMD</strong> specifies what command to run within the container. <strong>RUN</strong> builds your application with make. <strong>COPY</strong> adds files from your Docker client’s current directory.</p>
+<p><strong>FROM</strong> creates a layer from another Docker image. <strong>CMD</strong> specifies the default command to run when a container is started from an image. <strong>RUN</strong> executes commands during the build process of the Docker image. <strong>COPY</strong> adds files from your Docker client’s current directory.</p>
 </blockquote>
 <p>Next let’s use <code>RUN</code> to add a package to our image.</p>
 </section><section id="templates-for-adding-packages" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="templates-for-adding-packages">
@@ -443,16 +443,15 @@ ul.task-list li input[type="checkbox"] {
     c('BiocManager', \
       'R.utils', \
       'newpackagename'))"</code></pre>
-<p>To add an R package from Bioconductor, you can follow this kind of format:</p>
+<p>To add an R package from Bioconductor, you can use this kind of format:</p>
 <pre><code>RUN Rscript -e "options(warn = 2); BiocManager::install( \
   c('limma', \
-    'newpackagename')
-</code></pre>
-<p>To add a <strong>Python package using pip</strong>, you will need to add pip3 to install Python packages using this format. But first you’ll need to make sure you have pip installed using:</p>
+    'newpackagename')</code></pre>
+<p>To add a <strong>Python package using pip</strong>, you will first need to make sure you have pip installed using:</p>
 <p>Install pip:</p>
 <pre><code>RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
     python3-pip</code></pre>
-<p>Then you can use pip install to install packages</p>
+<p>Then you can use pip install to install packages with the following format:</p>
 <pre><code>RUN pip3 install \
     "somepackage==0.1.0"</code></pre>
 <p>There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We have gotten you started with a simple example of how to write a Dockerfil and build a docker image from a base image plus some additional packages. But, what you put on your Docker image will be up to you.</p>
