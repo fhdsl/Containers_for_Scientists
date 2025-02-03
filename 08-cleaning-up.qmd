@@ -31,7 +31,7 @@ This means you'll need to grab the container ID, either from Docker desktop or b
 Note! **If you try to remove an image that is currently being used to run a container you won't be allowed to!** So stop and remove containers first, then you can remove the image.
 
 
-**Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. **
+**Below are some kind of destructive actions. These will delete potentially a lot of containers and images. So, proceed with caution. **
 
 #### Remove non-running containers
 ```
@@ -63,7 +63,7 @@ This means you'll need to grab the container ID, either from Docker desktop or b
 Note! If you try to remove an image that is currently being used to run a container you won't be allowed to! So stop and remove containers first, then you can remove the image.
 
 
-**Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. **
+**Below are some kind of destructive actions. These will delete potentially a lot of containers and images. So, proceed with caution.**
 
 #### Remove all non-running containers
 ```
