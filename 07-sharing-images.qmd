@@ -10,7 +10,7 @@ xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```
 
-Reproducibility is a community activity and because of this sharing images is clearly a big component of why images can aid in reproducibility. 
+Reproducibility is a community activity. Sharing images is a big component of how images can aid in reproducibility. 
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_492") 
@@ -53,11 +53,11 @@ Data privacy is just one concern of best practices with containers. There's also
 
 ## Do not make one super large image that covers all your use cases
 
-Just as in Lord of the Rings that the "one ring to rule them all" was dangerous, so too is "one docker image to rule them all". Big images are a headache to deal with. They take a long time to build and to pull, and if anything is broken on them, it can be a headache to troubleshoot.
+Just as in Lord of the Rings where the "one ring to rule them all" proved dangerous, so too is "one docker image to rule them all". Big images are a headache to deal with. They take a long time to build and to pull, and if anything is broken on them, it can be a headache to troubleshoot.
 
 ### Alternatives: 
 
-There's no limit on the number of images you can make! There can be a fine art to making separate images for each use case. Obviously too many images could be hard to keep track of which is which, but a very intentional organizational plan for your images can take you far. 
+There's no limit on the number of images you can make! There can be a fine art to making separate images for each use case. Too many images can be hard to keep track of, but a very intentional organizational plan for your images can take you far. 
 
 ## Version control your Dockerfiles 
 
@@ -93,11 +93,11 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ## Container Registries 
 
-To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes. 
+To share our image with others (or our future selves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes. 
 
-[This article has a nice summary of some of the most popular ones](https://octopus.com/blog/top-8-container-registries). 
+[This article has a nice guide to some of the most popular ones](https://octopus.com/blog/top-8-container-registries). 
 
-And here's a TL;DR of the most common registries: 
+And here's a summary of the most common registries: 
 
 - [Dockerhub](https://hub.docker.com/) – widely used, a default
 - [Amazon Web Services Container Registry](https://aws.amazon.com/containers/) - includes options for keeping private  
@@ -109,7 +109,7 @@ We encourage you to consider what container registries work best for your specif
 1. If you have protected data and security concerns (like we discussed earlier in this chapter) you may need to pick a container registry that allows privacy and strong security.
 2. Price -- not all container registries are free, but many of them are. What kind of budget do you have for this purpose? Paying is generally not a necessity so don't pay for a container registry subscription unless you need to. 
 2. What tools are you already using? For example GitHub, Azure, and AWS have their own container registries, if you are already using these services you may consider using their associated registry. (Note GitHub actions works quite seamlessly with Dockerhub, so personally I haven't had a reason to use GitHub Container Registry but it is an option.) 
-4. Is there an industry standard? Where are your collaborators or those at your institution storing your images? 
+4. Is there an industry standard? Where are your collaborators or those at your institution storing their images? 
 
 While there are lots of container registry options, for the purposes of this tutorial, we'll use Dockerhub. Dockerhub is one of the first container registries and still remains one of the largest. For most purposes, using Dockerhub will be just fine. 
 
