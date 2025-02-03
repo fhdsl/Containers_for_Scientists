@@ -12,7 +12,7 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 
 A very powerful and approachable way to use containers for science is to just use them to develop from. 
 
-In previous chapters we discussed how to attach volumes. So you know how you can access your files from a container. But perhaps you don't want to work completely from command line and would like a Integrated Development Environment (IDE) to work from. 
+In previous chapters we discussed how to attach volumes. So you know how you can access your files from a container. But perhaps you don't want to work completely from command line and would like an Integrated Development Environment (IDE) to work from. 
 
 If you use RStudio or Jupyter notebooks, you will really like this chapter. 
 
