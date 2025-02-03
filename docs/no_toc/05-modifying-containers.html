@@ -111,7 +111,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="activity-instructions" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="activity-instructions">
 <span class="header-section-number">5.1</span> Activity Instructions</h2>
-<p>A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.</p>
 <p><input type="checkbox"> Open up the Dockerfile in the <code>activity-files</code> folder.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -123,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>You’ll notice we have this at the top for you:</p>
 <pre><code>FROM cansav09/practice-image:1</code></pre>
-<p>This means we’re going to take the existing image called, <code>cansav09/practice-image:1</code> and build on to it. This image will be our base. There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.</p>
+<p>This means we’re going to take the existing image called, <code>cansav09/practice-image:1</code> and build on to it. This image will be our base. There are so many Docker images out there that it might be that someone has already created a docker image with most of the functionality you need for your project.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -132,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The trick is to find a base image that has most of the software things you need, but not extra stuff you don’t need. You want to make your image have all the stuff it needs but also be as small as possible. IMages that are overly big are harder to deal with and to download.</p>
+<p>The trick is to find a base image that has most of the software things you need, but not extra stuff you don’t need. You want to make your image have all the stuff it needs but also be as small as possible. Images that are overly big are harder to deal with and to download.</p>
 <p><em>There are (at least) two strategies you can take</em>:</p>
 <ul>
 <li>Start with the smallest images possible and add only what you need for the specific case you are working on.<br>
@@ -142,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Let’s take a look at a Dockerfile.</p>
 <section id="step-1-use-any-file-editor-to-open-up-the-dockerfile" class="level4" data-number="5.1.0.1"><h4 data-number="5.1.0.1" class="anchored" data-anchor-id="step-1-use-any-file-editor-to-open-up-the-dockerfile">
 <span class="header-section-number">5.1.0.1</span> Step 1: Use any file editor to open up the Dockerfile</h4>
-<p><input type="checkbox"> Double click it and open the file to take a look at it with any default text editor.</p>
+<p><input type="checkbox"> Open the file to take a look at it with any text editor.</p>
 </section><section id="step-2-change-your-working-directory-to-activity-files" class="level4" data-number="5.1.0.2"><h4 data-number="5.1.0.2" class="anchored" data-anchor-id="step-2-change-your-working-directory-to-activity-files">
 <span class="header-section-number">5.1.0.2</span> Step 2: Change your working directory to activity-files</h4>
 <p><input type="checkbox"> Now in your Command Prompt or Terminal navigate to the <code>activity-files</code> folder. Use <code>cd</code> and don’t forget to use tabs so you don’t have to spell everything exactly.</p>
@@ -187,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section><section id="step-5-run-the-new-image" class="level4" data-number="5.2.1.3"><h4 data-number="5.2.1.3" class="anchored" data-anchor-id="step-5-run-the-new-image">
 <span class="header-section-number">5.2.1.3</span> Step 5: Run the new image</h4>
-<p><input type="checkbox"> Navigate back to your Docker desktop and the <code>images</code> window or run <code>docker ps</code> or <code>podman ps</code>. If your image built successfully, you should see a new image in your list! <input type="checkbox"> Let’s try running that image.</p>
+<p><input type="checkbox"> Let’s try running that image.</p>
 <pre><code>docker run cool-new-image</code></pre>
 <div class="cell">
 <div class="cell-output-display">
@@ -210,11 +209,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section><section id="step-7-edit-the-dockerfile-so-it-has-the-installation-step-for-rmarkdown-package-and-remove-the-cmd-step" class="level4" data-number="5.2.1.5"><h4 data-number="5.2.1.5" class="anchored" data-anchor-id="step-7-edit-the-dockerfile-so-it-has-the-installation-step-for-rmarkdown-package-and-remove-the-cmd-step">
 <span class="header-section-number">5.2.1.5</span> Step 7: Edit the Dockerfile so it has the installation step for rmarkdown package and remove the CMD step</h4>
-<p>For anything we need ran in this image we are building we need to use the <code>RUN</code> command followed by the installation steps we’d need.</p>
-<p><input type="checkbox"> Open up the file called <code>Dockerfile</code> in <code>activity-files</code>. <input type="checkbox"><strong>Copy and paste</strong> this into your Dockerfile below where it says <code># Add a new package here</code> so we can add the <code>rmarkdown</code> package.</p>
+<p>For anything we need to run in the image we are building we need to use the <code>RUN</code> command followed by the installation steps we’d need.</p>
+<p><input type="checkbox"> Open up the file called <code>Dockerfile</code> in <code>activity-files</code>.</p>
+<p><input type="checkbox"><strong>Copy and paste</strong> this into your Dockerfile below where it says <code># Add a new package here</code> so we can add the <code>rmarkdown</code> package.</p>
 <pre><code>RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
     repos = 'https://cloud.r-project.org/')"</code></pre>
-<p><input type="checkbox"><strong>AND remove the <code>CMD</code> line</strong>. <input type="checkbox"> Save your edited Dockerfile.</p>
+<p><input type="checkbox"><strong>remove the <code>CMD</code> line</strong>.</p>
+<p><input type="checkbox"> Save your edited Dockerfile.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -234,12 +235,13 @@ ul.task-list li input[type="checkbox"] {
 =&gt; =&gt; naming to docker.io/library/cool-new-image:2</code></pre>
 </section><section id="step-9-run-container-from-cool-new-image2" class="level4" data-number="5.2.1.7"><h4 data-number="5.2.1.7" class="anchored" data-anchor-id="step-9-run-container-from-cool-new-image2">
 <span class="header-section-number">5.2.1.7</span> Step 9: Run container from cool-new-image:2</h4>
-<p>Now let’s retry running the script from here but we will need to specify the volume again!</p>
+<p>Now let’s retry running the script from here but we will need to specify the volume again! Make sure that you are in the top level <code>containers-for-scientists-sandbox-main</code> directory.</p>
 <p><input type="checkbox"> First run the container using the <code>2</code> image:</p>
 <pre><code>docker run -v $PWD:/home cool-new-image:2</code></pre>
 </section><section id="step-10-re-retry-calling-the-script" class="level4" data-number="5.2.1.8"><h4 data-number="5.2.1.8" class="anchored" data-anchor-id="step-10-re-retry-calling-the-script">
 <span class="header-section-number">5.2.1.8</span> Step 10: Re-Retry calling the script</h4>
-<p><input type="checkbox"> Run <code>docker ps</code> or <code>podman ps</code> can get you the container ID. Or look on your Docker Desktop. <input type="checkbox"> Try running the script using the following command:</p>
+<p><input type="checkbox"> Run <code>docker ps</code> or <code>podman ps</code> can get you the container ID. Or look on your Docker Desktop.</p>
+<p><input type="checkbox"> Try running the script using the following command:</p>
 <pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 </section></section><section id="podman" class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" data-anchor-id="podman">
 <span class="header-section-number">5.2.2</span> Podman</h3>
@@ -298,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>FROM</code> is one of the <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">main commands that a Dockerfile can take as described by their documentation</a>.</p>
 <p>Now you are also familiar with <code>CMD</code> which runs something when the container is built</p>
 <blockquote class="blockquote">
-<p><strong>FROM</strong> creates a layer from the another Docker image. <strong>CMD</strong> specifies what command to run within the container. <strong>RUN</strong> builds your application with make. <strong>COPY</strong> adds files from your Docker client’s current directory.</p>
+<p><strong>FROM</strong> creates a layer from another Docker image. <strong>CMD</strong> specifies the default command to run when a container is started from an image. <strong>RUN</strong> executes commands during the build process of the Docker image. <strong>COPY</strong> adds files from your Docker client’s current directory.</p>
 </blockquote>
 <p>Next let’s use <code>RUN</code> to add a package to our image.</p>
 </section><section id="templates-for-adding-packages" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="templates-for-adding-packages">
@@ -310,20 +312,19 @@ ul.task-list li input[type="checkbox"] {
     c('BiocManager', \
       'R.utils', \
       'newpackagename'))"</code></pre>
-<p>To add an R package from Bioconductor, you can follow this kind of format:</p>
+<p>To add an R package from Bioconductor, you can use this kind of format:</p>
 <pre><code>RUN Rscript -e "options(warn = 2); BiocManager::install( \
   c('limma', \
-    'newpackagename')
-</code></pre>
-<p>To add a <strong>Python package using pip</strong>, you will need to add pip3 to install Python packages using this format. But first you’ll need to make sure you have pip installed using:</p>
+    'newpackagename')</code></pre>
+<p>To add a <strong>Python package using pip</strong>, you will first need to make sure you have pip installed using:</p>
 <p>Install pip:</p>
 <pre><code>RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
     python3-pip</code></pre>
-<p>Then you can use pip install to install packages</p>
+<p>Then you can use pip install to install packages with the following format:</p>
 <pre><code>RUN pip3 install \
     "somepackage==0.1.0"</code></pre>
-<p>There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.</p>
-<p>To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their <code>RUN</code> command. Then try to re-build your Docker image with that added <code>RUN</code> command and see if it builds successfully.</p>
+<p>There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We have gotten you started with a simple example of how to write a Dockerfil and build a docker image from a base image plus some additional packages. But, what you put on your Docker image will be up to you.</p>
+<p>To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their <code>RUN</code> command. Then try to re-build your Docker image with that added <code>RUN</code> command and see if it builds successfully. Another strategy is to enter an interactive terminal session on your base image, work out the required commands for installing the missing tool/package, then add those <code>RUN</code> commands to your Dockerfile.</p>
 <p>And lastly, make sure that whatever changes you make to your Dockerfile, that you add it to your GitHub repository!</p>
 
 

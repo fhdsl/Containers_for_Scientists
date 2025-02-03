@@ -104,17 +104,17 @@ ul.task-list li input[type="checkbox"] {
 <p>So how do we get files we need onto a container we are using?</p>
 <p>There are a few options:</p>
 <ul>
-<li>We could run our container and within that we could download the files we need from online! For example we could <code>git clone</code> files from a repository or otherwise <code>wget</code> or <code>curl</code> files that are stored.<br>
+<li>We could run our container and within that we could download the files we need from online! For example we could <code>git clone</code> files from a repository or otherwise <code>wget</code> or <code>curl</code> files that are stored online somewhere.<br>
 </li>
-<li>We could <code>COPY</code> a file on to the docker image when we are building it (more on this next chapter). But this strategy we want to be careful with for two reasons:
+<li>We could <code>COPY</code> a file on to the docker image when we are building it (more on this next chapter). But we want to be careful with this strategy for two reasons:
 <ul>
-<li>We don’t want our image to be too big. so this strategy can be fine if the file is small and something we know will always be needed for any use of the container.<br>
+<li>We don’t want our image to be too big. So, this strategy can be fine if the file is small and something we know will always be needed for any use of the container.<br>
 </li>
 <li>We DEFINITELY need to avoid ever having protected data on images that are shared. NEVER put protected data on images that we are sharing – more on this later too.<br>
 </li>
 </ul>
 </li>
-<li>Lastly we can add a <code>volume</code> of files that are local to our computer. We’ll dive into this strategy in this chapter. This will probably be a common way you’ll use to get access to files on your container.</li>
+<li>Lastly we can add a <code>volume</code> of files that are local to our computer. We’ll dive into this strategy in this chapter. This will probably be the most common way you’ll use to get access to files on your container.</li>
 </ul>
 <p>What is a volume? A volume is a folder, likely from your computer, that can be accessed by your container.</p>
 <div class="cell">
@@ -136,11 +136,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="header-section-number">4.1</span> Activity Instructions</h2>
 <section id="docker" class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" data-anchor-id="docker">
 <span class="header-section-number">4.1.1</span> Docker</h3>
-<p>Our container is separate from our computer so if we want to use a file we have to attach it using a “volume”.</p>
+<p>Our container is separate from our computer so if we want to use a file from our computer we have to attach it using a “volume”.</p>
 <section id="step-1-lets-add-our-containers-for-scientists-sandbox-files" class="level5" data-number="4.1.1.0.1"><h5 data-number="4.1.1.0.1" class="anchored" data-anchor-id="step-1-lets-add-our-containers-for-scientists-sandbox-files">
 <span class="header-section-number">4.1.1.0.1</span> Step 1: Let’s add our containers-for-scientists-sandbox files</h5>
 <p>Let’s point a volume to our workshop files so we have them on our container.</p>
-<p>We can specify a particular file path on our computer or give it <code>$PWD</code> Then optionally we can give a <code>:</code> and a file path we’d like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.</p>
+<p>We can specify a particular file path on our computer or give it <code>$PWD</code>. Then optionally we can give a <code>:</code> and a file path where we’d like it to be stored on the container. Otherwise it will be stored at the absolute top of the container. Note that <code>$PWD</code> is a special environment variable that stores the absolute path of the current working directory. You will need to be in the <code>containers-for-scientists-sandbox-main</code> for this to work.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p><input type="checkbox"> Now we can run:</p>
-<pre><code>docker run -v $pwd:/home cansav09/practice-image:1</code></pre>
+<pre><code>docker run -v $PWD:/home cansav09/practice-image:1</code></pre>
 <p>If you have a windows machine you may have to run this variant instead. This version has a different <code>${}</code> around the <code>pwd</code> part.</p>
 <pre><code>docker run -v ${pwd}:/home cansav09/practice-image:1</code></pre>
 <p>In Docker desktop you can specify a portal like this:</p>
@@ -166,6 +166,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="header-section-number">4.1.1.1</span> Step 2: Retry calling the script</h4>
 <p><input type="checkbox"> Now we can run the following command but we will have to run <code>docker ps</code> and get the container ID we need to put here.</p>
 <pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
+<p>or in the exec tab of the container in Docker desktop app, run</p>
+<pre><code>bash /home/run_analysis.sh</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <div>

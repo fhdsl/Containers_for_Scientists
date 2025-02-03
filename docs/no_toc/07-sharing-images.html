@@ -116,18 +116,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="do-not-put-protected-data-on-your-shared-image" class="level3" data-number="7.1.1"><h3 data-number="7.1.1" class="anchored" data-anchor-id="do-not-put-protected-data-on-your-shared-image">
 <span class="header-section-number">7.1.1</span> Do NOT put protected data on your shared image</h3>
 <p>Sharing is crucial to community driven science.</p>
-<p>Not sharing at all is not an option, this impedes the progress of research. BUT we do need to discuss <em>when</em>, <em>what</em>, and <em>who</em> of appropriate sharing. If you work with protected data types, like Protected Health Information (PHI) or Personally Identifiable Information (PII) and want to use your protected data with containers, that’s great!</p>
+<p>Not sharing at all is not an option, this impedes the progress of research. BUT we do need to discuss the <em>when</em>, <em>what</em>, and <em>who</em> of appropriate sharing. If you work with protected data types, like Protected Health Information (PHI) or Personally Identifiable Information (PII) and want to use your protected data with containers, that’s great!</p>
 <p>However, there are some very strong dos and don’ts associated with protected data.</p>
-<p>If you are working with protected data (or are not sure if you are), we also <strong>HIGHLY encourage you to talk with data privacy experts</strong> and ensure that the practices you are using are appropriate and making sure they protect the individuals’ whose data you have.</p>
+<p>If you are working with protected data (or are not sure if you are), we <strong>HIGHLY encourage you to talk with data privacy experts</strong> and ensure that the practices you are using are appropriate and make sure they protect the individuals’ whose data you have.</p>
 <p>Bottom line: <strong>DO NOT put protected data like PII or PHI on publicly shared Docker images!</strong></p>
 <p>The more layers of safety checks and cushions for human mistakes (which will happen), the better!</p>
 <section id="alternatives" class="level4" data-number="7.1.1.1"><h4 data-number="7.1.1.1" class="anchored" data-anchor-id="alternatives">
 <span class="header-section-number">7.1.1.1</span> Alternatives:</h4>
-<p>You can use one or more of these alternatives just make sure you clear it with the proper channels like IRBs and security experts!</p>
+<p>You can use one or more of these alternatives. Just make sure you clear it with the proper channels like IRBs and security experts!</p>
 <ul>
-<li>Do NOT put the data on the image. Store the data separately from the image. Don’t even build the docker image near where those data are stored. You may be able to, from a secure location, run a Docker container and access the data through a volume assuming the data is not moved anywhere. Not only does storing data on an image make the image really big, but obviously in the case of protected data its just not a good idea.</li>
-<li>If for some reason you must put something protected on an image, your other option is you can push the image to a secure and protected location site where only IRB approved individuals have access to it. Amazon Web Services Container registry has options as does Microsoft Azure for example.</li>
-<li>If for some reason you must put something protected on an image, and you can’t use a private registry, your other option is: <strong>Don’t push the image anywhere</strong> This obviously makes it harder to share methods, but it also could be possible you could share a version of the Dockerfile of this image that doesn’t have protected data information on there and this Dockerfile could just be shared for methods purposes.</li>
+<li>Do NOT put the data on the image. Store the data separately from the image. Don’t even build the docker image near where those data are stored. You may be able to, from a secure location, run a Docker container and access the data through an attached volume, assuming the data is not moved anywhere. Not only does storing data on an image make the image really big, but in the case of protected data its just not a good idea.</li>
+<li>If for some reason you must put something protected on an image, your other option is to push the image only to a secure and protected location where only IRB approved individuals have access to it. Amazon Web Services Container registry has options as does Microsoft Azure for example.</li>
+<li>If for some reason you must put something protected on an image, and you can’t use a private registry, your other option is: <strong>Don’t push the image anywhere</strong>. This makes it harder to share methods. You must take extra steps to, for example, share a version of the Dockerfile of the image that doesn’t have protected data information on it.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -146,19 +146,19 @@ ul.task-list li input[type="checkbox"] {
 <p>There’s no limit on the number of images you can make! There can be a fine art to making separate images for each use case. Obviously too many images could be hard to keep track of which is which, but a very intentional organizational plan for your images can take you far.</p>
 </section></section><section id="version-control-your-dockerfiles" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="version-control-your-dockerfiles">
 <span class="header-section-number">7.3</span> Version control your Dockerfiles</h2>
-<p>Keeping your Dockerfile stored only locally and untracked is likely to lead to headaches. Version control is always a good idea and containerization is no exception! To learn more about version control.</p>
+<p>Keeping your Dockerfile stored only locally and untracked is likely to lead to headaches. Version control is always a good idea and containerization is no exception! To learn more about version control see our <a href="https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html">Intro to Reproducibility in Cancer Informatics course</a> or <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/introduction.html">Advanced Reproducibility in Cancer Informatics course</a> sections on making your project open source with GitHub.</p>
 <p>If you do decide to keep your Dockerfiles on GitHub, there are a lot of useful tools to help you manage your images there. GitHub Actions marketplace for examples has a lot of handy tools. <a href="https://hutchdatascience.org/GitHub_Automation_for_Scientists/">See our GitHub Actions course for more on this</a>.</p>
 </section><section id="versioning-is-always-a-good-idea" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="versioning-is-always-a-good-idea">
 <span class="header-section-number">7.4</span> Versioning is always a good idea</h2>
-<p>Just like with software development, it’s good to have a system to keep track of things as you develop. Container development can easily get out of hand. Especially if others are using your images you want to be clear about which versions of containers are in a more risky earlier “development” stage and which have been more vetted and ready for use.</p>
+<p>Just like with software development, it’s good to have a system to keep track of things as you develop. Container development can easily get out of hand. Especially if others are using your images, you want to be clear about which versions of containers are in a more risky earlier “development” stage and which are more vetted and ready for use.</p>
 <p>Versioning tags can be whatever you’d like them to be. <a href="https://en.wikipedia.org/wiki/Software_versioning#Schemes">Versioning number systems used elsewhere</a> like <code>major.minor.patch</code> are also used with images.</p>
 <p>You can alter versioning numbers either when you are building your image initially or by using the <code>tag</code> command:</p>
 <pre><code>docker tag cool-new-image:2 username/cool-new-image:2</code></pre>
 <p>Other strategies for versioning can mirror git branch naming conventions, so <code>main</code> for the vetted version of the image and <code>dev</code> or <code>stage</code> for a version that’s still being worked on but will probably eventually be released.</p>
-<p>There’s no one size fits all for image tags, its really up to whatever you and your team decide works best for your project. Regardless being intentional, consistent, and clearly documenting any system you choose to use are the main keys.</p>
+<p>There’s no one size fits all for image tags, its really up to whatever you and your team decide works best for your project. Regardless, being intentional, consistent, and clearly documenting any system you choose to use are the main keys.</p>
 </section><section id="dont-use-random-developers-docker-images" class="level2" data-number="7.5"><h2 data-number="7.5" class="anchored" data-anchor-id="dont-use-random-developers-docker-images">
 <span class="header-section-number">7.5</span> Don’t use random developers’ docker images</h2>
-<p>Images and containers can be difficult to have transparency into the build at times. And unfrotunately not everyone on the internet who makes images is trustworthy. To avoid security issues make sure to stick to trusted sources for your docker images. Either verified individuals or companies. Try not to wander too far off the beaten path. Better to make your own image from a trusted source’s base image than to use a random strangers’ image that promises to do it all.</p>
+<p>Images and containers can be difficult to have transparency into the build at times. And unfortunately not everyone on the internet who makes images is trustworthy. To avoid security issues make sure to stick to trusted sources for your docker images. Trust only verified individuals or companies. Try not to wander too far off the beaten path. Better to make your own image from a trusted source’s base image than to use a random strangers’ image that promises to do it all.</p>
 </section><section id="summary-of-best-practices" class="level2" data-number="7.6"><h2 data-number="7.6" class="anchored" data-anchor-id="summary-of-best-practices">
 <span class="header-section-number">7.6</span> Summary of best practices</h2>
 <div class="cell">
@@ -171,25 +171,25 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section><section id="container-registries" class="level2" data-number="7.7"><h2 data-number="7.7" class="anchored" data-anchor-id="container-registries">
 <span class="header-section-number">7.7</span> Container Registries</h2>
-<p>To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes.</p>
+<p>To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes.</p>
 <p><a href="https://octopus.com/blog/top-8-container-registries">This article has a nice summary of some of the most popular ones</a>.</p>
 <p>And here’s a TL;DR of the most common registries:</p>
 <ul>
 <li>
 <a href="https://hub.docker.com/">Dockerhub</a> – widely used, a default</li>
 <li>
-<a href="https://aws.amazon.com/containers/">Amazon Web Services Container Registry</a> - options for keeping private<br>
+<a href="https://aws.amazon.com/containers/">Amazon Web Services Container Registry</a> - includes options for keeping private<br>
 </li>
 <li>
-<a href="https://aws.amazon.com/containers/">Github container registry</a> - If you are using GitHub packages works with that nicely</li>
+<a href="https://aws.amazon.com/containers/">Github container registry</a> - works nicely with GitHub Packages</li>
 <li>
 <a href="https://docs.sylabs.io/guides/3.5/user-guide/introduction.html">Singularity</a> – if you need more robust security</li>
 </ul>
-<p>We encourage you to consider what container registries work best for you specific project and team. Here’s a starter list of considerations you may want to think of, roughly in the order of importance.</p>
+<p>We encourage you to consider what container registries work best for your specific project and team. Here’s a starter list of considerations you may want to think of, roughly in the order of importance.</p>
 <ol type="1">
 <li>If you have protected data and security concerns (like we discussed earlier in this chapter) you may need to pick a container registry that allows privacy and strong security.</li>
-<li>Price – not all container registries are free, but many of them are what kind of budget do you have for this purpose? Paying is generally not a necessity so don’t pay for a container registry subscription unless you need to.</li>
-<li>What tools are you already using? For example GitHub, Azure, and AWS have their own container registries, if you already are using these services you may consider using their associated registry. (Note GitHub actions works quite seamlessly with Dockerhub, so personally I haven’t had a reason to use GitHub Container Registry but it is an option.)</li>
+<li>Price – not all container registries are free, but many of them are. What kind of budget do you have for this purpose? Paying is generally not a necessity so don’t pay for a container registry subscription unless you need to.</li>
+<li>What tools are you already using? For example GitHub, Azure, and AWS have their own container registries, if you are already using these services you may consider using their associated registry. (Note GitHub actions works quite seamlessly with Dockerhub, so personally I haven’t had a reason to use GitHub Container Registry but it is an option.)</li>
 <li>Is there an industry standard? Where are your collaborators or those at your institution storing your images?</li>
 </ol>
 <p>While there are lots of container registry options, for the purposes of this tutorial, we’ll use Dockerhub. Dockerhub is one of the first container registries and still remains one of the largest. For most purposes, using Dockerhub will be just fine.</p>
