@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>docker rm &lt;PUT_CONTAINER_ID_HERE&gt;</code></pre>
 <p>This means you’ll need to grab the container ID, either from Docker desktop or by running <code>docker ps</code>.</p>
 <p>Note! <strong>If you try to remove an image that is currently being used to run a container you won’t be allowed to!</strong> So stop and remove containers first, then you can remove the image.</p>
-<p><strong>Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. </strong></p>
+<p><strong>Below are some kind of destructive actions. These will delete potentially a lot of containers and images. So, proceed with caution. </strong></p>
 <section id="remove-non-running-containers" class="level4" data-number="8.2.0.1"><h4 data-number="8.2.0.1" class="anchored" data-anchor-id="remove-non-running-containers">
 <span class="header-section-number">8.2.0.1</span> Remove non-running containers</h4>
 <pre><code>docker rm $(docker ps -a -q)</code></pre>
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>docker rmi &lt;PUT_IMAGE_NAME_OR_ID_HERE&gt;</code></pre>
 <p>This means you’ll need to grab the container ID, either from Docker desktop or by running <code>docker image ls</code>.</p>
 <p>Note! If you try to remove an image that is currently being used to run a container you won’t be allowed to! So stop and remove containers first, then you can remove the image.</p>
-<p><strong>Below are some kind of destructive actions, its going to delete potentially a lot of containers and images if you run these so just beware. </strong></p>
+<p><strong>Below are some kind of destructive actions. These will delete potentially a lot of containers and images. So, proceed with caution.</strong></p>
 <section id="remove-all-non-running-containers" class="level4" data-number="8.3.0.1"><h4 data-number="8.3.0.1" class="anchored" data-anchor-id="remove-all-non-running-containers">
 <span class="header-section-number">8.3.0.1</span> Remove all non-running containers</h4>
 <pre><code>podman rm $(podman ps -a -q)</code></pre>
