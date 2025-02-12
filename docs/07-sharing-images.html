@@ -239,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Reproducibility is a community activity and because of this sharing images is clearly a big component of why images can aid in reproducibility.</p>
+<p>Reproducibility is a community activity. Sharing images is a big component of how images can aid in reproducibility.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -279,10 +279,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Data privacy is just one concern of best practices with containers. There’s also some other tips we can talk about at this time.</p>
 </section></section></section><section id="do-not-make-one-super-large-image-that-covers-all-your-use-cases" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="do-not-make-one-super-large-image-that-covers-all-your-use-cases">
 <span class="header-section-number">7.2</span> Do not make one super large image that covers all your use cases</h2>
-<p>Just as in Lord of the Rings that the “one ring to rule them all” was dangerous, so too is “one docker image to rule them all”. Big images are a headache to deal with. They take a long time to build and to pull, and if anything is broken on them, it can be a headache to troubleshoot.</p>
+<p>Just as in Lord of the Rings where the “one ring to rule them all” proved dangerous, so too is “one docker image to rule them all”. Big images are a headache to deal with. They take a long time to build and to pull, and if anything is broken on them, it can be a headache to troubleshoot.</p>
 <section id="alternatives-1" class="level3" data-number="7.2.1"><h3 data-number="7.2.1" class="anchored" data-anchor-id="alternatives-1">
 <span class="header-section-number">7.2.1</span> Alternatives:</h3>
-<p>There’s no limit on the number of images you can make! There can be a fine art to making separate images for each use case. Obviously too many images could be hard to keep track of which is which, but a very intentional organizational plan for your images can take you far.</p>
+<p>There’s no limit on the number of images you can make! There can be a fine art to making separate images for each use case. Too many images can be hard to keep track of, but a very intentional organizational plan for your images can take you far.</p>
 </section></section><section id="version-control-your-dockerfiles" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="version-control-your-dockerfiles">
 <span class="header-section-number">7.3</span> Version control your Dockerfiles</h2>
 <p>Keeping your Dockerfile stored only locally and untracked is likely to lead to headaches. Version control is always a good idea and containerization is no exception! To learn more about version control see our <a href="https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html">Intro to Reproducibility in Cancer Informatics course</a> or <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/introduction.html">Advanced Reproducibility in Cancer Informatics course</a> sections on making your project open source with GitHub.</p>
@@ -310,9 +310,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section><section id="container-registries" class="level2" data-number="7.7"><h2 data-number="7.7" class="anchored" data-anchor-id="container-registries">
 <span class="header-section-number">7.7</span> Container Registries</h2>
-<p>To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes.</p>
-<p><a href="https://octopus.com/blog/top-8-container-registries">This article has a nice summary of some of the most popular ones</a>.</p>
-<p>And here’s a TL;DR of the most common registries:</p>
+<p>To share our image with others (or our future selves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes.</p>
+<p><a href="https://octopus.com/blog/top-8-container-registries">This article has a nice guide to some of the most popular ones</a>.</p>
+<p>And here’s a summary of the most common registries:</p>
 <ul>
 <li>
 <a href="https://hub.docker.com/">Dockerhub</a> – widely used, a default</li>
