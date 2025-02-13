@@ -40,7 +40,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 ### Docker 
 
-There are three Dockerfiles in this folder. Each has something slightly wrong with it.
+There are three Dockerfiles in the `activity-files` folder. Each has something slightly wrong with it.
 
 Use the following `docker build` commands and work to pinpoint the error and fix it using the tips we discussed in this chapter. 
 
@@ -63,7 +63,7 @@ docker build -f Bad_Dockerfile_3 .
 
 ### Podman 
 
-There are three Dockerfiles in this folder. Each has something slightly wrong with it.
+There are three Dockerfiles in the `activity-files` folder. Each has something slightly wrong with it.
 
 Use the following `podman build` commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.
 
@@ -89,9 +89,9 @@ Carefully look at the name of base image that is being pulled from.
 </details> 
 
 <details><summary> Bad_Dockerfile_2 hint </summary>
-Are the commands that are referenced all things that are installed on the base image?
+Are the commands that are referenced installed on the base image?
 </details> 
 
 <details><summary> Bad_Dockerfile_3 hint </summary>
-Is the file that is being `COPY` over specified correctly? 
+Is the file that is being copied over with `COPY` specified correctly? 
 </details> 
