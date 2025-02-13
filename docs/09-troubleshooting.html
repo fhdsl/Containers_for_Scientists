@@ -262,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="header-section-number">9.1</span> Activity Instructions</h2>
 <section id="docker" class="level3" data-number="9.1.1"><h3 data-number="9.1.1" class="anchored" data-anchor-id="docker">
 <span class="header-section-number">9.1.1</span> Docker</h3>
-<p>There are three Dockerfiles in this folder. Each has something slightly wrong with it.</p>
+<p>There are three Dockerfiles in the <code>activity-files</code> folder. Each has something slightly wrong with it.</p>
 <p>Use the following <code>docker build</code> commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.</p>
 <section id="bad-dockerfile-1" class="level4" data-number="9.1.1.1"><h4 data-number="9.1.1.1" class="anchored" data-anchor-id="bad-dockerfile-1">
 <span class="header-section-number">9.1.1.1</span> Bad Dockerfile 1:</h4>
@@ -275,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>docker build -f Bad_Dockerfile_3 .</code></pre>
 </section></section><section id="podman" class="level3" data-number="9.1.2"><h3 data-number="9.1.2" class="anchored" data-anchor-id="podman">
 <span class="header-section-number">9.1.2</span> Podman</h3>
-<p>There are three Dockerfiles in this folder. Each has something slightly wrong with it.</p>
+<p>There are three Dockerfiles in the <code>activity-files</code> folder. Each has something slightly wrong with it.</p>
 <p>Use the following <code>podman build</code> commands and work to pinpoint the error and fix it using the tips we discussed in this chapter.</p>
 <section id="bad-dockerfile-1-1" class="level4" data-number="9.1.2.1"><h4 data-number="9.1.2.1" class="anchored" data-anchor-id="bad-dockerfile-1-1">
 <span class="header-section-number">9.1.2.1</span> Bad Dockerfile 1:</h4>
@@ -295,11 +295,11 @@ Carefully look at the name of base image that is being pulled from.
 </details><details><summary>
 Bad_Dockerfile_2 hint
 </summary>
-Are the commands that are referenced all things that are installed on the base image?
+Are the commands that are referenced installed on the base image?
 </details><details><summary>
 Bad_Dockerfile_3 hint
 </summary>
-Is the file that is being <code>COPY</code> over specified correctly?
+Is the file that is being copied over with <code>COPY</code> specified correctly?
 </details>
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
