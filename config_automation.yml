@@ -21,7 +21,7 @@ url-check-periodically: yes
 
 ##### Renderings run upon merge to main branch #####
 # Rendering each platform's content
-render-website: rmd
+render-website: quarto
 render-leanpub: yes
 render-coursera: yes
 
