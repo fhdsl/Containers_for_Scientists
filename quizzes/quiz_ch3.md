@@ -1,61 +1,40 @@
 
-{quiz, id: quiz_name_here, attempts: 10}
+{quiz, id: using_containers, attempts: 10}
 
-## Template quiz
+## Using Containers
 
-Put any other instructions your quiz takers need to know here like: Choose the best answer.
-
-{choose-answers: 4}
-? First question to ask goes here. (Note- you need a question mark at end like this. Just one is required if using a question mark in your question field)?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+Choose the best answer for each question.
 
 {choose-answers: 4}
-? Question example with just a question mark?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+? What happens by default when you run a container regarding files and software?
+C) The container is isolated and does not have access to your computer's files and software
+m) The container automatically copies all your computer's files
+m) The container shares all files with your computer
+o) The container only copies system files
+o) The container connects to cloud storage
 
 {choose-answers: 4}
-? Second question to ask goes here?
-
-C) A correct answer here!
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
-
+? What is the correct command to see what Docker images you have on your computer?
+C) docker image ls
+m) docker images show
+m) docker list images
+o) docker ps
+o) docker show images
 
 {choose-answers: 4}
-? A more complicated example. Note the question mark at the end of the options! Which of the following are correct
-1. An option described
-2. A second option
-3. A third option
-4. A fourth option
-5. A fifth option ?
+? What is the difference between 'docker run' and 'docker exec' commands?
+C) docker run creates a new container from an image, while docker exec executes commands in an already running container
+m) They are exactly the same command
+m) docker exec creates new containers while docker run executes commands
+o) docker run is only for images while docker exec is only for files
+o) There is no difference between the commands
 
-C) All of the examples listed except 5
-C) All of the listed examples except 5
-m) 1, 3, and 5
-m) 1, 2, and 3
-o) All of the examples except 1 and 5
-o) All of the examples listed
-
-{random-choice-order: false}
-? A question in which the order of choices is important?
-
-a) The possible responses should be labeled a, b, c, etc
-b) The correct answer has a capital letter, in this case "D" is correct
-c) both a and b
-D) All of the above will always be last choice in this question
+{choose-answers: 4}
+? What is the purpose of "pulling" a Docker image?
+C) To download a copy of the image from the internet to your local computer
+m) To upload your images to the internet
+m) To create a new container
+o) To delete old images
+o) To modify existing images
 
 {/quiz}

@@ -1,61 +1,39 @@
+{quiz, id: troubleshooting_tips_quiz, attempts: 10}
 
-{quiz, id: quiz_name_here, attempts: 10}
+## Understanding Docker Troubleshooting
 
-## Template quiz
-
-Put any other instructions your quiz takers need to know here like: Choose the best answer.
-
-{choose-answers: 4}
-? First question to ask goes here. (Note- you need a question mark at end like this. Just one is required if using a question mark in your question field)?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+Choose the best answer for each question.
 
 {choose-answers: 4}
-? Question example with just a question mark?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+? What is one of the first questions you should ask yourself when troubleshooting Docker container issues?
+C) Is there a file or software package that I'm assuming the image/container has that it does not?
+m) Is my internet connection working?
+m) Is Docker installed correctly?
+o) Is my computer powerful enough?
+o) Do I need to upgrade Docker?
 
 {choose-answers: 4}
-? Second question to ask goes here?
-
-C) A correct answer here!
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
-
+? When dealing with dependencies in a Dockerfile, what is a crucial consideration?
+C) Make sure the dependency's RUN steps come before the software package that needs it
+m) Always install all dependencies at once
+m) Put all dependencies at the end of the Dockerfile
+o) Skip dependency installation
+o) Install dependencies in random order
 
 {choose-answers: 4}
-? A more complicated example. Note the question mark at the end of the options! Which of the following are correct
-1. An option described
-2. A second option
-3. A third option
-4. A fourth option
-5. A fifth option ?
+? When should you use the --no-cache option when building a Docker image?
+C) When the base image or copied files have changed and you need to force a rebuild
+m) Every time you build an image
+m) Only for small images
+o) Never use --no-cache
+o) Only for testing purposes
 
-C) All of the examples listed except 5
-C) All of the listed examples except 5
-m) 1, 3, and 5
-m) 1, 2, and 3
-o) All of the examples except 1 and 5
-o) All of the examples listed
-
-{random-choice-order: false}
-? A question in which the order of choices is important?
-
-a) The possible responses should be labeled a, b, c, etc
-b) The correct answer has a capital letter, in this case "D" is correct
-c) both a and b
-D) All of the above will always be last choice in this question
+{choose-answers: 4}
+? What sequence of steps should you follow when debugging a Docker build issue?
+C) Check for missing files, verify software packages, look for typos, and check dependencies
+m) Immediately rebuild the entire image
+m) Delete all containers and start over
+o) Only check for typos
+o) Ignore error messages
 
 {/quiz}

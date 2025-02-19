@@ -1,61 +1,40 @@
 
-{quiz, id: quiz_name_here, attempts: 10}
+{quiz, id: why_containers, attempts: 10}
 
-## Template quiz
+## Why Containers
 
-Put any other instructions your quiz takers need to know here like: Choose the best answer.
-
-{choose-answers: 4}
-? First question to ask goes here. (Note- you need a question mark at end like this. Just one is required if using a question mark in your question field)?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+Choose the best answer for each question.
 
 {choose-answers: 4}
-? Question example with just a question mark?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+? What is the primary reason containers are beneficial for scientific reproducibility?
+C) They control the computing environment across different machines
+m) They make computers run faster
+m) They automatically update software
+o) They prevent software from being installed
+o) They reduce storage space requirements
 
 {choose-answers: 4}
-? Second question to ask goes here?
-
-C) A correct answer here!
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
-
+? In the context of containers, what is the relationship between an image and a container?
+C) An image is like a recipe, and a container is like the prepared meal from that recipe
+m) An image is a running instance of a container
+m) Images and containers are the same thing
+o) Containers create images automatically
+o) Images are only used for storage purposes
 
 {choose-answers: 4}
-? A more complicated example. Note the question mark at the end of the options! Which of the following are correct
-1. An option described
-2. A second option
-3. A third option
-4. A fourth option
-5. A fifth option ?
+? According to the text, why can scientific results vary between different computers?
+C) Due to variations in software versions, packages installed, and operating systems
+m) Only because of different operating systems
+m) Only because of user preferences
+o) Due to variations in hardware speed
+o) Because of network connectivity differences
 
-C) All of the examples listed except 5
-C) All of the listed examples except 5
-m) 1, 3, and 5
-m) 1, 2, and 3
-o) All of the examples except 1 and 5
-o) All of the examples listed
-
-{random-choice-order: false}
-? A question in which the order of choices is important?
-
-a) The possible responses should be labeled a, b, c, etc
-b) The correct answer has a capital letter, in this case "D" is correct
-c) both a and b
-D) All of the above will always be last choice in this question
+{choose-answers: 4}
+? What is described as a potential impractical solution for controlling computing environments?
+C) Shipping one laptop between all collaborators
+m) Using cloud computing
+m) Installing identical software on all computers
+o) Using virtual machines
+o) Creating backup copies of software
 
 {/quiz}

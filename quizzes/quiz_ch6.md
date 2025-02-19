@@ -1,61 +1,40 @@
 
-{quiz, id: quiz_name_here, attempts: 10}
+{quiz, id: write_dockerfiles, attempts: 10}
 
-## Template quiz
+## Write Dockerfiles
 
-Put any other instructions your quiz takers need to know here like: Choose the best answer.
-
-{choose-answers: 4}
-? First question to ask goes here. (Note- you need a question mark at end like this. Just one is required if using a question mark in your question field)?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+Choose the best answer for each question.
 
 {choose-answers: 4}
-? Question example with just a question mark?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+? When installing packages in a Dockerfile, what is an important syntax consideration?
+C) Using backslashes () at the end of each line for continuing commands and maintaining proper spacing
+m) Using semicolons at the end of each line
+m) Adding spaces randomly throughout the command
+o) Using forward slashes (/) at the end of each line
+o) Adding extra blank lines between commands
 
 {choose-answers: 4}
-? Second question to ask goes here?
-
-C) A correct answer here!
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
-
+? What is the recommended approach when looking to add new software to your Dockerfile?
+C) Look for other Dockerfiles with the same base OS and copy their successful installation steps
+m) Always write installation steps from scratch
+m) Only use the newest versions of software
+o) Avoid using version numbers
+o) Only use default package managers
 
 {choose-answers: 4}
-? A more complicated example. Note the question mark at the end of the options! Which of the following are correct
-1. An option described
-2. A second option
-3. A third option
-4. A fourth option
-5. A fifth option ?
+? If you're planning to use R in your container, which image repository should you specifically look at first?
+C) rocker images
+m) Python images
+m) Ubuntu base images
+o) Alpine images
+o) Node images
 
-C) All of the examples listed except 5
-C) All of the listed examples except 5
-m) 1, 3, and 5
-m) 1, 2, and 3
-o) All of the examples except 1 and 5
-o) All of the examples listed
-
-{random-choice-order: false}
-? A question in which the order of choices is important?
-
-a) The possible responses should be labeled a, b, c, etc
-b) The correct answer has a capital letter, in this case "D" is correct
-c) both a and b
-D) All of the above will always be last choice in this question
+{choose-answers: 4}
+? What is a recommended practice when specifying package versions in a Dockerfile?
+C) Always specify version numbers to ensure consistent rebuilds
+m) Never specify version numbers
+m) Only specify major version numbers
+o) Use random version numbers
+o) Let the package manager choose versions automatically
 
 {/quiz}

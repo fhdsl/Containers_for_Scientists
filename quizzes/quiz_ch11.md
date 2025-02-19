@@ -1,61 +1,39 @@
+{quiz, id: advanced_containers_quiz, attempts: 10}
 
-{quiz, id: quiz_name_here, attempts: 10}
+## Understanding Advanced Container Techniques
 
-## Template quiz
-
-Put any other instructions your quiz takers need to know here like: Choose the best answer.
-
-{choose-answers: 4}
-? First question to ask goes here. (Note- you need a question mark at end like this. Just one is required if using a question mark in your question field)?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+Choose the best answer for each question.
 
 {choose-answers: 4}
-? Question example with just a question mark?
-
-C) One correct answer here marked with a "C"
-C) A second correct answer here
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
+? What is the relationship between GitHub Actions and Docker containers?
+C) GitHub Actions can seamlessly use Docker containers for automation and help manage Docker images and Dockerfiles
+m) GitHub Actions can only be used to delete Docker containers
+m) GitHub Actions cannot work with Docker containers
+o) GitHub Actions only works with local containers
+o) GitHub Actions requires manual container management
 
 {choose-answers: 4}
-? Second question to ask goes here?
-
-C) A correct answer here!
-m) Mandatory incorrect answers have an "m"
-m) A second mandatory incorrect answer
-o) An optional incorrect answer here marked with an "o"
-o) A second optional incorrect answer here
-
+? What is the purpose of Personal Access Tokens in Docker?
+C) They allow secure access to Dockerhub from services like GitHub Actions, but must be kept private
+m) They are used to make containers public
+m) They are used to delete containers
+o) They are optional security features
+o) They are used to share containers publicly
 
 {choose-answers: 4}
-? A more complicated example. Note the question mark at the end of the options! Which of the following are correct
-1. An option described
-2. A second option
-3. A third option
-4. A fourth option
-5. A fifth option ?
+? What advantage does Docker Compose offer over basic docker run commands?
+C) It allows you to specify multiple complex arguments and configurations in a yaml file
+m) It runs containers faster
+m) It uses less storage space
+o) It automatically creates containers
+o) It only works with simple commands
 
-C) All of the examples listed except 5
-C) All of the listed examples except 5
-m) 1, 3, and 5
-m) 1, 2, and 3
-o) All of the examples except 1 and 5
-o) All of the examples listed
-
-{random-choice-order: false}
-? A question in which the order of choices is important?
-
-a) The possible responses should be labeled a, b, c, etc
-b) The correct answer has a capital letter, in this case "D" is correct
-c) both a and b
-D) All of the above will always be last choice in this question
+{choose-answers: 4}
+? What is Kubernetes primarily used for?
+C) Managing and orchestrating multiple containers at once, though it's not typically needed for scientific analyses
+m) Creating single containers
+m) Only for scientific analyses
+o) Replacing Docker entirely
+o) Managing Personal Access Tokens
 
 {/quiz}
