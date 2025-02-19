@@ -21,13 +21,6 @@ m) Using git clone to download files from online
 o) Using wget to download files from online
 o) Using COPY for small, necessary files
 
-{choose-answers: 4}
-? What is the correct format for creating a volume when running a Docker container on a Unix-based system?
-C) docker run -v $PWD:/home image-name
-m) docker run -volume $PWD:/home image-name
-m) docker copy $PWD:/home image-name
-o) docker mount $PWD:/home image-name
-o) docker save $PWD:/home image-name
 
 {choose-answers: 4}
 ? What happens to a volume when you stop and delete a container?

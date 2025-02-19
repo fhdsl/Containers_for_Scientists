@@ -21,7 +21,7 @@ o) --jupyter-lab
 o) -e JUPYTER=on
 
 {choose-answers: 4}
-? What is the purpose of the -v $PWD:/home/jovyan/work flag in the Jupyter container command?
+? What is the purpose of the -v flag in the Jupyter container command?
 C) It creates a volume that connects your current directory to the container's work directory
 m) It specifies the container's version
 m) It sets the container's password
