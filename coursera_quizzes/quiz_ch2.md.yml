@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the primary reason containers are beneficial for scientific reproducibility?
+      shuffleOptions: true
+      options:
+        - answer: They control the computing environment across different machines
+          isCorrect: true
+          feedback: |-
+              Correct! Containers package the computing environment, ensuring consistency across different machines which is essential for reproducibility.
+        - answer: They make computers run faster
+          isCorrect: false
+          feedback: |-
+              Speed improvements are not mentioned as the primary benefit for scientific reproducibility. The main benefit is environment consistency.
+        - answer: They automatically update software
+          isCorrect: false
+          feedback: |-
+              Automatic updates are not the primary benefit for reproducibility. In fact, version control (not automatic updates) is what helps with reproducibility.
+        - answer: They prevent software from being installed
+          isCorrect: false
+          feedback: |-
+              Containers don't prevent software installation - they actually package software in a controlled way to ensure consistency.
+        - answer: They reduce storage space requirements
+          isCorrect: false
+          feedback: |-
+              Storage efficiency is not mentioned as the primary benefit for scientific reproducibility. The focus is on environment consistency.
+
+- variations:
+    - typeName: multipleChoice
+      prompt: In the context of containers, what is the relationship between an image and a container?
+      shuffleOptions: true
+      options:
+        - answer: An image is like a recipe, and a container is like the prepared meal from that recipe
+          isCorrect: true
+          feedback: |-
+              Correct! This analogy accurately describes the relationship - an image is the template or blueprint from which containers (running instances) are created.
+        - answer: An image is a running instance of a container
+          isCorrect: false
+          feedback: |-
+              This reverses the relationship. Containers are the running instances created from images, not the other way around.
+        - answer: Images and containers are the same thing
+          isCorrect: false
+          feedback: |-
+              Images and containers are distinct concepts with different purposes. Images are immutable templates, while containers are running instances.
+        - answer: Containers create images automatically
+          isCorrect: false
+          feedback: |-
+              The relationship works in the opposite direction - images are used to create containers, not vice versa.
+        - answer: Images are only used for storage purposes
+          isCorrect: false
+          feedback: |-
+              While images are stored, their purpose extends beyond mere storage - they serve as templates for creating containers.
+
+- variations:
+    - typeName: multipleChoice
+      prompt: According to the text, why can scientific results vary between different computers?
+      shuffleOptions: true
+      options:
+        - answer: Due to variations in software versions, packages installed, and operating systems
+          isCorrect: true
+          feedback: |-
+              Correct! These environmental differences can affect how scientific code runs, potentially leading to different results.
+        - answer: Only because of different operating systems
+          isCorrect: false
+          feedback: |-
+              Operating systems are just one factor - software versions and packages are also important variables that can affect results.
+        - answer: Only because of user preferences
+          isCorrect: false
+          feedback: |-
+              User preferences alone don't explain the variation in scientific results. The underlying computing environment differences are the key factor.
+        - answer: Due to variations in hardware speed
+          isCorrect: false
+          feedback: |-
+              Hardware speed may affect performance but isn't mentioned as a primary cause of varying scientific results in the context of reproducibility.
+        - answer: Because of network connectivity differences
+          isCorrect: false
+          feedback: |-
+              Network connectivity is not mentioned as a factor affecting scientific reproducibility across different computers.
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is described as a potential impractical solution for controlling computing environments?
+      shuffleOptions: true
+      options:
+        - answer: Shipping one laptop between all collaborators
+          isCorrect: true
+          feedback: |-
+              Correct! This is mentioned as a theoretical but impractical solution that would technically ensure an identical computing environment.
+        - answer: Using cloud computing
+          isCorrect: false
+          feedback: |-
+              Cloud computing is generally presented as a practical solution, not an impractical one, for consistent environments.
+        - answer: Installing identical software on all computers
+          isCorrect: false
+          feedback: |-
+              While this approach might help, it's not identified as the specifically impractical solution mentioned in the text.
+        - answer: Using virtual machines
+          isCorrect: false
+          feedback: |-
+              Virtual machines are typically presented as a viable solution, not an impractical one, for environment control.
+        - answer: Creating backup copies of software
+          isCorrect: false
+          feedback: |-
+              Backups don't address the computing environment consistency issue that's central to scientific reproducibility.
