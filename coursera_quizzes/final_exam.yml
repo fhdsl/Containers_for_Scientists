@@ -1,0 +1,207 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the primary advantage of using multi-stage builds in Docker?
+      shuffleOptions: true
+      options:
+        - answer: They produce smaller final images by discarding unnecessary build tools and intermediate files
+          isCorrect: true
+          feedback: |-
+              Consider the relationship between image size and what gets included during each build stage. How might separating the build environment from the runtime environment affect the final result?
+        - answer: They automatically optimize container performance
+          isCorrect: false
+          feedback: |-
+              Think about what multi-stage builds primarily address. Are they focused on runtime performance or on the composition of the final image?
+        - answer: They eliminate the need for Dockerfiles
+          isCorrect: false
+          feedback: |-
+              Consider how multi-stage builds are defined. Do they replace Dockerfiles or represent a more sophisticated way of structuring them?
+        - answer: They only work with compiled languages
+          isCorrect: false
+          feedback: |-
+              Think about the concept of build artifacts versus runtime requirements. Is this pattern limited to certain language types or broadly applicable?
+        - answer: They reduce build time but increase image size
+          isCorrect: false
+          feedback: |-
+              Consider the primary goal of multi-stage builds. Would increasing image size be consistent with their intended purpose?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: When should you consider using Docker secrets for configuration?
+      shuffleOptions: true
+      options:
+        - answer: When your container needs access to sensitive information like API keys or passwords
+          isCorrect: true
+          feedback: |-
+              Consider what types of information should never be embedded directly in images or visible in configuration files. What mechanisms would protect this data while still making it available to containers?
+        - answer: Only when using Docker in production
+          isCorrect: false
+          feedback: |-
+              Think about whether the need for securing sensitive information is limited to certain environments. Would development environments benefit from proper secret management?
+        - answer: When you want to speed up container startup
+          isCorrect: false
+          feedback: |-
+              Consider the primary purpose of Docker secrets. Are they designed for performance optimization or for security?
+        - answer: Only when using Docker Compose
+          isCorrect: false
+          feedback: |-
+              Think about whether secret management is tied to specific Docker tools. Is this security feature limited to certain deployment methods?
+        - answer: When containers need to communicate with each other
+          isCorrect: false
+          feedback: |-
+              Consider what Docker secrets primarily protect. Are they designed for inter-container communication or for protecting sensitive data?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is a key difference between Docker and singularity containers in scientific computing?
+      shuffleOptions: true
+      options:
+        - answer: Singularity is designed for HPC environments and doesn't require root privileges to run
+          isCorrect: true
+          feedback: |-
+              Consider the security and permission requirements of traditional HPC (High-Performance Computing) environments. What container features would be important in multi-user shared computing resources?
+        - answer: Docker supports scientific applications while Singularity doesn't
+          isCorrect: false
+          feedback: |-
+              Think about the purpose behind Singularity's development. Was it created to replace scientific capability or to address specific needs in scientific computing environments?
+        - answer: Singularity containers are always smaller than Docker containers
+          isCorrect: false
+          feedback: |-
+              Consider whether container size is determined by the container technology or by what's included in the container. Is size an inherent property of the container type?
+        - answer: Docker is open-source while Singularity is proprietary
+          isCorrect: false
+          feedback: |-
+              Think about the licensing models of these container technologies. Are either of them closed-source commercial products?
+        - answer: Singularity can only run on Windows systems
+          isCorrect: false
+          feedback: |-
+              Consider the primary operating systems used in scientific and HPC environments. Would a container technology limited to Windows be widely adopted in these settings?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the recommended approach for handling data persistence in containers?
+      shuffleOptions: true
+      options:
+        - answer: Store data that needs to persist in mounted volumes, not within the container filesystem
+          isCorrect: true
+          feedback: |-
+              Consider the ephemeral nature of containers. What happens to data written inside a container when that container is removed or replaced?
+        - answer: Always store data inside the container's filesystem
+          isCorrect: false
+          feedback: |-
+              Think about container immutability and lifecycle. When a container is restarted or rebuilt, what happens to its internal filesystem?
+        - answer: Avoid storing persistent data when using containers
+          isCorrect: false
+          feedback: |-
+              Consider whether containers are incompatible with persistent data or if they just require a specific approach to handling it.
+        - answer: Back up the container regularly instead of using volumes
+          isCorrect: false
+          feedback: |-
+              Think about the container philosophy of separation of concerns. Is backing up entire containers an efficient way to preserve just the data?
+        - answer: Convert persistent data to read-only files
+          isCorrect: false
+          feedback: |-
+              Consider whether applications need to write new data or modify existing data. Would read-only data meet the needs of applications that update information?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the primary benefit of using container registries instead of sharing container files directly?
+      shuffleOptions: true
+      options:
+        - answer: They provide a centralized, versioned repository that makes distribution and updates more manageable
+          isCorrect: true
+          feedback: |-
+              Consider how software distribution has evolved beyond sharing files directly. What advantages do repository systems offer over direct file transfers?
+        - answer: They make containers run faster
+          isCorrect: false
+          feedback: |-
+              Think about what registries primarily address. Do they affect runtime performance or distribution and management?
+        - answer: They automatically fix bugs in your containers
+          isCorrect: false
+          feedback: |-
+              Consider the role of registries in the container lifecycle. Do they modify container content or primarily store and distribute it?
+        - answer: They reduce the size of container images
+          isCorrect: false
+          feedback: |-
+              Think about what registries do with container images. Do they compress or optimize images or simply store and catalog them?
+        - answer: They eliminate the need for Dockerfiles
+          isCorrect: false
+          feedback: |-
+              Consider the relationship between how containers are built versus how they are stored and shared. Do registries replace the build process or come after it?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the best practice for handling container logs?
+      shuffleOptions: true
+      options:
+        - answer: Configure containers to write logs to stdout/stderr and use the host's logging system to capture them
+          isCorrect: true
+          feedback: |-
+              Consider the container design philosophy of separation of concerns. How would this approach maintain container simplicity while ensuring logs are preserved?
+        - answer: Always store logs inside the container
+          isCorrect: false
+          feedback: |-
+              Think about what happens when containers are removed or restarted. How would internal log storage affect log persistence?
+        - answer: Disable logging entirely for better performance
+          isCorrect: false
+          feedback: |-
+              Consider the importance of observability in troubleshooting. Would the performance gain outweigh the loss of visibility?
+        - answer: Create a separate container just for storing logs
+          isCorrect: false
+          feedback: |-
+              Think about standard logging patterns in containerized environments. Is creating dedicated log storage containers the recommended approach?
+        - answer: Only log errors, not informational messages
+          isCorrect: false
+          feedback: |-
+              Consider different log levels and their purposes. Would limiting logs to errors provide sufficient context for troubleshooting all issues?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: Which of the following is a best practice for container security?
+      shuffleOptions: true
+      options:
+        - answer: Run containers with the least privileges necessary and scan images for vulnerabilities
+          isCorrect: true
+          feedback: |-
+              Consider the principle of least privilege in security. Why would limiting container capabilities reduce potential security risks?
+        - answer: Always run containers as root to ensure they have access to everything they need
+          isCorrect: false
+          feedback: |-
+              Think about the security implications of elevated privileges. Would granting maximum access align with security best practices?
+        - answer: Security is automatically handled by containers
+          isCorrect: false
+          feedback: |-
+              Consider whether containerization itself provides complete security. Are additional practices needed beyond the basic isolation containers provide?
+        - answer: Use the same credentials for all your containers
+          isCorrect: false
+          feedback: |-
+              Think about credential management best practices. Would credential reuse strengthen or weaken your security posture?
+        - answer: Disable all security features for better performance
+          isCorrect: false
+          feedback: |-
+              Consider the tradeoff between security and performance. Would completely prioritizing performance over security be considered a best practice?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is a key consideration when containerizing a database for scientific workflows?
+      shuffleOptions: true
+      options:
+        - answer: Ensure data persistence through proper volume mapping and carefully consider backup strategies
+          isCorrect: true
+          feedback: |-
+              Consider the critical nature of research data. What container configuration aspects would ensure data is neither lost nor corrupted if the container is replaced?
+        - answer: Databases should never be containerized
+          isCorrect: false
+          feedback: |-
+              Think about whether there are valid use cases for database containerization. Are there scenarios where the benefits might outweigh the challenges?
+        - answer: Performance doesn't matter for scientific databases
+          isCorrect: false
+          feedback: |-
+              Consider whether scientific applications have performance requirements. Would researchers benefit from efficient data access or is any performance level acceptable?
+        - answer: Always use the smallest possible database image
+          isCorrect: false
+          feedback: |-
+              Think about whether image size should be the primary consideration. What other factors might be equally or more important for database containers?
+        - answer: Security is unnecessary for scientific databases
+          isCorrect: false
+          feedback: |-
+              Consider the nature of scientific data. Might it include sensitive information that requires protection, or is all scientific data publicly shareable?
