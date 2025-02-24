@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the relationship between GitHub Actions and Docker containers?
+      shuffleOptions: true
+      options:
+        - answer: GitHub Actions can seamlessly use Docker containers for automation and help manage Docker images and Dockerfiles
+          isCorrect: true
+          feedback: |-
+              Consider how CI/CD pipelines interact with containerization. How might automation platforms leverage containers to create consistent build environments?
+        - answer: GitHub Actions can only be used to delete Docker containers
+          isCorrect: false
+          feedback: |-
+              Think about the range of operations in a CI/CD workflow. Would a powerful automation platform be limited to only deletion operations?
+        - answer: GitHub Actions cannot work with Docker containers
+          isCorrect: false
+          feedback: |-
+              Consider the integration between modern DevOps tools. Would isolated tools without cross-compatibility be the norm in today's ecosystem?
+        - answer: GitHub Actions only works with local containers
+          isCorrect: false
+          feedback: |-
+              Think about the cloud-based nature of GitHub Actions. How would location constraints affect its utility in distributed development workflows?
+        - answer: GitHub Actions requires manual container management
+          isCorrect: false
+          feedback: |-
+              Consider the purpose of automation platforms. Would requiring manual intervention align with the goals of continuous integration and deployment?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the purpose of Personal Access Tokens in Docker?
+      shuffleOptions: true
+      options:
+        - answer: They allow secure access to Dockerhub from services like GitHub Actions, but must be kept private
+          isCorrect: true
+          feedback: |-
+              Consider how automated systems authenticate with external services. What security mechanism would allow scripts to access private resources without human intervention?
+        - answer: They are used to make containers public
+          isCorrect: false
+          feedback: |-
+              Think about the relationship between authentication and access control. Are tokens typically used to reduce security or to enhance it?
+        - answer: They are used to delete containers
+          isCorrect: false
+          feedback: |-
+              Consider the primary purpose of authentication tokens. Are they typically used for specific operations or for establishing identity and access rights?
+        - answer: They are optional security features
+          isCorrect: false
+          feedback: |-
+              Think about the requirements for automated interactions with container registries. Would authentication be optional for accessing private resources?
+        - answer: They are used to share containers publicly
+          isCorrect: false
+          feedback: |-
+              Consider whether authentication would be necessary for public access. Would tokens typically be used for increasing visibility or for controlled access?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What advantage does Docker Compose offer over basic docker run commands?
+      shuffleOptions: true
+      options:
+        - answer: It allows you to specify multiple complex arguments and configurations in a yaml file
+          isCorrect: true
+          feedback: |-
+              Consider the challenges of managing complex container configurations. How would declarative configuration files compare to lengthy command-line instructions?
+        - answer: It runs containers faster
+          isCorrect: false
+          feedback: |-
+              Think about what Docker Compose primarily addresses. Is it focused on performance optimization or on configuration management?
+        - answer: It uses less storage space
+          isCorrect: false
+          feedback: |-
+              Consider what Docker Compose actually does. Does it affect how containers are stored or how they are configured and launched?
+        - answer: It automatically creates containers
+          isCorrect: false
+          feedback: |-
+              Think about the difference between configuration and automation. Does Docker Compose create containers on its own or does it provide a way to define how they should be created?
+        - answer: It only works with simple commands
+          isCorrect: false
+          feedback: |-
+              Consider the purpose of Docker Compose. Would it be designed to handle simpler or more complex scenarios compared to basic commands?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is Kubernetes primarily used for?
+      shuffleOptions: true
+      options:
+        - answer: Managing and orchestrating multiple containers at once, though it's not typically needed for scientific analyses
+          isCorrect: true
+          feedback: |-
+              Consider the scale at which different container management tools operate. What scenarios would require coordinating many containers across multiple machines?
+        - answer: Creating single containers
+          isCorrect: false
+          feedback: |-
+              Think about the complexity and overhead of Kubernetes. Would such a sophisticated system be necessary for managing individual containers?
+        - answer: Only for scientific analyses
+          isCorrect: false
+          feedback: |-
+              Consider the origins and primary use cases of Kubernetes. Was it developed specifically for scientific computing or for broader application deployment?
+        - answer: Replacing Docker entirely
+          isCorrect: false
+          feedback: |-
+              Think about the relationship between container runtimes and orchestration platforms. Does Kubernetes replace Docker or work with it at a different level?
+        - answer: Managing Personal Access Tokens
+          isCorrect: false
+          feedback: |-
+              Consider what Kubernetes is designed to coordinate. Is it primarily a security credential manager or does it serve a broader infrastructure purpose?

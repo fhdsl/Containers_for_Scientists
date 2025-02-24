@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What is one of the first questions you should ask yourself when troubleshooting Docker container issues?
+      shuffleOptions: true
+      options:
+        - answer: Is there a file or software package that I'm assuming the image/container has that it does not?
+          isCorrect: true
+          feedback: |-
+              Consider how containers differ from traditional environments. What assumptions might we make about available resources that could cause problems in containerized environments?
+        - answer: Is my internet connection working?
+          isCorrect: false
+          feedback: |-
+              Think about what factors are most likely to cause container-specific issues. Is network connectivity typically the root cause of container runtime problems?
+        - answer: Is Docker installed correctly?
+          isCorrect: false
+          feedback: |-
+              Consider whether installation issues would manifest as container-specific problems. Would you be able to create and run containers at all if Docker wasn't installed properly?
+        - answer: Is my computer powerful enough?
+          isCorrect: false
+          feedback: |-
+              Think about common causes of container issues. Are resource constraints typically the first thing to check, or are there more common configuration issues?
+        - answer: Do I need to upgrade Docker?
+          isCorrect: false
+          feedback: |-
+              Consider whether version issues are typically the first troubleshooting step. Are there more fundamental configuration aspects to check before considering version upgrades?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: When dealing with dependencies in a Dockerfile, what is a crucial consideration?
+      shuffleOptions: true
+      options:
+        - answer: Make sure the dependency's RUN steps come before the software package that needs it
+          isCorrect: true
+          feedback: |-
+              Think about how Docker builds images layer by layer. How does the sequence of instructions affect the availability of components during the build process?
+        - answer: Always install all dependencies at once
+          isCorrect: false
+          feedback: |-
+              Consider the impact of combining all dependency installations. Would this approach help with troubleshooting or layer caching?
+        - answer: Put all dependencies at the end of the Dockerfile
+          isCorrect: false
+          feedback: |-
+              Think about the sequence of operations during image building. What would happen if a package needed a dependency that wasn't yet installed?
+        - answer: Skip dependency installation
+          isCorrect: false
+          feedback: |-
+              Consider what would happen if required dependencies were missing. How would this affect software functionality?
+        - answer: Install dependencies in random order
+          isCorrect: false
+          feedback: |-
+              Think about whether order matters in dependency installation. Would randomness help or hinder predictable container behavior?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: When should you use the --no-cache option when building a Docker image?
+      shuffleOptions: true
+      options:
+        - answer: When the base image or copied files have changed and you need to force a rebuild
+          isCorrect: true
+          feedback: |-
+              Consider how Docker's caching mechanism works. Under what circumstances might the cache become "stale" or contain outdated information?
+        - answer: Every time you build an image
+          isCorrect: false
+          feedback: |-
+              Think about the purpose of caching in build processes. What are the performance implications of always disabling the cache?
+        - answer: Only for small images
+          isCorrect: false
+          feedback: |-
+              Consider whether image size affects caching benefits. Do larger or smaller images benefit differently from proper cache management?
+        - answer: Never use --no-cache
+          isCorrect: false
+          feedback: |-
+              Think about situations where cached layers might cause problems. Are there circumstances where using outdated cached layers could lead to unexpected behavior?
+        - answer: Only for testing purposes
+          isCorrect: false
+          feedback: |-
+              Consider the range of scenarios where cache invalidation is necessary. Is cache management only relevant in testing environments?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What sequence of steps should you follow when debugging a Docker build issue?
+      shuffleOptions: true
+      options:
+        - answer: Check for missing files, verify software packages, look for typos, and check dependencies
+          isCorrect: true
+          feedback: |-
+              Consider a systematic approach to troubleshooting. What categories of issues are most common, and in what order would it make sense to investigate them?
+        - answer: Immediately rebuild the entire image
+          isCorrect: false
+          feedback: |-
+              Think about troubleshooting efficiency. Would repeating the same process without investigation help identify the underlying issue?
+        - answer: Delete all containers and start over
+          isCorrect: false
+          feedback: |-
+              Consider whether removing existing containers addresses build issues. Are runtime containers typically related to build-time problems?
+        - answer: Only check for typos
+          isCorrect: false
+          feedback: |-
+              Think about the range of potential issues. Would limiting your investigation to just one category of problems be thorough enough?
+        - answer: Ignore error messages
+          isCorrect: false
+          feedback: |-
+              Consider the value of error messages in troubleshooting. Would disregarding these explicit indicators help or hinder problem resolution?

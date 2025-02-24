@@ -1,4 +1,4 @@
-replicability	
+replicability
 bb
 br
 ebdaa
@@ -547,4 +547,7 @@ wget
 wikipedia
 xaringanExtra
 yaml
+freecodecamp
+IDEs
+JupyterLab
 Yay

@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What is a Dockerfile primarily used for?
+      shuffleOptions: true
+      options:
+        - answer: It's a recipe that describes how to build a Docker image
+          isCorrect: true
+          feedback: |-
+              Think about the relationship between Dockerfiles and images. Consider what comes first in the Docker workflow and what document contains the instructions for creating something else.
+        - answer: It's a way to run containers
+          isCorrect: false
+          feedback: |-
+              Consider the distinct stages in Docker usage - building versus running. Which commands are used for execution, and which files are used during preparation?
+        - answer: It's a tool for storing container data
+          isCorrect: false
+          feedback: |-
+              Think about the purpose of a Dockerfile in the Docker ecosystem. Does it primarily relate to data storage or to defining something that will be created?
+        - answer: It's a program to download Docker images
+          isCorrect: false
+          feedback: |-
+              Consider what command is used to download images versus what files define how to build custom images. Are Dockerfiles involved in the download process?
+        - answer: It's a security protocol for Docker
+          isCorrect: false
+          feedback: |-
+              Think about what Dockerfiles contain - are they primarily security-focused or do they serve another fundamental purpose in the Docker ecosystem?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the recommended strategy for creating Docker images regarding size?
+      shuffleOptions: true
+      options:
+        - answer: Start with the smallest possible image and add only what you need for specific cases
+          isCorrect: true
+          feedback: |-
+              Consider the principles of efficient container usage. What approach would minimize resource usage while ensuring functionality? Think about how unused components impact performance.
+        - answer: Always include all possible packages you might need
+          isCorrect: false
+          feedback: |-
+              Think about the tradeoffs between convenience and efficiency. How would including unused packages affect image size and performance?
+        - answer: Create one large image for all use cases
+          isCorrect: false
+          feedback: |-
+              Consider the principles of containerization. Does a one-size-fits-all approach align with the container philosophy of specific, targeted environments?
+        - answer: Only use pre-built images
+          isCorrect: false
+          feedback: |-
+              Think about the flexibility needs in scientific computing. Would pre-built images always contain exactly what's needed for specialized workflows?
+        - answer: Always start with the largest base image
+          isCorrect: false
+          feedback: |-
+              Consider how image size affects download times, storage requirements, and resource usage. What would be the drawbacks of unnecessarily large images?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the difference between the FROM, CMD, and RUN commands in a Dockerfile?
+      shuffleOptions: true
+      options:
+        - answer: FROM creates a layer from another image, CMD specifies the default command to run at start, RUN executes commands during build
+          isCorrect: true
+          feedback: |-
+              Think about when each command takes effect in the Docker lifecycle. Which happens during image building, which sets up what happens when a container starts, and which establishes the foundation?
+        - answer: They are all the same command with different names
+          isCorrect: false
+          feedback: |-
+              Consider the different stages of container creation and execution. Would it make sense for these commands to be interchangeable if they serve different purposes?
+        - answer: FROM runs commands, CMD creates layers, RUN specifies defaults
+          isCorrect: false
+          feedback: |-
+              Think carefully about what each command actually does. Which one is about inheritance, which is about build-time execution, and which is about defining startup behavior?
+        - answer: They are only used for package installation
+          isCorrect: false
+          feedback: |-
+              Consider the broader purpose of Dockerfiles beyond just installing packages. What other configuration tasks might be needed when creating images?
+        - answer: They only work with base images
+          isCorrect: false
+          feedback: |-
+              Think about the various stages of image creation. Are these commands restricted to only certain types of images or do they serve fundamental functions in all Dockerfiles?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the correct format for installing R packages from CRAN in a Dockerfile?
+      shuffleOptions: true
+      options:
+        - answer: RUN Rscript -e "install.packages(c('package_name'))"
+          isCorrect: true
+          feedback: |-
+              Consider when package installation should happen - during image building or at container startup? Which Dockerfile command executes shell commands during the build process?
+        - answer: CMD Rscript -e "install.packages(c('package_name'))"
+          isCorrect: false
+          feedback: |-
+              Think about the purpose of CMD in a Dockerfile. Is it meant for setup tasks during image creation or for specifying what happens when a container starts?
+        - answer: FROM Rscript -e "install.packages(c('package_name'))"
+          isCorrect: false
+          feedback: |-
+              Consider what the FROM instruction does in a Dockerfile. Is it related to executing commands or to specifying a base image to build upon?
+        - answer: INSTALL Rscript -e "install.packages(c('package_name'))"
+          isCorrect: false
+          feedback: |-
+              Review the standard Dockerfile instructions. Is INSTALL one of the recognized commands in Dockerfile syntax?
+        - answer: ADD Rscript -e "install.packages(c('package_name'))"
+          isCorrect: false
+          feedback: |-
+              Think about what the ADD instruction is designed for in Dockerfiles. Is it meant for executing commands or for copying files into an image?
