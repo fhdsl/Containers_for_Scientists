@@ -1,0 +1,19 @@
+{
+  "hash": "139ec157770ec43873b355348c990bf1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n# Advanced Container Techniques\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2effc5b673e_0_857.png){width=100%}\n:::\n:::\n\n\n\n\n\n\n\n## GitHub Actions to manage your containers \n\nGitHub Actions pairs really well with images [We encourage you to take a look at our course on GitHub Actions for science!](https://hutchdatascience.org/GitHub_Automation_for_Scientists/)\n\nGitHub Actions can use Docker containers really seamlessly to automate things for you. \nGitHub Actions can also be a way for you to manage your Docker images and Dockerfiles. \n\nSee an example of one we actually maintain here: https://github.com/jhudsl/ottr-docker \n\n\n## Personal Access Tokens \n\nTo give GitHub Actions or other items access to your Dockerhub you will need to use Personal access Tokens. \nAs with most Personal Access Tokens, be very careful to not share these or post them anywhere publicly!\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2effc5b673e_0_647.png){width=100%}\n:::\n:::\n\n\n\n\n## Docker compose \n\nIn this course, we introduced you to docker run. But what if you have a ton of arguments to specify and things that you can't do from a single command? Enter docker compose. This allows you to get very fancy with your docker containers and specify a bunch of things in your yaml file. \n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2effc5b673e_0_655.png){width=100%}\n:::\n:::\n\n\n\n\n## What's Kubernetes\n\n[Kubernetes is a way you can use a bunch of containers at once](https://kubernetes.io/docs/concepts/overview/). It's mostly not needed for scientific analyses but now you know about it. \n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](resources/images/figure//1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY_g2effc5b673e_0_660.png){width=100%}\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"site_libs/panelset-0.3.0/panelset.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/panelset-0.3.0/panelset.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
