@@ -1,0 +1,77 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What is a volume in Docker terminology?
+      shuffleOptions: true
+      options:
+        - answer: A folder that acts like a portal between your computer and container, allowing file access
+          isCorrect: true
+          feedback: |-
+              Think about how containers need to communicate with the host system. What mechanism would allow files to be shared between these otherwise isolated environments?
+        - answer: A type of container storage that only exists in the cloud
+          isCorrect: false
+          feedback: |-
+              Consider the primary purpose of volumes - are they primarily meant for remote storage or for connecting existing systems? Review the section on volumes and file sharing.
+        - answer: A backup system for Docker images
+          isCorrect: false
+          feedback: |-
+              Volumes and images serve different purposes in Docker. Think about what volumes are designed to connect or share rather than preserve.
+        - answer: A way to permanently store files in a container
+          isCorrect: false
+          feedback: |-
+              Remember that containers are designed to be ephemeral. What would be the point of volumes if containers already stored files permanently?
+        - answer: A special type of Docker image
+          isCorrect: false
+          feedback: |-
+              Consider the relationship between volumes, containers, and images. Are volumes a type of template/blueprint or do they serve a different function?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: Which of the following is NOT a recommended way to get files into a container?
+      shuffleOptions: true
+      options:
+        - answer: Putting protected data directly into shared images
+          isCorrect: true
+          feedback: |-
+              Think about security and privacy concerns. What happens when you build data into an image that might be shared with others?
+        - answer: Using volumes to access local files
+          isCorrect: false
+          feedback: |-
+              Consider the primary purpose of volumes - are they generally considered a good practice for sharing files with containers?
+        - answer: Using git clone to download files from online
+          isCorrect: false
+          feedback: |-
+              Think about fetching data from version-controlled repositories - is this typically discouraged or encouraged for reproducibility?
+        - answer: Using wget to download files from online
+          isCorrect: false
+          feedback: |-
+              Consider how downloading data at runtime affects reproducibility and whether this is typically discouraged.
+        - answer: Using COPY for small, necessary files
+          isCorrect: false
+          feedback: |-
+              Think about the COPY command's purpose in Dockerfiles and whether it's appropriate for certain types of files.
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What happens to a volume when you stop and delete a container?
+      shuffleOptions: true
+      options:
+        - answer: The portal/connection between the container and computer is closed
+          isCorrect: true
+          feedback: |-
+              Consider the lifecycle of containers versus volumes. What happens to the connection between two systems when one of them is removed?
+        - answer: The files in the volume are permanently deleted
+          isCorrect: false
+          feedback: |-
+              Think about one of the main benefits of volumes - would it make sense for them to be automatically deleted when containers are removed?
+        - answer: The volume becomes part of the container image
+          isCorrect: false
+          feedback: |-
+              Consider the relationship between volumes, containers, and images. Can runtime connections become part of a static template?
+        - answer: The volume is automatically backed up
+          isCorrect: false
+          feedback: |-
+              Think about Docker's default behaviors - does it typically perform automatic backups without explicit commands?
+        - answer: The volume becomes read-only
+          isCorrect: false
+          feedback: |-
+              Consider how volume permissions work - would they typically change automatically based on container status?

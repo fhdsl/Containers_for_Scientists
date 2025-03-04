@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: When installing packages in a Dockerfile, what is an important syntax consideration?
+      shuffleOptions: true
+      options:
+        - answer: Using backslashes (\) at the end of each line for continuing commands and maintaining proper spacing
+          isCorrect: true
+          feedback: |-
+              Consider how long package installation commands can become and what syntax elements help with readability while ensuring the shell interprets multiple lines as a single command.
+        - answer: Using semicolons at the end of each line
+          isCorrect: false
+          feedback: |-
+              Think about the standard shell syntax for line continuation. Does a semicolon terminate a command or allow it to continue to the next line?
+        - answer: Adding spaces randomly throughout the command
+          isCorrect: false
+          feedback: |-
+              Consider how spacing affects command readability and execution. Would random spaces help or hinder proper execution of shell commands?
+        - answer: Using forward slashes (/) at the end of each line
+          isCorrect: false
+          feedback: |-
+              Think about standard shell syntax for line continuation. Which character is typically used to indicate that a command continues on the next line?
+        - answer: Adding extra blank lines between commands
+          isCorrect: false
+          feedback: |-
+              Consider whether blank lines would help with command continuation or if they serve a different purpose in script readability.
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the recommended approach when looking to add new software to your Dockerfile?
+      shuffleOptions: true
+      options:
+        - answer: Look for other Dockerfiles with the same base OS and copy their successful installation steps
+          isCorrect: true
+          feedback: |-
+              Think about the value of learning from others' experiences. How might examining existing solutions save time and help avoid common pitfalls?
+        - answer: Always write installation steps from scratch
+          isCorrect: false
+          feedback: |-
+              Consider the efficiency of software development. Is it always beneficial to "reinvent the wheel" or might there be value in building upon others' work?
+        - answer: Only use the newest versions of software
+          isCorrect: false
+          feedback: |-
+              Think about the tradeoffs between using the latest software versus established versions. What factors beyond newness might be important for reproducibility?
+        - answer: Avoid using version numbers
+          isCorrect: false
+          feedback: |-
+              Consider how version specification affects reproducibility. What might happen if you don't specify which version to install?
+        - answer: Only use default package managers
+          isCorrect: false
+          feedback: |-
+              Think about the diversity of software installation methods. Are package managers always sufficient for all types of software?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: If you're planning to use R in your container, which image repository should you specifically look at first?
+      shuffleOptions: true
+      options:
+        - answer: rocker images
+          isCorrect: true
+          feedback: |-
+              Consider which repositories specialize in specific programming languages. For R users, which community-maintained collection of Docker images is recommended?
+        - answer: Python images
+          isCorrect: false
+          feedback: |-
+              Think about the relationship between programming languages and specialized Docker images. Would Python-focused images be the most appropriate starting point for R work?
+        - answer: Ubuntu base images
+          isCorrect: false
+          feedback: |-
+              Consider the difference between general-purpose OS images and language-specific images. Which would require more configuration for R-specific work?
+        - answer: Alpine images
+          isCorrect: false
+          feedback: |-
+              Think about Alpine's focus on minimalism versus the needs of R users. Would a minimal OS image or a language-specific image be more convenient?
+        - answer: Node images
+          isCorrect: false
+          feedback: |-
+              Consider the primary purpose of Node.js images. Would they be optimized for R development or for a different language ecosystem?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is a recommended practice when specifying package versions in a Dockerfile?
+      shuffleOptions: true
+      options:
+        - answer: Always specify version numbers to ensure consistent rebuilds
+          isCorrect: true
+          feedback: |-
+              Think about reproducibility in scientific computing. How does version specification help ensure that containers built at different times behave the same way?
+        - answer: Never specify version numbers
+          isCorrect: false
+          feedback: |-
+              Consider what might happen when rebuilding a container months or years later without version specifications. How might this affect reproducibility?
+        - answer: Only specify major version numbers
+          isCorrect: false
+          feedback: |-
+              Think about how much change can occur between minor versions or patch releases. Would major version numbers alone provide sufficient reproducibility?
+        - answer: Use random version numbers
+          isCorrect: false
+          feedback: |-
+              Consider the purpose of version specifications. How would randomness affect the reliability and reproducibility of your container?
+        - answer: Let the package manager choose versions automatically
+          isCorrect: false
+          feedback: |-
+              Think about what happens when package managers automatically select "latest" versions. How might this affect reproducibility over time?
