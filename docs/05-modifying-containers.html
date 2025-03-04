@@ -454,7 +454,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Then you can use pip install to install packages with the following format:</p>
 <pre><code>RUN pip3 install \
     "somepackage==0.1.0"</code></pre>
-<p>There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We have gotten you started with a simple example of how to write a Dockerfil and build a docker image from a base image plus some additional packages. But, what you put on your Docker image will be up to you.</p>
+<p>There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We have gotten you started with a simple example of how to write a Dockerfile and build a docker image from a base image plus some additional packages. But, what you put on your Docker image will be up to you.</p>
 <p>To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their <code>RUN</code> command. Then try to re-build your Docker image with that added <code>RUN</code> command and see if it builds successfully. Another strategy is to enter an interactive terminal session on your base image, work out the required commands for installing the missing tool/package, then add those <code>RUN</code> commands to your Dockerfile.</p>
 <p>And lastly, make sure that whatever changes you make to your Dockerfile, that you add it to your GitHub repository!</p>
 
