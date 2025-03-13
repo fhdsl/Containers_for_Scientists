@@ -37,6 +37,7 @@ devtools::session_info()
 [Ava Hoffman]: https://www.avahoffman.com/
 [Obi Griffith]: https://obigriffith.org/
 [My Huang]: https://griffithlab.org/team/
+[Kate Isaac]: https://kweav.github.io/
 
 <!-- Links -->
 
