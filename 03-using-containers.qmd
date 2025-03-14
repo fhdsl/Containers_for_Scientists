@@ -63,7 +63,7 @@ We will encounter both an error when we don't have a file we need AND an error w
 We need to get the Docker **image** we want to use. We do this by "pulling" it.
 Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer). Pulling is basically like downloading.
 
-```{r, out.width = "100%", fig.alt = "docker pull - we can borrow an image from online where an image. In this image the internet is represented by a cloud where docker pull is an arrow pointing down from the cloud. is A snapshot of an environment that’s easily shareable" echo = FALSE}
+```{r, out.width = "100%", fig.alt = "docker pull - we can borrow an image from online where an image. In this image the internet is represented by a cloud where docker pull is an arrow pointing down from the cloud. is A snapshot of an environment that’s easily shareable", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_732")
 ```
 
@@ -93,7 +93,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will use the `docker run` command
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "A similar image to before but now we are showing that docker run turns images into containers. Where an image is A snapshot of an environment that’s easily shareable and a container is An environment we can run stuff in", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_760")
 ```
 
