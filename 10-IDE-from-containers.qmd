@@ -1,7 +1,7 @@
 
 # Using Containers as your Development Space
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Use images for a reproducible development space using IDEs", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_872") 
 ```
 
@@ -20,13 +20,13 @@ Docker has a `port` option that allows you to work from the container with an ID
 
 Here's an example of RStudio running from a container and being seen from a Docker port: 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This shows an example of using RStudio from a container.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_626") 
 ```
 
 Here's an example of Jupyter running from a container and being seen from a Docker port: 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This shows an example of using Jupyter from a container.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_39") 
 ```
 

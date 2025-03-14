@@ -22,7 +22,7 @@ See an example of one we actually maintain here: https://github.com/jhudsl/ottr-
 To give GitHub Actions or other items access to your Dockerhub you will need to use Personal access Tokens. 
 As with most Personal Access Tokens, be very careful to not share these or post them anywhere publicly!
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Personal access tokens can be used to help manage and integrate your docker images from elsewhere.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_647") 
 ```
 
@@ -30,7 +30,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 In this course, we introduced you to docker run. But what if you have a ton of arguments to specify and things that you can't do from a single command? Enter docker compose. This allows you to get very fancy with your docker containers and specify a bunch of things in your yaml file. 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "What if I have a lot of arguments I need to specify? Docker compose. Specify options in a yml file", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_655") 
 ```
 
@@ -38,6 +38,6 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 [Kubernetes is a way you can use a bunch of containers at once](https://kubernetes.io/docs/concepts/overview/). It's mostly not needed for scientific analyses but now you know about it. 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "What if I have a lot of containers I need to coordinate? Kubernetes", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_660") 
 ```

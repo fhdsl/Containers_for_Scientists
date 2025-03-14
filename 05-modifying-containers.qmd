@@ -1,7 +1,9 @@
+---
+title: "Modifying Containers"
+format: pdf
+---
 
-# Modifying Containers
-
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Understand the purpose of a Dockerfile Modify a Dockerfile to build a new image Manage image using tags Add a new package to a Docker image", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_847")
 ```
 
@@ -12,7 +14,7 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 
 A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "On our growing diagram we now see that dockerfiles are a file that’s a recipe for making an image. Using the docker build command we can turn a Dockerfile into a docker image.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1169")
 ```
 
@@ -20,7 +22,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 <input type="checkbox"> Open up the Dockerfile in the  `activity-files` folder.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "We will need to navigate to the activity-files where a “Dockerfile” is.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1192")
 ```
 
@@ -32,7 +34,7 @@ FROM cansav09/practice-image:1
 This means we're going to take the existing image called, `cansav09/practice-image:1` and build on to it.
 This image will be our base. There are so many Docker images out there that it might be that someone has already created a docker image with most of the functionality you need for your project.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "We borrow a different image as our base image using the FROM command. In our dockerfile # is for putting comments. And here we have. CMD command which will run upon using the image with docker run", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1200")
 ```
 
@@ -54,7 +56,7 @@ Let's take a look at a Dockerfile.
 <input type="checkbox">  Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly.
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Tip use tabs to navigate to this file path!", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1212")
 ```
 
@@ -73,7 +75,7 @@ Optionally you could call this from somewhere else and use the `-f` option to sp
 
 If your image builds properly you should see something like this:
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This is what your screens should look like when your dockerfile successfully built into an image.",  echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1221")
 ```
 
@@ -86,7 +88,7 @@ docker image ls
 
 And if you check Docker desktop you should now see this image show up in your list:
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Now in docker desktop we can see the image listed.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1230")
 ```
 
@@ -98,7 +100,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 docker run cool-new-image
 ```
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "We can run the container same way as before by clicking the play button next to the image name in docker desktop", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1238")
 ```
 
@@ -107,7 +109,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 <input type="checkbox"> We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image.
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "In the logs page in our containers tab in Docker desktop we should see a Yay I built a Docker desktop that was set up in the Dockerfile", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1247")
 ```
 
@@ -128,7 +130,7 @@ RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
 <input type="checkbox"> Save your edited Dockerfile.
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Here we are showing how we will alter this dockerfile to add the R package we need, rmarkdown. we will delete the CMD line and copy and paste this RUN command from the text and then save", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1253")
 ```
 
@@ -164,6 +166,10 @@ docker run -v $PWD:/home cool-new-image:2
 <input type="checkbox"> Try running the script using the following command:
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
+```
+
+```{r, out.width = "100%", fig.alt = "Recall, because containers are isolated from  your computer. If you are missing files, you can re-run the container but add a volume. If you are missing software you can edit your dockerfile and re-build.", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1326")
 ```
 
 ### Podman
@@ -245,7 +251,7 @@ podman run -v $PWD:/home cool-new-image:2
 podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Recall, because containers are isolated from  your computer. If you are missing files, you can re-run the container but add a volume. If you are missing software you can edit your dockerfile and re-build.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1326")
 ```
 
