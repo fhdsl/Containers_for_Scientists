@@ -1,7 +1,7 @@
 
 # Best practices for sharing images
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Recognize the importance of keeping protected data safe as it relates to images Understand best practices for containerizationContrast the different online destinations for sharing a Docker image Change the name of a image Push an image to Dockerhub for sharing purposes", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_852") 
 ```
 
@@ -12,7 +12,7 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 
 Reproducibility is a community activity. Sharing images is a big component of how images can aid in reproducibility. 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Now our diagram includes that docker push moves the image from our computer to the internet sharing that image with the world (or our team).", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_492") 
 ```
 
@@ -44,7 +44,7 @@ You can use one or more of these alternatives. Just make sure you clear it with 
 - If for some reason you must put something protected on an image, your other option is to push the image only to a secure and protected location where only IRB approved individuals have access to it. Amazon Web Services Container registry has options as does Microsoft Azure for example. 
 - If for some reason you must put something protected on an image, and you can't use a private registry, your other option is: **Don’t push the image anywhere**. This makes it harder to share methods. You must take extra steps to, for example, share a version of the Dockerfile of the image that doesn't have protected data information on it.  
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "If you work with protected data types, PII and PHI, DO NOT put these data on publicly shared Docker images! Alternatives: Don’t put the data on the image Don’t push the image anywhere Push the image to a secure and protected location site: (AWS has options, singularity, etc) More layers of safety checks the better!", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1276") 
 ```
 
@@ -87,7 +87,7 @@ Images and containers can be difficult to have transparency into the build at ti
 
 ## Summary of best practices
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = " A Table summarizing what to do and what not to do with images and containers. Do NOT put protected data on your shared image instead, store data separate or Make your images private and CONSULT data privacy experts! Do not make one super larger Docker image that covers all your use cases. Big images are a headache to deal with. Instead, make separate images for separate use cases. Think carefully about build efficiencies Keep these well documented and organized. Do not keep Dockerfiles stored only locally and untracked instead use version control to put these on put on GitHub (or your platform of choice). Do not not using tags for versioning instead you can at least use tags like “:main” you can use versioning numbers to keep track. Do not use random developers’ Docker images instead stick to Using trusted sources/developers", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1282") 
 ```
 
@@ -125,7 +125,7 @@ docker login -u your_user_name
 ```
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This image shows how to sign into your docker account through your docker desktop", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_523") 
 ```
 
@@ -137,10 +137,6 @@ We can do that by using the `tag` command. But replace `<your_username>` with wh
 docker tag cool-new-image:2 <your_username>/cool-new-image:2
 ```
 
-```{r, out.width = "70%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_530") 
-```
-
 <input type="checkbox"> Now we can push it to our repository.  
 ```
 docker <your_username> push username/cool-new-image:2
@@ -148,7 +144,7 @@ docker <your_username> push username/cool-new-image:2
 
 You can also do this with this button on Docker Desktop: 
 
-```{r, out.width = "70%", echo = FALSE}
+```{r, out.width = "70%", fig.alt = "This shows how you can push an image to dockerhub using docker desktop.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_539") 
 ```
 
