@@ -37,7 +37,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 <input type="checkbox"> Put this file on your desktop so it is easily findable.<br>
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.<br>
 
-```{r, out.width = "100%", fig.alt = "Download a zip file of the files for this workshop https://github.com/fhdsl/containers-for-scientists-sandbox and clicking the download zip file button" echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Download a zip file of the files for this workshop https://github.com/fhdsl/containers-for-scientists-sandbox and clicking the download zip file button", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
 ```
 
