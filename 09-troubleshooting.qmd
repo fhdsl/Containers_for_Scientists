@@ -16,7 +16,7 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 
 First remind yourself of the lessons we discussed in the activities in Chapter 3: 
 
-```{r, out.width = "100%",  echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Recall, because containers are isolated from  your computer. If you are missing files, you can re-run the container but add a volume. If you are missing software you can edit your dockerfile and re-build.",  echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1326") 
 ```
 

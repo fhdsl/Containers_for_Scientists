@@ -12,7 +12,7 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 
 Now having gone through some activities in this course, you may find you're acquiring quite a list of images and containers.
 
-```{r, out.width = "100%", fig.alt = "The image shows a cluttered up docker desktop and says your container manager is probably getting messy. Your computer will not be happy with you." echo = FALSE}
+```{r, out.width = "100%", fig.alt = "The image shows a cluttered up docker desktop and says your container manager is probably getting messy. Your computer will not be happy with you.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1521")
 ```
 
