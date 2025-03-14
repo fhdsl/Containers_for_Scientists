@@ -1,7 +1,7 @@
 
 # Best practices for sharing images
 
-```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Recognize the importance of keeping protected data safe as it relates to images Understand best practices for containerizationContrast the different online destinations for sharing a Docker image Change the name of a image Push an image to Dockerhub for sharing purposes", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Recognize the importance of keeping protected data safe as it relates to images Understand best practices for containerization. Contrast the different online destinations for sharing a Docker image Change the name of a image Push an image to Dockerhub for sharing purposes", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_852") 
 ```
 

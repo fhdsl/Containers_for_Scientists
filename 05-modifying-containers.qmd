@@ -3,7 +3,7 @@ title: "Modifying Containers"
 format: pdf
 ---
 
-```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Understand the purpose of a Dockerfile Modify a Dockerfile to build a new imageManage image using tags Add a new package to a Docker image", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Understand the purpose of a Dockerfile Modify a Dockerfile to build a new image Manage image using tags Add a new package to a Docker image", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_847")
 ```
 
