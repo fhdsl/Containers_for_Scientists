@@ -109,7 +109,7 @@ If you have a windows machine you may have to run this variant instead. This ver
 podman run -v ${pwd}:/home cansav09/practice-image:1
 ```
 
-```{r, out.width = "100%", fig.alt = "This diagram shows a podman run command where a volume is specified. -v is used to specify the volume which has two pieces to the option. First is the Folder on your computer with files you want accessible then a colon is placed and on the other side of this colon a file path that indicates Where these files should show up on your container. After this option the image name is given as is typical for docker run. "echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This diagram shows a podman run command where a volume is specified. -v is used to specify the volume which has two pieces to the option. First is the Folder on your computer with files you want accessible then a colon is placed and on the other side of this colon a file path that indicates Where these files should show up on your container. After this option the image name is given as is typical for docker run.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_15")
 ```
 
