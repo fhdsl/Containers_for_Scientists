@@ -1,7 +1,7 @@
 
 # Using Containers
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Recognize the practical definitions of what an image and a container are Pull an image Run a container Identify how containers could be used", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_833")
 ```
 
@@ -27,7 +27,7 @@ xaringanExtra::style_panelset_tabs(font_family = "inherit")
 <input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).<br>
 <input type="checkbox"> Start up Docker desktop by double clicking on the app. It may take some time to start up.<br>
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "First you need to install docker by going to https://docs.docker.com/engine/install/ ", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_686")
 ```
 
@@ -37,24 +37,22 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 <input type="checkbox"> Put this file on your desktop so it is easily findable.<br>
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.<br>
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Download a zip file of the files for this workshop https://github.com/fhdsl/containers-for-scientists-sandbox and clicking the download zip file button" echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
 ```
-
-*ADD: Kate to add a brief description of the files that are here*
 
 #### Activity 1: Pull and run a Docker image
 
 **This activity is built so that you will encounter errors that this guide will work you through!**
 One of the most common container stumbling blocks is understanding the idea that containers are isolated from your computer.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Most Common Stumbling Block: Containers are isolated from your computer If your computer has: Files Software Or anything else Your container does NOT have it", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_700")
 ```
 
 Which means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "We are going to encounter these stumbling blocks look out. The image shows huge cartoon eyes.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_713")
 ```
 
@@ -65,7 +63,7 @@ We will encounter both an error when we don't have a file we need AND an error w
 We need to get the Docker **image** we want to use. We do this by "pulling" it.
 Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer). Pulling is basically like downloading.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "docker pull - we can borrow an image from online where an image. In this image the internet is represented by a cloud where docker pull is an arrow pointing down from the cloud. is A snapshot of an environment that’s easily shareable" echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_732")
 ```
 
@@ -76,7 +74,7 @@ docker pull cansav09/practice-image:1
 ```
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "When pulling the image you should see some progress bars and Download complete messages from your command line. ", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_745")
 ```
 
@@ -87,7 +85,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 <input type="checkbox"> Alternatively, you can visit the Images tab of the docker desktop app.<br>
 <input type="checkbox"> We should see `cansav09/practice-image:1` show up in the output.<br>
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "We can look at what images we have by going to the Images tab.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_752")
 ```
 
@@ -116,20 +114,20 @@ docker ps
 <input type="checkbox"> Alternatively, you can visit the Containers tab of the Docker Desktop app.
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "A similar image to before but now we are showing that docker run turns images into containers. Where an image is A snapshot of an environment that’s easily shareable and a container is An environment we can run stuff in", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_775")
 ```
 
 Pat yourself on the back! You have a running container!
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Yay! You are running a Docker container… But now what?", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_786")
 ```
 
 
 What can we do with running containers?
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Examples of ways to use your Docker image/container: Run a single command Run a script Run with a port to a browser where you can work interactively (only some images) Have a GitHub Action or other app run on a container! AND MORE!", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_791")
 ```
 
@@ -141,7 +139,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 docker exec -it <PUT_CONTAINER_ID_HERE> bash
 ```
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Running and IDEs from a Docker container is a great option. here we are showing examples of how RStudio or Jupyter can be run from a container using a browser and a container", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_803")
 ```
 You can find the `CONTAINER ID` in the containers tab of the desktop app or by using the `docker container ls` command in the terminal. Note that whereas the `docker run` command creates a new container from a docker image, the `docker exec` command executes a command inside an already running container. The `-it` option tells docker to execute the command interactively. In this case the actual command being specified is `bash`. Altogether the result is an interactive Bash shell inside the already running container.
@@ -181,7 +179,7 @@ cd containers-for-scientists-sandbox-main
 docker exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
 ```
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "We can interact with our container by going to the exec tab and calling commands from here.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_812")
 ```
 
@@ -194,7 +192,7 @@ bash: run_analysis.sh: No such file or directory
 **Question: Does our container have all of the same files that our computer has?**
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Does our container have all of the same files that our computer has?", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_833")
 ```
 
@@ -218,20 +216,20 @@ podman machine start
 <input type="checkbox"> Put this file on your desktop so it is easily findable.<br>
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.<br>
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Download a zip file of the files for this workshop https://github.com/fhdsl/containers-for-scientists-sandbox", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_693")
 ```
 
 **This activity is built so that you will encounter errors that this guide will work you through!**
 Most common container stumbling block is understanding the idea that containers are isolated from your computer
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Most Common Stumbling Block: Containers are isolated from your computer If your computer has: Files Software Or anything else Your container does NOT have it", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_700")
 ```
 
 Which means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "We are going to encounter these stumbling blocks look out. The image shows huge cartoon eyes.",  echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_713")
 ```
 
@@ -242,7 +240,7 @@ We will encounter both an error of when we don't have a file we need AND an erro
 We need to get the **image** we want to use. We do this by "pulling" it.
 Pulling is a term used in GitHub terminology too. It just means we're taking something from the internet and getting a copy locally (on our computer).
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "docker pull - we can borrow an image from online where an image. In this image the internet is represented by a cloud where docker pull is an arrow pointing down from the cloud. is A snapshot of an environment that’s easily shareable", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_732")
 ```
 
@@ -254,7 +252,7 @@ podman pull cansav09/practice-image:1
 
 If this command is running properly you should see some output that looks like this:
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "As podman pulls the image you will see progress messages in your command line console", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_0")
 ```
 
@@ -271,7 +269,7 @@ docker.io/cansav09/practice-image  1   91619ca583b8  1 month ago  2.39 GB
 
 Remember images can be shared easily but to actually use the stuff we need to turn our image into a container! To do that we will do `podman run`
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "A similar image to before but now we are showing that docker run turns images into containers. Where an image is A snapshot of an environment that’s easily shareable and a container is An environment we can run stuff in", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_760")
 ```
 
@@ -283,7 +281,7 @@ podman run cansav09/practice-image:1
 
 If this command has run properly it will return something like this:
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "When we run the container we’ll see a message like this. That ends in done.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_9")
 ```
 
@@ -305,13 +303,13 @@ e7b19cfb4461  docker.io/cansav09/practice-image:1  /init       2 minutes ago  Up
 
 Pat yourself on the back! You have a running container!
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Yay! You are running a Docker container… But now what?", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_786")
 ```
 
 What can we do with running containers?
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Examples of ways to use your Docker image/container: Run a single command Run a script Run with a port to a browser where you can work interactively (only some images) Have a GitHub Action or other app run on a container! AND MORE!", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_791")
 ```
 
@@ -367,7 +365,7 @@ bash: run_analysis.sh: No such file or directory
 **Question: Does our container have all of the same files that our computer has?**
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Does our container have all of the same files that our computer has?" echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_833")
 ```
 

@@ -2,7 +2,7 @@
 # Why Containers?
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Describe the idea that that computing environments are moving targets Be motivated for using containers in a scientific software development or analysis setting Recognize containers as a tool for reproducibility", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_828")
 ```
 
@@ -10,19 +10,19 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 In today's data driven world, science is driven by computer work. But each of these computers is unique. This goes far beyond "Mac vs PC". Every computer has a special configuration of software and software versions that is installed on it. Some of this is determined by the user of the computer, some due to the design by the company that builds and sells the computers, and some is even controlled by institutions and their IT departments that manage the computers.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Our computers are like snowflakes! Each is unique! Our local computers aren’t blank slates. Different computing environments can lead to different analysis results.",  echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_0")
 ```
 
 Software programs can give us a concrete example of what differing computing environments can look like by printing out this information. This side-by-side example below shows two different computers' computing environments. This printout comes from using `sessionInfo()` in the R programming language. You can see that not only do these two computing environments differ by operating system, but also by software packages installed, software packages loaded, and the versions of these software packages.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Two session info print outs are show side by side.Highlighted we can see that they have different R versions: 4.0.2 vs 4.0.5. They also have different operating systems. The packages they have attached is rmarkdown but they also have different rmarkdown package versions!  If there are  discrepancies in re-runs of the analysis, the session info print out gives a record which may have clues to why that might be! This can give items to look into for determining why the results didn’t reproduce as expected." echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_25")
 ```
 
 Not only are our computers very unique at any one point in time, but as time moves forward computers and the software environments change very rapidly. These changes might happen through intentional installations of programs by computer users. Some are changes users may not be aware of, which took place through automatic software updates that are instigated by the developers of the hardware and software that make up the computer.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "As time goes on, your computing environment is changing – you may not even realize how!", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_6")
 ```
 
@@ -30,7 +30,7 @@ Computing environments are a moving target.
 
 This can be a real problem for science because prior research has shown that these computing environments can affect results [@BeaulieuJones2017]. In a genomic analysis for example, where the output might be a list of genes, differing computing environments may result in different numbers of significant genes!
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "With this image downloaded, Avi can now use it to completely perfectly replicate the computing environment Ruby originally used to run the analysis.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_49")
 ```
 
@@ -42,13 +42,13 @@ For the purposes of informatics and data analysis, **a reproducible analysis is 
 
 Generally speaking, the more variables involved in a system, the messier things get, and the less clarity we have in what we are observing. It turns out computing environments are another variable that can affect reproducibility.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "A triangular graph shows a hierarchy of research. Repeatability is a the bottom ‘same researcher, same machine’, Reproducibility is above that, ‘new researcher, same data’ and on the very top is Replicability ‘new researcher, new data’."echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_0")
 ```
 
 An important note: although your results can be reproducibly wrong (you're coming to a faulty conclusion consistently) they can NOT be irreproducibly right.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Reproducibility does not equal Correctness but Reproducibility is related to Consistency But you could be consistently wrong in the same way" echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_219")
 ```
 
@@ -56,7 +56,7 @@ If we control the computing environments, that is one less variable we need to d
 
 We could think of impractical ways to control our computing environment: We could have one laptop that we ship back and forth between all our collaborators. Although this may make the computing environment slightly more controlled, clearly it is not a practical solution.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "How do we get around this problem? Shipping laptops is obviously problematic. The image shows a package being sent across the map of the world between two researchers" echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_62")
 ```
 
@@ -64,25 +64,25 @@ That's where containers come in.
 
 A container is kind of like your computer is running a computer inside of it. It is isolated from the rest of your computer so your science can be more reproducible.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Containers are kinda like Virtual machines - your computer is pretending to be someone else by running a different computer inside of it. Containers are isolated from your computer’s environment.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_72")
 ```
 
 Containerization allows computing environments to be shared over the internet easily using libraries like Docker Hub.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "In this image we are showing that Ruby the researcher is able to work from a docker image which is easily shareable to Avi the associate who can now download the image on his computer for use.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_86")
 ```
 
 Sharing computing environments and using those shared environments guarantee that the same computing environment is being used no matter where the analysis is being run.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "With this image downloaded, Avi can now use it to completely perfectly replicate the computing environment Ruby originally used to run the analysis." echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_90")
 ```
 
 And containerization aids in reproducibility as shown by [@BeaulieuJones2017]
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "From Beaulieu-Jones and Casey S. Greene, 2017 showed that containers allow results to be reproduced exactly. Resulting in the same gene lists." echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_94")
 ```
 
@@ -94,7 +94,7 @@ Beside reasons stated above, there are even more benefits to using containers:
 
 Installing software can be a huge headache. Bioinformatics involves using software that is often fringe -- developed and maintained by small teams -- or sometimes the software isn't maintained at all. This means installation can take a lot of valuable time that scientists often don't have.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Installing things can be so frustrating and lead to something called dependency hell.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_56")
 ```
 
@@ -111,7 +111,7 @@ Containers assist with unit testing by allowing for a standard computing environ
 
 To summarize:
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Top reasons for using Containers! Helps with reproducibility! Easy sharing! Less installation problems. Really handy for testing", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_100")
 ```
 
@@ -121,13 +121,13 @@ First, let's address some terminology and the difference between an "image" and 
 
 The image is what is easily shareable. There are huge repositories or libraries where you can find all kinds of images that folks around the world have made -- each with a different configuration and purpose.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "In general, package managers work by capturing a snapshot of the environment and when that environment snapshot is shared, it attempt to rebuild it. In this example we show one computing environment, and using a package manager, we can take  snapshot of it. That snapshot can be shared to another computer which can be used to attempt to build the computing environment on this computer. This will help address some differences in package versions between two individual’s computers.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_108")
 ```
 
 From the image, a container can be built. A container is a running instance of an image. A container is then where you can work and do science (or other things). You can run scripts, interact with files, etc. All the things you would do on your computer, you do in the container. But the container acts as a separate and controlled environment, ensuring that the computing environment contains the intended software. Think of a container as the meal prepared from the recipe.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "There are many options for containers. Docker is a popular one and what we will use for this course. But Singularity, now called Apptainer is another option.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_199")
 ```
 

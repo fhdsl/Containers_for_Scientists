@@ -1,5 +1,7 @@
-
-# Modifying Containers
+---
+title: "Modifying Containers"
+format: pdf
+---
 
 ```{r, out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_847")
