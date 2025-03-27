@@ -42,7 +42,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1x0Cnk2Wcsg8HYkmX
 The specific topics covered in this course include the benefits of using containers, using images/containers created by others, modifying images/containers, and using volumes to link to your data to a container, and troubleshooting best practices when working with containers.
 
 ```{r topics_covered, out.width = "100%", fig.alt = "Topics covered in Containers for Scientists: Why use containers/images? Using images Modifying images And containers Using volumes Troubleshooting Best practices for containers", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1x0Cnk2Wcsg8HYkmXnXo_0PxmYCxAwzVrUQzb8DUDvTA/edit#slide=id.g2ab6f05fef1_0_0")
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g326f667c634_0_5")
 ```
 
 ## Motivation
