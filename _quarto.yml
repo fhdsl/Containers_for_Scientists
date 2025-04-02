@@ -14,6 +14,7 @@ book:
   repo-url: https://github.com/fhdsl/Containers_for_Scientists
   repo-actions: [edit]
   issue-url: https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform
+  google-analytics: "G-L8RNG6K22F"
 
   chapters:
     - index.qmd
