@@ -21,7 +21,7 @@ _This course is written for individuals who:_
 - Want to learn best practices for using containers
 
 
-```{r, out.width = "100%", fig.alt = "Containers for Scientists. For individuals who:Are comfortable with bash and command line. Perhaps tried to use Docker or other container managers before but felt overwhelmed or confused on how to get started. Want to learn best practices for using containers", echo = FALSE}
+```{r for_individuals_who, out.width = "100%", fig.alt = "Containers for Scientists. For individuals who:Are comfortable with bash and command line. Perhaps tried to use Docker or other container managers before but felt overwhelmed or confused on how to get started. Want to learn best practices for using containers", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2942096bb40_0_787")
 ```
 
@@ -29,14 +29,20 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qa
 
 This course covers how to use containers for scientific software development. Scientific software can take many forms but all can benefit from the concepts of continuous integration (CI) and continuous deployment (CD). Containers play a critical role in CI/CD by providing a consistent, portable, and isolated environment for building, testing, and deploying software.
 
-```{r, out.width = "100%", fig.alt = "Describe the idea that that computing environments are moving targets. Be motivated for using containers in a scientific software development or analysis setting. Recognize containers as a tool for reproducibility", echo = FALSE}
+```{r learning_objectives, out.width = "100%", fig.alt = "Describe the idea that that computing environments are moving targets. Be motivated for using containers in a scientific software development or analysis setting. Recognize containers as a tool for reproducibility", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2942096bb40_0_464")
 ```
 
-This course builds on concepts introduced in the [Reproducibility](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html) and [Advanced Reproducibility](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/introduction.html) courses from the ITCR Training Network. If you are unfamiliar with GitHub and/or do not have an account, we'd suggest you start with those courses by using the links above.
+This course builds on concepts introduced in the [Reproducibility](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html) and [Advanced Reproducibility](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/introduction.html) courses from the ITCR Training Network. If you are unfamiliar with GitHub and/or do not have an account, we'd suggest you start with these courses first.
 
-```{r, out.width = "100%", fig.alt = "Topics covered in Containers for Scientists: Why use containers/images? Using images Modifying images And containers Using volumes Troubleshooting Best practices for containers", echo = FALSE}
+```{r prereqs, out.width = "100%", fig.alt = "Since this course builds on concepts introduced in previous reproducibility courses, visit these resources if needed prior to using this course.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1x0Cnk2Wcsg8HYkmXnXo_0PxmYCxAwzVrUQzb8DUDvTA/edit#slide=id.g101867ebdaa_18_0")
+```
+
+The specific topics covered in this course include the benefits of using containers, using images/containers created by others, modifying images/containers, and using volumes to link to your data to a container, and troubleshooting best practices when working with containers.
+
+```{r topics_covered, out.width = "100%", fig.alt = "Topics covered in Containers for Scientists: Why use containers/images? Using images Modifying images And containers Using volumes Troubleshooting Best practices for containers", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g326f667c634_0_5")
 ```
 
 ## Motivation
