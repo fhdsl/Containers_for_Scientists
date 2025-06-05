@@ -10,12 +10,12 @@ These credits are based on our [course contributors table guidelines](https://ww
 |-------|-----|
 |**Pedagogy**||
 |Lead Content Instructor(s)|[Candace Savonen]|
-|Content Editor(s)/Reviewer(s) | [Obi Griffith] [Kate Isaac] [My Huang]|
+|Content Editor(s)/Reviewer(s) | [Obi Griffith] [Kate Isaac] [My Hoang]|
 |**Technical**||
 |Template Publishing Engineers|[Candace Savonen], [Carrie Wright], [Ava Hoffman]|
 |Publishing Maintenance Engineer|[Candace Savonen]|
 |Technical Publishing Stylists|[Carrie Wright], [Ava Hoffman], [Candace Savonen]|
-|Package Developers ([ottrpal]) [Candace Savonen], [John Muschelli], [Carrie Wright]|
+|Package Developers ([ottrpal])| [Candace Savonen], [John Muschelli], [Carrie Wright]|
 |**Art and Design**||
 |Illustrator(s)| [Candace Savonen]|
 |**Funding**||
@@ -36,7 +36,7 @@ devtools::session_info()
 [Carrie Wright]: https://carriewright11.github.io/
 [Ava Hoffman]: https://www.avahoffman.com/
 [Obi Griffith]: https://obigriffith.org/
-[My Huang]: https://griffithlab.org/team/
+[My Hoang]: https://griffithlab.org/team/
 [Kate Isaac]: https://kweav.github.io/
 
 <!-- Links -->
