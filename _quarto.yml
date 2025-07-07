@@ -6,7 +6,7 @@ book:
   title: Containers for Scientists
   author: Candace Savonen
   date: "10/11/2024"
-  favicon: assets/favicon.ico
+  favicon: assets/ITN_favicon.ico
   bread-crumbs: false
 
   page-navigation: true
@@ -33,8 +33,8 @@ book:
     - About.qmd
 
   sidebar:
-    logo: "img/logo.png"
-    logo-href: "https://hutchdatascience.org/"
+    logo: "assets/ITN_logo.png"
+    logo-href: "https://www.itcrtraining.org/"
     foreground: "#1B365D"
 
   page-footer:
@@ -73,7 +73,7 @@ format:
 
     link-external-newwindow: true
 
-    image: img/favicon.ico
+    image: assets/ITN_favicon.ico
     license: "CC BY"
 knitr:
   opts_chunk:
