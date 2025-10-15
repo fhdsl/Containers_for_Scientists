@@ -39,12 +39,12 @@ book:
 
   page-footer:
     left: |
-      This book was built with <a href="https://quarto.org/" style="color: #fff;">Quarto</a> using
-      <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #fff;">OTTR</a>.
+      This book was built with <a href="https://quarto.org/" style="color: #0000FF;">Quarto</a> using
+      <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #0000FF;">OTTR</a>.
     center: |
-      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #fff;">CC-BY. </a>
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;">CC-BY. </a>
       <br>
-      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/" style="color: #fff;"> CC-BY </a> unless noted otherwise.
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;"> CC-BY </a> unless noted otherwise.
     right:
       - icon: github
         href: https://github.com/
