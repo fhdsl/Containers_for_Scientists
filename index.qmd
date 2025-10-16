@@ -9,5 +9,5 @@ This course is part of a series of courses for the [Informatics Technology for C
 This course is available in multiple formats which allows you to take it in the way that best suits your needs. You can take it for a certificate which can be for free or for a fee.
 
 - The material for this course can be viewed without login requirement on this [Bookdown website](https://hutchdatascience.org/Containers_for_Scientists/). This format might be most appropriate for you if you rely on screen-reader technology.
-- This course can be taken on [Coursera for certification here](https://www.coursera.org/learn/wrangling-computing-environments-using-docker-for-research). 
+- This course can be taken on [Coursera for certification for a fee here](https://www.coursera.org/learn/wrangling-computing-environments-using-docker-for-research). 
 - Our courses are open source, you can find the [source material for this course on GitHub](https://github.com/fhdsl/Containers_for_Scientists).
