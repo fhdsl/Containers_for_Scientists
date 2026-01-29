@@ -30,7 +30,7 @@ I think of volumes like portals:
 The portal/volume can be opened when you `RUN` the container. And when you stop and delete the container the portal is no longer there. But its a way that your container can access and modify files on your computer for the time being.
 
 
-```{r panel-setup, include = FALSE}
+```{r panel-setup, include = FALSE, eval=knitr::is_html_output()}
 xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```

@@ -5,7 +5,7 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_857")
 ```
 
-```{r panel-setup, include = FALSE}
+```{r panel-setup, include = FALSE, eval=knitr::is_html_output()}
 xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```

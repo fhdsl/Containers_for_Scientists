@@ -1,4 +1,3 @@
-
 # Using Containers
 
 ```{r, out.width = "100%", echo = FALSE}
@@ -13,7 +12,7 @@ When learning another software skill like containers, it sometimes means you'll 
 
 **IMPORTANT**: Use the checkboxes to follow along with each step in the activities! This is to help you keep track because the steps have to be done in order!
 
-```{r panel-setup, include = FALSE}
+```{r panel-setup, include = FALSE, eval=knitr::is_html_output()}
 install.packages("xaringanExtra", repos = 'https://cloud.r-project.org')
 xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")

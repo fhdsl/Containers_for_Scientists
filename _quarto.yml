@@ -74,6 +74,11 @@ format:
 
     image: img/favicon.ico
     license: "CC BY"
+  pdf:
+    prefer-html: true
 knitr:
   opts_chunk:
     fig.path: "resources/images/figure/"
+    dev: "png"
+    webshot: "webshot2"
+
