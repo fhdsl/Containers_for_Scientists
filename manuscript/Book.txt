@@ -1,3 +1,13 @@
+quiz_ch2.md
+quiz_ch3.md
+quiz_ch4.md
+quiz_ch5.md
+quiz_ch6.md
+quiz_ch7.md
+quiz_ch8.md
+quiz_ch9.md
+quiz_ch10.md
+quiz_ch11.md
 Introduction.md
 Why-Containers?.md
 Using-Containers.md

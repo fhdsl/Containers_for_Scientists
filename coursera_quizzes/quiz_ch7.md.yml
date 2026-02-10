@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the most important rule when dealing with protected data (like PHI or PII) and Docker images?
+      shuffleOptions: true
+      options:
+        - answer: Never put protected data on publicly shared Docker images
+          isCorrect: true
+          feedback: |-
+              Consider the implications of sharing sensitive information in publicly accessible locations. What happens to data privacy when protected information is included in resources that anyone can download?
+        - answer: Always include protected data in the image
+          isCorrect: false
+          feedback: |-
+              Think about the security implications of embedding sensitive data directly into shareable artifacts. How might this affect data privacy and compliance requirements?
+        - answer: Store protected data in any container registry
+          isCorrect: false
+          feedback: |-
+              Consider whether all storage locations offer the same level of security. What security features would be necessary for handling sensitive information?
+        - answer: Only share protected data through public registries
+          isCorrect: false
+          feedback: |-
+              Think about the meaning of "public" in this context. Would public sharing align with the principles of data protection and privacy?
+        - answer: Use default security settings for protected data
+          isCorrect: false
+          feedback: |-
+              Consider whether default settings are typically designed for the highest level of security or for general convenience. What approach would be most appropriate for sensitive information?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: Why should you avoid creating one large Docker image for all use cases?
+      shuffleOptions: true
+      options:
+        - answer: Large images are difficult to troubleshoot, take longer to build and pull, and can be hard to maintain
+          isCorrect: true
+          feedback: |-
+              Consider the practical implications of image size on various aspects of the development workflow. How might size affect download times, build processes, and debugging?
+        - answer: Large images are more secure
+          isCorrect: false
+          feedback: |-
+              Think about the relationship between image size and security. Does including more software and components typically increase or decrease the potential attack surface?
+        - answer: Large images are required for most projects
+          isCorrect: false
+          feedback: |-
+              Consider the containerization principle of creating purpose-specific environments. Do most applications require all possible dependencies or just what they need to run?
+        - answer: Large images save storage space
+          isCorrect: false
+          feedback: |-
+              Think about the relationship between size and storage requirements. How would larger files with potentially unnecessary components impact storage efficiency?
+        - answer: Large images load faster than small ones
+          isCorrect: false
+          feedback: |-
+              Consider the basic principles of file transfer and loading. How does file size typically affect download and initialization times?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: Which of the following is considered a best practice for Docker image versioning?
+      shuffleOptions: true
+      options:
+        - answer: Use consistent versioning tags and clearly document the versioning system you choose
+          isCorrect: true
+          feedback: |-
+              Think about what makes versioning useful in a collaborative or long-term project. What characteristics of a versioning system would help others understand and use your images effectively?
+        - answer: Never use version tags
+          isCorrect: false
+          feedback: |-
+              Consider how users would identify different iterations of your images without version information. How would this affect reproducibility?
+        - answer: Use random numbers for versions
+          isCorrect: false
+          feedback: |-
+              Think about the purpose of versioning. Would randomness help or hinder understanding the relationship between different versions of your image?
+        - answer: Keep all versions private
+          isCorrect: false
+          feedback: |-
+              Consider the purpose of sharing versioned images. How would privacy settings affect collaboration and reuse of your work?
+        - answer: Only use single digit versions
+          isCorrect: false
+          feedback: |-
+              Think about the constraints of using only single digits. How would this limit your ability to represent different types of changes over time?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is an important consideration when choosing a container registry?
+      shuffleOptions: true
+      options:
+        - answer: Security requirements, especially if dealing with protected data, should be the top priority
+          isCorrect: true
+          feedback: |-
+              Consider what characteristics of a storage system would be most critical when handling sensitive information. What consequences might result from prioritizing other factors over security?
+        - answer: Always choose the most expensive option
+          isCorrect: false
+          feedback: |-
+              Think about the relationship between cost and value. Does higher price always correlate with better features or appropriate security measures?
+        - answer: Only use unknown registries
+          isCorrect: false
+          feedback: |-
+              Consider the importance of reputation and established security practices. What risks might be associated with using registries without established track records?
+        - answer: Ignore security features
+          isCorrect: false
+          feedback: |-
+              Think about the potential consequences of disregarding security when storing container images. How might this affect data protection and compliance?
+        - answer: Only use local storage
+          isCorrect: false
+          feedback: |-
+              Consider the tradeoffs between local and remote storage. What limitations might exclusively local storage impose on collaboration and backup?

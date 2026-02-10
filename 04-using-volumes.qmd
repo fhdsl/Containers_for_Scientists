@@ -1,7 +1,7 @@
 
 # Using Volumes
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Recognize the purpose of volumes Mount a volume to a Docker container", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_842")
 ```
 
@@ -19,7 +19,7 @@ There are a few options:
 
 What is a volume? A volume is a folder, likely from your computer, that can be accessed by your container.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "In our growing diagram we can now see that attached to a container which is An environment we can run stuff in we now have a volume which is a Folder that can be accessed by the container", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1097")
 ```
 
@@ -47,7 +47,7 @@ Let's point a volume to our workshop files so we have them on our container.
 
 We can specify a particular file path on our computer or give it `$PWD`. Then optionally we can give a `:` and a file path where we'd like it to be stored on the container. Otherwise it will be stored at the absolute top of the container. Note that `$PWD` is a special environment variable that stores the absolute path of the current working directory. You will need to be in the `containers-for-scientists-sandbox-main` for this to work.
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This diagram shows a docker run command where a volume is specified. -v is used to specify the volume which has two pieces to the option. First is the Folder on your computer with files you want accessible then a colon is placed and on the other side of this colon a file path that indicates Where these files should show up on your container After this option the image name is given as is typical for docker run.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1128")
 ```
 
@@ -78,7 +78,7 @@ or in the exec tab of the container in Docker desktop app, run
 bash /home/run_analysis.sh
 ```
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Now we have a new error. Error in loadnamespace(x) there is no package called rmarkdown. What do we think this means?", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1152")
 ```
 
@@ -86,7 +86,7 @@ Now we have a new error! What does this mean?
 
 **Question: Does our container have all of the same software that our computer has?**
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Does our container have all of the same software that our computer has?", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1160")
 ```
 
@@ -109,7 +109,7 @@ If you have a windows machine you may have to run this variant instead. This ver
 podman run -v ${pwd}:/home cansav09/practice-image:1
 ```
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This diagram shows a podman run command where a volume is specified. -v is used to specify the volume which has two pieces to the option. First is the Folder on your computer with files you want accessible then a colon is placed and on the other side of this colon a file path that indicates Where these files should show up on your container. After this option the image name is given as is typical for docker run.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_15")
 ```
 
@@ -130,6 +130,6 @@ What does this mean?
 
 **Question: Does our container have all of the same software that our computer has?**
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Does our container have all of the same software that our computer has?", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1160")
 ```

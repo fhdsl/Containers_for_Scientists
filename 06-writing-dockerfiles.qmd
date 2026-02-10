@@ -1,7 +1,7 @@
 
 # Writing Dockerfiles
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Use Dockerfile commands to build images. Install commonly used software packages like those from R or Python", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a80783034_1_34") 
 ```
 

@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What happens by default when you run a container regarding files and software?
+      shuffleOptions: true
+      options:
+        - answer: The container is isolated and does not have access to your computer's files and software
+          isCorrect: true
+          feedback: |-
+              Correct! By default, containers run in isolation with their own filesystem, separate from the host computer's files and software.
+        - answer: The container automatically copies all your computer's files
+          isCorrect: false
+          feedback: |-
+              Containers do not automatically copy all files from your computer. They run in isolation with their own filesystem unless specifically configured to access host files.
+        - answer: The container shares all files with your computer
+          isCorrect: false
+          feedback: |-
+              Containers do not share all files with your computer by default. File sharing requires explicit volume mounting or binding.
+        - answer: The container only copies system files
+          isCorrect: false
+          feedback: |-
+              Containers don't automatically copy system files from the host. They use their own filesystem based on the container image.
+        - answer: The container connects to cloud storage
+          isCorrect: false
+          feedback: |-
+              Containers do not automatically connect to cloud storage. Any external storage connections must be explicitly configured.
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the correct command to see what Docker images you have on your computer?
+      shuffleOptions: true
+      options:
+        - answer: docker image ls
+          isCorrect: true
+          feedback: |-
+              Correct! The command "docker image ls" lists all Docker images that are currently stored on your local machine.
+        - answer: docker images show
+          isCorrect: false
+          feedback: |-
+              This is not a valid Docker command. The correct command to list images is "docker image ls" or simply "docker images".
+        - answer: docker list images
+          isCorrect: false
+          feedback: |-
+              This is not a valid Docker command. Docker does not use the word "list" in this command structure.
+        - answer: docker ps
+          isCorrect: false
+          feedback: |-
+              "docker ps" shows running containers, not images. To see images, use "docker image ls".
+        - answer: docker show images
+          isCorrect: false
+          feedback: |-
+              This is not a valid Docker command. Docker does not use the "show" verb in this context.
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the difference between 'docker run' and 'docker exec' commands?
+      shuffleOptions: true
+      options:
+        - answer: docker run creates a new container from an image, while docker exec executes commands in an already running container
+          isCorrect: true
+          feedback: |-
+              Correct! "docker run" starts a new container instance from an image, while "docker exec" runs additional commands inside a container that is already running.
+        - answer: They are exactly the same command
+          isCorrect: false
+          feedback: |-
+              These commands serve different purposes and are not the same. "docker run" creates new containers while "docker exec" works with existing ones.
+        - answer: docker exec creates new containers while docker run executes commands
+          isCorrect: false
+          feedback: |-
+              This reverses the actual functions. "docker run" creates containers, while "docker exec" executes commands in existing containers.
+        - answer: docker run is only for images while docker exec is only for files
+          isCorrect: false
+          feedback: |-
+              This mischaracterizes both commands. Neither is limited to just images or files - they relate to container creation and command execution.
+        - answer: There is no difference between the commands
+          isCorrect: false
+          feedback: |-
+              These commands have distinct purposes and behaviors in Docker. They are not interchangeable.
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the purpose of "pulling" a Docker image?
+      shuffleOptions: true
+      options:
+        - answer: To download a copy of the image from the internet to your local computer
+          isCorrect: true
+          feedback: |-
+              Correct! "Pulling" an image means downloading it from a registry (like Docker Hub) to your local machine so you can use it to create containers.
+        - answer: To upload your images to the internet
+          isCorrect: false
+          feedback: |-
+              Uploading images is called "pushing," not "pulling." Pulling specifically refers to downloading images to your local system.
+        - answer: To create a new container
+          isCorrect: false
+          feedback: |-
+              Creating a container is done with "docker run," not "docker pull." Pulling only downloads the image without creating a container.
+        - answer: To delete old images
+          isCorrect: false
+          feedback: |-
+              Deleting images is done with "docker rmi" or "docker image rm," not "pull." Pulling adds images rather than removing them.
+        - answer: To modify existing images
+          isCorrect: false
+          feedback: |-
+              Pulling does not modify existing images. It downloads a copy of an image from a registry. Modifying images involves different commands and typically requires creating a new image.

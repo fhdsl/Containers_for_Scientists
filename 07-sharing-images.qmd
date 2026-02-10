@@ -1,7 +1,7 @@
 
 # Best practices for sharing images
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This chapter will demonstrate how to: Recognize the importance of keeping protected data safe as it relates to images Understand best practices for containerization. Contrast the different online destinations for sharing a Docker image Change the name of a image Push an image to Dockerhub for sharing purposes", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_852") 
 ```
 
@@ -10,9 +10,9 @@ xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```
 
-Reproducibility is a community activity and because of this sharing images is clearly a big component of why images can aid in reproducibility. 
+Reproducibility is a community activity. Sharing images is a big component of how images can aid in reproducibility. 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "Now our diagram includes that docker push moves the image from our computer to the internet sharing that image with the world (or our team).", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_492") 
 ```
 
@@ -44,7 +44,7 @@ You can use one or more of these alternatives. Just make sure you clear it with 
 - If for some reason you must put something protected on an image, your other option is to push the image only to a secure and protected location where only IRB approved individuals have access to it. Amazon Web Services Container registry has options as does Microsoft Azure for example. 
 - If for some reason you must put something protected on an image, and you can't use a private registry, your other option is: **Don’t push the image anywhere**. This makes it harder to share methods. You must take extra steps to, for example, share a version of the Dockerfile of the image that doesn't have protected data information on it.  
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "If you work with protected data types, PII and PHI, DO NOT put these data on publicly shared Docker images! Alternatives: Don’t put the data on the image Don’t push the image anywhere Push the image to a secure and protected location site: (AWS has options, singularity, etc) More layers of safety checks the better!", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1276") 
 ```
 
@@ -53,11 +53,11 @@ Data privacy is just one concern of best practices with containers. There's also
 
 ## Do not make one super large image that covers all your use cases
 
-Just as in Lord of the Rings that the "one ring to rule them all" was dangerous, so too is "one docker image to rule them all". Big images are a headache to deal with. They take a long time to build and to pull, and if anything is broken on them, it can be a headache to troubleshoot.
+Just as in Lord of the Rings where the "one ring to rule them all" proved dangerous, so too is "one docker image to rule them all". Big images are a headache to deal with. They take a long time to build and to pull, and if anything is broken on them, it can be a headache to troubleshoot.
 
 ### Alternatives: 
 
-There's no limit on the number of images you can make! There can be a fine art to making separate images for each use case. Obviously too many images could be hard to keep track of which is which, but a very intentional organizational plan for your images can take you far. 
+There's no limit on the number of images you can make! There can be a fine art to making separate images for each use case. Too many images can be hard to keep track of, but a very intentional organizational plan for your images can take you far. 
 
 ## Version control your Dockerfiles 
 
@@ -87,17 +87,17 @@ Images and containers can be difficult to have transparency into the build at ti
 
 ## Summary of best practices
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = " A Table summarizing what to do and what not to do with images and containers. Do NOT put protected data on your shared image instead, store data separate or Make your images private and CONSULT data privacy experts! Do not make one super larger Docker image that covers all your use cases. Big images are a headache to deal with. Instead, make separate images for separate use cases. Think carefully about build efficiencies Keep these well documented and organized. Do not keep Dockerfiles stored only locally and untracked instead use version control to put these on put on GitHub (or your platform of choice). Do not not using tags for versioning instead you can at least use tags like “:main” you can use versioning numbers to keep track. Do not use random developers’ Docker images instead stick to Using trusted sources/developers", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g30a4ed49e59_0_1282") 
 ```
 
 ## Container Registries 
 
-To share our image with others (or ourselves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes. 
+To share our image with others (or our future selves), we can push it to an online repository. There are a lot of options for container registries. Container registries are generally cross-compatible meaning you can pull the image from just about anywhere if you have the right command and software. You can use different container registries for different purposes. 
 
-[This article has a nice summary of some of the most popular ones](https://octopus.com/blog/top-8-container-registries). 
+[This article has a nice guide to some of the most popular ones](https://octopus.com/blog/top-8-container-registries). 
 
-And here's a TL;DR of the most common registries: 
+And here's a summary of the most common registries: 
 
 - [Dockerhub](https://hub.docker.com/) – widely used, a default
 - [Amazon Web Services Container Registry](https://aws.amazon.com/containers/) - includes options for keeping private  
@@ -125,7 +125,7 @@ docker login -u your_user_name
 ```
 
 
-```{r, out.width = "100%", echo = FALSE}
+```{r, out.width = "100%", fig.alt = "This image shows how to sign into your docker account through your docker desktop", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_523") 
 ```
 
@@ -137,10 +137,6 @@ We can do that by using the `tag` command. But replace `<your_username>` with wh
 docker tag cool-new-image:2 <your_username>/cool-new-image:2
 ```
 
-```{r, out.width = "70%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_530") 
-```
-
 <input type="checkbox"> Now we can push it to our repository.  
 ```
 docker <your_username> push username/cool-new-image:2
@@ -148,7 +144,7 @@ docker <your_username> push username/cool-new-image:2
 
 You can also do this with this button on Docker Desktop: 
 
-```{r, out.width = "70%", echo = FALSE}
+```{r, out.width = "70%", fig.alt = "This shows how you can push an image to dockerhub using docker desktop.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1T5Lfei2UVou9b0qaUCrWXmkcIwAao-UcN4pHMPEE4CY/edit#slide=id.g2effc5b673e_0_539") 
 ```
 

@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: Why is it important to clean up Docker containers and images periodically?
+      shuffleOptions: true
+      options:
+        - answer: They take up space on your computer and can cause performance issues if too many accumulate
+          isCorrect: true
+          feedback: |-
+              Consider what happens to system resources when unused files accumulate. How might Docker artifacts affect storage and performance if left unmanaged over time?
+        - answer: They automatically expire after a certain time
+          isCorrect: false
+          feedback: |-
+              Think about whether Docker has built-in expiration mechanisms. Do containers and images have a natural lifecycle, or do they persist until manually removed?
+        - answer: They slow down the internet connection
+          isCorrect: false
+          feedback: |-
+              Consider the relationship between stored files and internet connectivity. How would local Docker artifacts affect network performance?
+        - answer: They interfere with other Docker installations
+          isCorrect: false
+          feedback: |-
+              Think about how Docker manages different images and containers. Do artifacts from one project typically affect the operation of other Docker projects?
+        - answer: They cause security issues if not removed
+          isCorrect: false
+          feedback: |-
+              Consider whether the mere presence of unused containers creates security vulnerabilities. Are there other more significant factors that affect Docker security?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the correct order of operations when removing Docker images and containers?
+      shuffleOptions: true
+      options:
+        - answer: First stop and remove containers, then remove the associated images
+          isCorrect: true
+          feedback: |-
+              Think about the dependency relationship between containers and images. What constraints might exist when trying to remove components that depend on each other?
+        - answer: Remove images first, then remove containers
+          isCorrect: false
+          feedback: |-
+              Consider the parent-child relationship between images and containers. Can you remove a parent object while the child objects still exist?
+        - answer: Remove everything at once without checking
+          isCorrect: false
+          feedback: |-
+              Think about the potential consequences of batch operations without verification. What problems might arise from undiscriminating removal?
+        - answer: Only remove containers and keep all images
+          isCorrect: false
+          feedback: |-
+              Consider the goal of comprehensive cleanup. Would removing only containers address all resource usage concerns?
+        - answer: Only remove images that aren't being used
+          isCorrect: false
+          feedback: |-
+              Think about what might happen if you attempt to remove only unused images without addressing containers. Is this a complete solution?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What command would you use to remove all non-running Docker containers?
+      shuffleOptions: true
+      options:
+        - answer: docker rm $(docker ps -a -q)
+          isCorrect: true
+          feedback: |-
+              Consider the purpose of each part of this command. What does "rm" do versus "rmi"? What does "docker ps -a -q" return, and how would that be used by the main command?
+        - answer: docker rmi $(docker ps -a -q)
+          isCorrect: false
+          feedback: |-
+              Think about the specific Docker commands for removing containers versus images. What does the "i" in "rmi" stand for, and does it match what you're trying to remove?
+        - answer: docker stop $(docker ps -a -q)
+          isCorrect: false
+          feedback: |-
+              Consider what the "stop" command does. Does stopping a container also remove it from the system?
+        - answer: docker delete $(docker ps -a -q)
+          isCorrect: false
+          feedback: |-
+              Think about the standard Docker command vocabulary. Is "delete" a valid Docker command for container removal?
+        - answer: docker remove $(docker ps -a -q)
+          isCorrect: false
+          feedback: |-
+              Consider the precise Docker command syntax. Which abbreviated command is used for removing containers?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What happens if you try to remove a Docker image that is currently being used by a running container?
+      shuffleOptions: true
+      options:
+        - answer: The removal will not be allowed until the container is stopped and removed
+          isCorrect: true
+          feedback: |-
+              Consider how Docker manages dependencies between its components. What safeguards might be in place to prevent removal of resources that are actively in use?
+        - answer: The image and container will both be automatically removed
+          isCorrect: false
+          feedback: |-
+              Think about whether Docker would automatically remove running resources. Would automatic removal of active containers align with principles of predictable system behavior?
+        - answer: Only the container will be removed
+          isCorrect: false
+          feedback: |-
+              Consider which component depends on the other. Would removing a dependent container be the default behavior when trying to remove the underlying image?
+        - answer: The system will crash
+          isCorrect: false
+          feedback: |-
+              Think about the robustness of modern software systems. Are catastrophic failures typical when performing operations with dependency conflicts?
+        - answer: The image will be partially removed
+          isCorrect: false
+          feedback: |-
+              Consider whether Docker operations are typically atomic. Would partial removal be a logical outcome for dependency-constrained operations?

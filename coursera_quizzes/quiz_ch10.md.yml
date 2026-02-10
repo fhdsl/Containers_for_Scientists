@@ -1,0 +1,103 @@
+- variations:
+    - typeName: multipleChoice
+      prompt: What feature of Docker allows you to use IDEs like RStudio or Jupyter notebooks from within a container?
+      shuffleOptions: true
+      options:
+        - answer: The port option, which allows you to access the IDE through a browser
+          isCorrect: true
+          feedback: |-
+              Consider how web-based IDEs are accessed in general. What Docker feature would allow network communication between a container's internal services and your local browser?
+        - answer: The volume option alone
+          isCorrect: false
+          feedback: |-
+              Think about what volumes primarily provide. Do they enable file sharing or network connectivity between the container and host?
+        - answer: The container ID
+          isCorrect: false
+          feedback: |-
+              Consider the purpose of a container ID. Is it an identifier or a feature that enables specific functionality?
+        - answer: The image name
+          isCorrect: false
+          feedback: |-
+              Think about what the image name represents. Is it related to how you access services running inside a container?
+        - answer: The container registry
+          isCorrect: false
+          feedback: |-
+              Consider what a container registry is used for. Is it related to running containers or to storing and distributing images?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: When running a Jupyter notebook from a container, what command flag is used to enable JupyterLab?
+      shuffleOptions: true
+      options:
+        - answer: -e JUPYTER_ENABLE_LAB=yes
+          isCorrect: true
+          feedback: |-
+              Consider how environment variables are set in Docker commands. What flag is used to pass environment variables to a container?
+        - answer: -p JUPYTER_ENABLE_LAB=yes
+          isCorrect: false
+          feedback: |-
+              Think about what the -p flag is typically used for in Docker commands. Is it related to environment variables or to network settings?
+        - answer: --enable-jupyter
+          isCorrect: false
+          feedback: |-
+              Consider Docker's command structure and naming conventions. Does this follow the standard pattern for Docker command options?
+        - answer: --jupyter-lab
+          isCorrect: false
+          feedback: |-
+              Think about how container configurations are typically set. Are they usually specified as command flags or through environment variables?
+        - answer: -e JUPYTER=on
+          isCorrect: false
+          feedback: |-
+              Consider the specific environment variable name required by Jupyter containers. Is this the standard variable name used to enable JupyterLab?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What is the purpose of the -v flag in the Jupyter container command?
+      shuffleOptions: true
+      options:
+        - answer: It creates a volume that connects your current directory to the container's work directory
+          isCorrect: true
+          feedback: |-
+              Consider what would be necessary to save your work when using a containerized Jupyter environment. How would files persist beyond the container's lifecycle?
+        - answer: It specifies the container's version
+          isCorrect: false
+          feedback: |-
+              Think about how container versions are specified in Docker commands. Is the -v flag typically used for version specification?
+        - answer: It sets the container's password
+          isCorrect: false
+          feedback: |-
+              Consider what command option would be used for security settings. Is volume mapping related to authentication?
+        - answer: It enables port forwarding
+          isCorrect: false
+          feedback: |-
+              Think about which Docker flag is used for network port mapping. Is -v the standard option for this purpose?
+        - answer: It installs Jupyter packages
+          isCorrect: false
+          feedback: |-
+              Consider when package installation typically occurs in the Docker workflow. Are packages usually installed at runtime using command flags?
+
+- variations:
+    - typeName: multipleChoice
+      prompt: What should you do if you need additional packages that aren't included in the development container?
+      shuffleOptions: true
+      options:
+        - answer: Modify the Dockerfile to include the needed packages and rebuild the image
+          isCorrect: true
+          feedback: |-
+              Consider the principles of container immutability and reproducibility. What approach would provide a consistent environment every time the container is run?
+        - answer: Install packages directly in the running container
+          isCorrect: false
+          feedback: |-
+              Think about what happens when a container is stopped and restarted. Would changes made inside a running container persist?
+        - answer: Use a different container
+          isCorrect: false
+          feedback: |-
+              Consider whether switching containers is always feasible. What if you need specific features from the current container plus additional packages?
+        - answer: Ignore the missing packages
+          isCorrect: false
+          feedback: |-
+              Think about the impact on your workflow. How would missing dependencies affect your ability to execute your code?
+        - answer: Create a new volume
+          isCorrect: false
+          feedback: |-
+              Consider what volumes are used for in Docker. Do they provide software packages or just file access?

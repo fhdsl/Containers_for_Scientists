@@ -6,14 +6,15 @@ book:
   title: Containers for Scientists
   author: Candace Savonen
   date: "10/11/2024"
-  favicon: assets/favicon.ico
+  favicon: assets/ITN_favicon.ico
   bread-crumbs: false
 
   page-navigation: true
   search: true
   repo-url: https://github.com/fhdsl/Containers_for_Scientists
   repo-actions: [edit]
-  issue-url: https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform
+  issue-url: https://forms.gle/hc8Xt3Y2Znjb6M4Y7
+  google-analytics: "G-L8RNG6K22F"
 
   chapters:
     - index.qmd
@@ -32,18 +33,18 @@ book:
     - About.qmd
 
   sidebar:
-    logo: "img/logo.png"
-    logo-href: "https://hutchdatascience.org/"
+    logo: "assets/ITN_logo.png"
+    logo-href: "https://www.itcrtraining.org/"
     foreground: "#1B365D"
 
   page-footer:
     left: |
-      This book was built with <a href="https://quarto.org/" style="color: #fff;">Quarto</a> using
-      <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #fff;">OTTR</a>.
+      This book was built with <a href="https://quarto.org/" style="color: #0000FF;">Quarto</a> using
+      <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #0000FF;">OTTR</a>.
     center: |
-      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #fff;">CC-BY. </a>
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;">CC-BY. </a>
       <br>
-      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/" style="color: #fff;"> CC-BY </a> unless noted otherwise.
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;"> CC-BY </a> unless noted otherwise.
     right:
       - icon: github
         href: https://github.com/
@@ -58,8 +59,8 @@ format:
   html:
     grid:
        sidebar-width: 260px
-    css: style.css
-    linkcolor: "#00C1D5"
+    css: assets/style_ITN.css
+    linkcolor: "#e0471c"
     mainfont: "Karla"
 
     sidebar: true
@@ -72,7 +73,7 @@ format:
 
     link-external-newwindow: true
 
-    image: img/favicon.ico
+    image: assets/ITN_favicon.ico
     license: "CC BY"
   pdf:
     prefer-html: true
