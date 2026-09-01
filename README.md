@@ -1,4 +1,5 @@
 # Containers for Scientists
+[![Render Bookdown, Leanpub, and Coursera](https://github.com/fhdsl/Containers_for_Scientists/actions/workflows/render-all.yml/badge.svg)](https://github.com/fhdsl/Containers_for_Scientists/actions/workflows/render-all.yml)
 
 This course was created from [this GitHub template](https://github.com/ottrproject/ottr_quarto).
 
